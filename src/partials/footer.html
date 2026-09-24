@@ -1,24 +1,24 @@
 </main>
 <footer class="site-footer" id="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-brand">
         <img src="/assets/img/logo.png" width="370" height="185" alt="משפחה פיננסית" loading="lazy">
-        <p>ייעוץ משכנתאות וכלכלת משפחה. ליווי אישי בתכנון המשכנתא, בבניית התמהיל, במכרז בין הבנקים ובבירוקרטיה, וגם אחרי קבלת הכסף.</p>
-        <div class="social">
-          <a href="{{site.social.facebook}}" target="_blank" rel="noopener" aria-label="פייסבוק">{{icon:facebook-logo}}</a>
-          <a href="{{site.social.instagram}}" target="_blank" rel="noopener" aria-label="אינסטגרם">{{icon:instagram-logo}}</a>
-          <a href="{{site.social.tiktok}}" target="_blank" rel="noopener" aria-label="טיקטוק">{{icon:tiktok-logo}}</a>
-          <a href="{{site.whatsapp}}" target="_blank" rel="noopener" aria-label="וואטסאפ">{{icon:whatsapp-logo}}</a>
-        </div>
+        <p>ייעוץ משכנתאות וכלכלת משפחה. ליווי אישי מהשיחה הראשונה ועד אחרי קבלת הכסף.</p>
       </div>
+      <div class="footer-cta">
+        <a class="btn btn-light" href="/contact/">{{site.cta}}</a>
+        <a class="footer-phone ltr" href="{{site.phoneHref}}">{{icon:phone}} {{site.phone}}</a>
+      </div>
+    </div>
+    <div class="footer-grid">
       <div>
         <h4>ניווט</h4>
         <ul class="footer-list">
           <li><a href="/">דף הבית</a></li>
+          <li><a href="/about/">אודות הצוות</a></li>
           <li><a href="/services/">שירותים</a></li>
           <li><a href="/services/#process">איך זה עובד</a></li>
-          <li><a href="/about/">אודות הצוות</a></li>
           <li><a href="/contact/">צור קשר</a></li>
         </ul>
       </div>
@@ -36,15 +36,23 @@
         <h4>מרכז הידע</h4>
         <ul class="footer-list">
           <li><a href="/knowledge/">מאמרים ועדכונים</a></li>
-          <li><a href="/rates/">מרכז פיננסי: ריביות ומדדים</a></li>
+          <li><a href="/rates/">ריביות ומדדים</a></li>
           <li><a href="/glossary/">מילון מונחים</a></li>
           <li><a href="/calculators/">מחשבונים</a></li>
         </ul>
-        <h4 class="mt-4">דברו איתנו</h4>
-        <ul class="footer-list">
-          <li><a href="{{site.phoneHref}}" class="ltr">{{site.phone}}</a></li>
-          <li><a href="mailto:{{site.email}}" class="ltr">{{site.email}}</a></li>
+      </div>
+      <div>
+        <h4>דברו איתנו</h4>
+        <ul class="footer-list footer-contact">
+          <li><a href="{{site.phoneHref}}">{{icon:phone}} <span class="ltr">{{site.phone}}</span></a></li>
+          <li><a href="mailto:{{site.email}}">{{icon:envelope-simple}} <span class="ltr">{{site.email}}</span></a></li>
+          <li><a href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a></li>
         </ul>
+        <div class="social">
+          <a href="{{site.social.facebook}}" target="_blank" rel="noopener" aria-label="פייסבוק">{{icon:facebook-logo}}</a>
+          <a href="{{site.social.instagram}}" target="_blank" rel="noopener" aria-label="אינסטגרם">{{icon:instagram-logo}}</a>
+          <a href="{{site.social.tiktok}}" target="_blank" rel="noopener" aria-label="טיקטוק">{{icon:tiktok-logo}}</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -53,10 +61,11 @@
         <a href="/privacy-policy/">מדיניות פרטיות</a>
         <a href="/accessibility/">הצהרת נגישות</a>
         <div class="prefs">
-          <button class="prefs-toggle" type="button" aria-expanded="false" aria-controls="prefs-panel" style="background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;font:inherit">העדפות תצוגה</button>
+          <button class="prefs-toggle" type="button" aria-expanded="false" aria-controls="prefs-panel">העדפות תצוגה</button>
           {{> prefs}}
         </div>
       </nav>
+      <div class="powered">Powered by <a href="https://einstein-web.co.il" target="_blank" rel="noopener">Einstein-Web</a></div>
     </div>
   </div>
 </footer>
