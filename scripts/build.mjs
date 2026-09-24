@@ -80,6 +80,8 @@ const blocks = {
   "fin-tiles": finTiles,
   "fin-tiles-compact": () => finTiles(true),
   "cpi-chart": cpiChart,
+  "cpi-lines": () => indexLines("cpi"),
+  "construction-lines": () => indexLines("construction"),
   "rate-tables": rateTables,
   "rate-preview": ratePreview,
   "rates-updated": () => heDate(rates.updated),
@@ -169,6 +171,50 @@ function cpiChart() {
 <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${attr(desc)}" direction="ltr">${gridl}${bars}${labels}</svg>
 <div class="chart-legend"><span><i style="background:var(--teal)"></i>עלייה חודשית</span><span><i style="background:var(--coral)"></i>ירידה חודשית</span><span>מקור: הלשכה המרכזית לסטטיסטיקה, כפי שפורסם באתר</span></div>
 <details class="more mt-2"><summary>הנתונים בטבלה ${icon("caret-down")}</summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th><th class="num">שינוי</th></tr></thead><tbody>${rows}</tbody></table></div></details>
+</div>`;
+}
+
+
+function indexLines(key) {
+  // classic year-over-year line chart, one line per year, real data from content/rates.json
+  const idx = rates.indices.find((i) => i.key === key);
+  const src = key === "cpi" ? rates.cpiMonthly : rates.constructionMonthly;
+  const monthsFull = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
+  const years = Object.keys(src.series).sort();
+  const palette = { "2022": "#93a3bd", "2023": "#ffc857", "2024": "#10a058", "2025": "#10c8b8", "2026": "#2457f5" };
+  const all = years.flatMap((y) => src.series[y]);
+  const step = 0.5;
+  const max = Math.ceil(Math.max(...all) / step) * step, min = Math.floor(Math.min(...all) / step) * step;
+  const W = 600, H = 330, padL = 48, padR = 14, padT = 16, padB = 36;
+  const x = (m) => padL + (m / 11) * (W - padL - padR);
+  const y = (v) => padT + (max - v) / (max - min) * (H - padT - padB);
+  let grid = "";
+  for (let g = min; g <= max + 1e-9; g += step) grid += `<line class="${Math.abs(g) < 1e-9 ? "axis" : "grid-line"}" x1="${padL}" x2="${W - padR}" y1="${y(g).toFixed(1)}" y2="${y(g).toFixed(1)}"/><text x="${padL - 8}" y="${(y(g) + 4).toFixed(1)}" text-anchor="end">${g.toFixed(1)}%</text>`;
+  let labels = "";
+  src.months.forEach((m, i) => { labels += `<text x="${x(i).toFixed(1)}" y="${H - 10}" text-anchor="middle">${m}</text>`; });
+  let lines = "", dots = "";
+  years.forEach((yr, yi) => {
+    const d = src.series[yr];
+    const path = d.map((v, i) => (i === 0 ? "M" : "L") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join("");
+    const cur = yr === years[years.length - 1];
+    lines += `<path class="line" d="${path}" fill="none" stroke="${palette[yr] || "#5f6e86"}" stroke-width="${cur ? 3.5 : 2}" stroke-linejoin="round" stroke-linecap="round" style="animation-delay:${yi * 120}ms" opacity="${cur ? 1 : 0.85}"/>`;
+    d.forEach((v, i) => { dots += `<circle class="dot" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${cur ? 4 : 3}" fill="${palette[yr] || "#5f6e86"}"><title>${monthsFull[i]} ${yr}: ${v}%</title></circle>`; });
+  });
+  const legend = years.slice().reverse().map((yr) => `<span><i style="background:${palette[yr]}"></i>${yr}</span>`).join("");
+  const rows = src.months.map((m, i) => `<tr><td>${monthsFull[i]}</td>${years.map((yr) => `<td class="num">${src.series[yr][i] === undefined ? "" : src.series[yr][i] + "%"}</td>`).join("")}</tr>`).join("");
+  const desc = `שינוי חודשי ב${idx.name}, לפי שנה, ${years[0]} עד ${years[years.length - 1]}. השנה הנוכחית מודגשת.`;
+  return `<div class="index-block">
+  <h3>${idx.name}</h3>
+  <div class="chart chart-lines">
+    <div class="chart-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${attr(desc)}" direction="ltr">${grid}${lines}${dots}${labels}</svg></div>
+    <div class="chart-legend">${legend}</div>
+  </div>
+  <table class="summary-table"><tbody>
+    <tr><th>12 חודשים אחרונים</th><td class="num">${idx.last12.toFixed(2)}%</td></tr>
+    <tr><th>מצטבר ${years[years.length - 1]}</th><td class="num">${idx.ytd.toFixed(2)}%</td></tr>
+    <tr><th>מדד חודש ${idx.lastMonth.label}</th><td class="num">${idx.lastMonth.value.toFixed(2)}%</td></tr>
+  </tbody></table>
+  <details class="more"><summary>הנתונים החודשיים בטבלה ${icon("caret-down")}</summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th>${years.map((yr) => `<th class="num">${yr}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div></details>
 </div>`;
 }
 

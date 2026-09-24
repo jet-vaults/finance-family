@@ -41,15 +41,24 @@
     </div>
     <div class="fin-grid reveal-stagger">
       {{@fin-tiles}}
-      <div class="fin-tile full">
-        <div class="fin-label">שינוי חודשי במדד המחירים לצרכן, 24 חודשים</div>
-        {{@cpi-chart}}
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="tables" aria-labelledby="tables-title">
+<section class="section section-alt" id="indices" aria-labelledby="indices-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="indices-title">מדדים</h2>
+      <p>השינוי החודשי במדד המחירים לצרכן ובמדד תשומות הבנייה, שנה מול שנה. השנה הנוכחית מודגשת, ומעבר על נקודה מציג את הערך.</p>
+    </div>
+    <div class="index-grid reveal">
+      {{@cpi-lines}}
+      {{@construction-lines}}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tables" aria-labelledby="tables-title">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">טבלאות ריבית</span>
@@ -76,7 +85,7 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="impact-title">
+<section class="section section-alt" aria-labelledby="impact-title">
   <div class="container">
     <div class="grid grid-12" style="align-items:center">
       <div class="span-7 reveal">
