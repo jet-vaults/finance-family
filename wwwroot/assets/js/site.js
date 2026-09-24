@@ -104,9 +104,19 @@
 
   /* ---------- needs selector (tabs) ---------- */
   $$(".needs").forEach(function (wrap) {
-    var tabs = $$("[role=tab]", wrap), panels = $$("[role=tabpanel]", wrap);
+    var tabs = $$("[role=tab]", wrap), panels = $$("[role=tabpanel]", wrap), home = $(".needs-panels", wrap);
+    var mq = window.matchMedia("(max-width: 900px)");
+    function place(tab) {
+      // small screens: the open panel sits directly under its tab (accordion); large screens: panels live in their own column
+      panels.forEach(function (p) {
+        var own = p.id === tab.getAttribute("aria-controls");
+        if (mq.matches && own) { tab.insertAdjacentElement("afterend", p); }
+        else if (p.parentNode !== home) { home.appendChild(p); }
+      });
+    }
     function select(tab, focus) {
       tabs.forEach(function (t) { var on = t === tab; t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1; });
+      place(tab);
       panels.forEach(function (p) {
         var on = p.id === tab.getAttribute("aria-controls");
         p.hidden = !on;
@@ -114,6 +124,9 @@
       });
       if (focus) tab.focus();
     }
+    var current = tabs.filter(function (t) { return t.getAttribute("aria-selected") === "true"; })[0] || tabs[0];
+    place(current);
+    (mq.addEventListener ? mq.addEventListener("change", function () { place(tabs.filter(function (t) { return t.getAttribute("aria-selected") === "true"; })[0] || tabs[0]); }) : null);
     tabs.forEach(function (t, i) {
       t.addEventListener("click", function () { select(t); });
       t.addEventListener("keydown", function (e) {

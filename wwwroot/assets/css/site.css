@@ -481,9 +481,16 @@ body[data-menu-open="true"] { overflow: hidden; }
 }
 
 /* ---------- needs selector (tabs) ---------- */
-.needs { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
-@media (max-width: 900px) { .needs { grid-template-columns: 1fr; } }
-.needs-tabs { display: grid; gap: 0.5rem; }
+.needs { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: stretch; }
+.needs-tabs { display: grid; gap: 0.5rem; grid-auto-rows: 1fr; }
+.needs-panels { display: grid; }
+.needs-panels .needs-panel { height: 100%; }
+@media (max-width: 900px) {
+  .needs { grid-template-columns: 1fr; }
+  .needs-tabs { grid-auto-rows: auto; }
+  .needs-tabs .needs-panel { margin: 0.25rem 0 0.75rem; box-shadow: var(--shadow); }
+  .needs-tab[aria-selected="true"] svg.caret { transform: rotate(-90deg); }
+}
 .needs-tab {
   --acc: var(--blue); --acc-bg: var(--blue-100);
   display: flex; align-items: center; gap: 0.9rem; width: 100%; text-align: start;

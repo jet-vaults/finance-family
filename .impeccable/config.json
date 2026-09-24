@@ -20,6 +20,12 @@
         ],
         "createdAt": "2026-09-24T18:00:02.691Z",
         "reason": "Claude decided: the only zero-padding bordered element is .pl-marker, a fixed 3.4rem circle with a two-digit number centred via grid; every card in the page has 1.25rem or more padding"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(0.2, 1.4, 0.4, 1)",
+        "createdAt": "2026-09-24T18:06:51.098Z",
+        "reason": "user asked for a pop-up domino reveal of the process cards; the mild spring overshoot is the requested pop"
       }
     ]
   }
