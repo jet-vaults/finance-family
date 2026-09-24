@@ -267,7 +267,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 .section-dark .link-arrow { color: var(--teal); }
 
 .chip {
-  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; border-radius: var(--r-pill);
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; border-radius: var(--r-pill);
   background: var(--surface-2); color: var(--ink-2); font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid transparent;
 }
 a.chip:hover { border-color: var(--line-strong); color: var(--ink); }
