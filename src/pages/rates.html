@@ -5,10 +5,7 @@
 .fin-grid > .fin-tile.accent { grid-column: span 12; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .fin-grid > .fin-tile.accent .fin-label { flex-basis: 100%; }
 .fin-grid > .fin-tile.accent .fin-value { margin-top: 0; }
-.fin-grid > .fin-tile.accent .fin-sub { margin-top: 0; padding-top: 0; max-width: 46ch; }
-.swipe-hint { display: none; font-size: 0.82rem; color: var(--muted); margin: 0 0 0.5rem; }
-@media (max-width: 720px) { .swipe-hint { display: block; } }
-.abbr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.fin-grid > .fin-tile.accent .fin-sub { margin-top: 0; padding-top: 0; max-width: 46ch; }.abbr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
 .abbr-grid div { padding: 1rem 1.1rem; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); }
 .abbr-grid dt { font-weight: 800; font-size: 1.15rem; color: var(--navy-800); }
 .abbr-grid dd { margin: 0.25rem 0 0; font-size: 0.92rem; color: var(--ink-2); }
@@ -66,10 +63,8 @@
       <p>לכל מסלול טווח ריבית לפי אחוז המימון (יחס המשכנתא לשווי הנכס) והתקופה. בחרו מסלול כדי לראות את הטבלה שלו.</p>
     </div>
     <div class="reveal">
-      <p class="swipe-hint" aria-hidden="true">גללו את הטבלה לצדדים לעמודות נוספות</p>
       {{@rate-tables}}
     </div>
-    <p class="track-note mt-3">הטווחים הם ריביות מקובלות בשוק נכון ל-{{@rates-updated}}, לצורך התמצאות והשוואה בלבד. הם אינם הצעה מחייבת; הריבית בפועל נקבעת לפי נתוני הלווים, הנכס והמכרז מול הבנקים.</p>
     <h3 class="mt-6">איך קוראים את הטבלאות</h3>
     <dl class="abbr-grid reveal-stagger">
       <div><dt>אחוז מימון</dt><dd>היחס בין סכום המשכנתא לשווי הנכס (LTV). ככל שהוא גבוה יותר, הריבית המוצעת בדרך כלל גבוהה יותר.</dd></div>

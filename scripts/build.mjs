@@ -169,7 +169,7 @@ function cpiChart() {
   const desc = `שינוי חודשי במדד המחירים לצרכן, ${last[0].y} עד ${last[last.length - 1].y}. ערכים חיוביים בטורקיז, שליליים בכתום.`;
   return `<div class="chart" aria-hidden="false">
 <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${attr(desc)}" direction="ltr">${gridl}${bars}${labels}</svg>
-<div class="chart-legend"><span><i style="background:var(--teal)"></i>עלייה חודשית</span><span><i style="background:var(--coral)"></i>ירידה חודשית</span><span>מקור: הלשכה המרכזית לסטטיסטיקה, כפי שפורסם באתר</span></div>
+<div class="chart-legend"><span><i style="background:var(--teal)"></i>עלייה חודשית</span><span><i style="background:var(--coral)"></i>ירידה חודשית</span></div>
 <details class="more mt-2"><summary>הנתונים בטבלה ${icon("caret-down")}</summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th><th class="num">שינוי</th></tr></thead><tbody>${rows}</tbody></table></div></details>
 </div>`;
 }
@@ -224,9 +224,8 @@ function rateTables() {
   const tabs = rates.tracks.map((t, i) => `<button class="rate-tab" role="tab" id="rt-tab-${t.key}" aria-controls="rt-${t.key}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" type="button">${t.short}</button>`).join("");
   const panels = rates.tracks.map((t, i) => `<div role="tabpanel" id="rt-${t.key}" aria-labelledby="rt-tab-${t.key}" ${i === 0 ? "" : "hidden"}>
 <div class="table-wrap"><table class="rate-table"><caption>${esc(t.name)}</caption><thead><tr><th>תקופה</th>${rates.ltvColumns.map((c) => `<th class="num">מימון ${c}</th>`).join("")}</tr></thead><tbody>${t.rows.map((row, ri) => `<tr><td>${rates.termRows[ri]}</td>${row.map((r) => `<td class="num range"><b>${r.min.toFixed(2)}%</b> - ${r.max.toFixed(2)}%</td>`).join("")}</tr>`).join("")}</tbody></table></div>
-<p class="track-note">${t.indexed ? "הקרן צמודה למדד המחירים לצרכן." : "הקרן אינה צמודה למדד."} ${t.fixed ? "הריבית קבועה לכל התקופה." : t.key === "prime" ? "הריבית משתנה עם כל שינוי בריבית בנק ישראל." : "הריבית מתעדכנת בתחנות של 5 שנים."} הטווח מייצג ריביות מקובלות בשוק לפי אחוז מימון ותקופה, ואינו הצעה מחייבת.</p>
 </div>`).join("");
-  const zak = `<div class="table-wrap mt-4"><table class="rate-table"><caption>${esc(rates.zakaut.label)}</caption><thead><tr><th>תקופה</th><th class="num">ריבית</th></tr></thead><tbody>${rates.zakaut.rows.map((r) => `<tr><td>${r[0]}</td><td class="num"><b>${r[1].toFixed(2)}%</b></td></tr>`).join("")}</tbody></table></div><p class="track-note">הלוואת זכאות מסובסדת ממשרד הבינוי והשיכון, ריבית אחידה לכל אחוזי המימון.</p>`;
+  const zak = `<div class="table-wrap mt-4"><table class="rate-table"><caption>${esc(rates.zakaut.label)}</caption><thead><tr><th>תקופה</th><th class="num">ריבית</th></tr></thead><tbody>${rates.zakaut.rows.map((r) => `<tr><td>${r[0]}</td><td class="num"><b>${r[1].toFixed(2)}%</b></td></tr>`).join("")}</tbody></table></div>`;
   return `<div data-tabs><div class="rate-tabs" role="tablist" aria-label="מסלולי ריבית">${tabs}</div>${panels}</div>${zak}`;
 }
 
@@ -260,7 +259,6 @@ function heroViz() {
   <div class="viz-card span-6"><div class="viz-label">יתרת הקרן לאורך חיי ההלוואה</div><div class="viz-chart"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="גרף המדגים ירידה הדרגתית של יתרת הקרן מ-1.2 מיליון שקל לאפס לאורך 25 שנים" direction="ltr"><defs><linearGradient id="vizFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10c8b8" stop-opacity=".45"/><stop offset="1" stop-color="#10c8b8" stop-opacity="0"/></linearGradient></defs><path class="fill-area" d="${area}" fill="url(#vizFill)"/><path class="draw" d="${d}" fill="none" stroke="#7ff0e6" stroke-width="2.5" stroke-linecap="round"/>${ticks}</svg></div></div>
   <div class="viz-card span-3"><div class="viz-label">תמהיל לדוגמה</div><div class="viz-mix"><svg width="90" height="90" viewBox="0 0 90 90" role="img" aria-label="תמהיל לדוגמה: שליש פריים, שליש ריבית קבועה לא צמודה, שליש ריבית משתנה">${donut}</svg><div class="viz-legend">${segs.map((s) => `<span><i style="background:${s.c}"></i>${s.l}<b>${s.p}%</b></span>`).join("")}</div></div></div>
   <div class="viz-card span-3"><div class="viz-label">מדד המחירים, 6 חודשים</div><div class="viz-value num">${rates.indices[0].last12.toFixed(1)}<small>% ב-12 חוד'</small></div><svg width="108" height="40" viewBox="0 0 108 40" role="img" aria-label="שינוי חודשי במדד בששת החודשים האחרונים" direction="ltr" style="margin-top:.4rem">${cbars}</svg></div>
-  <div class="viz-foot">ההחזר והתמהיל הם הדגמה ולא נתוני לקוח. ריבית בנק ישראל והמדד: נתונים אמיתיים, עודכנו ${heDate(rates.updated)}.</div>
 </div>`;
 }
 
