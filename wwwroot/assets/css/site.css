@@ -747,7 +747,7 @@ body[data-menu-open="true"] { overflow: hidden; }
 .tool-link:hover { transform: translateY(-2px); box-shadow: var(--shadow); color: inherit; }
 .tool-link b { display: block; }
 .tool-link span { color: var(--muted); font-size: 0.88rem; }
-.tool-link svg.arrow { margin-inline-start: auto; width: 1.2rem; height: 1.2rem; color: var(--muted); }
+.tool-link > svg:last-child { margin-inline-start: auto; width: 1.2rem; height: 1.2rem; color: var(--muted); flex: none; }
 
 /* article grid (knowledge page) */
 .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
