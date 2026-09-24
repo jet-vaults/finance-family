@@ -263,7 +263,7 @@ function heroViz() {
 }
 
 function featured(p) {
-  return `<a class="featured reveal" href="/blog/${encodeURI(p.slug)}/"><span class="chip">${p.category}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p><div class="meta">${heDate(p.date)} · ${p.readMinutes} דק' קריאה</div></a>`;
+  return `<a class="featured reveal" href="/blog/${encodeURI(p.slug)}/"><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p><div class="meta">${heDate(p.date)} · ${p.readMinutes} דק' קריאה</div></a>`;
 }
 function postRow(p) {
   return `<a class="post-row" href="/blog/${encodeURI(p.slug)}/"><h4>${esc(p.title)}</h4>${icon("arrow-left")}<div class="meta"><span>${p.category}</span><span class="meta-dot">${heDate(p.date)}</span></div></a>`;
