@@ -103,6 +103,17 @@ const blocks = {
   "marketing-consent": () => site.form.marketingConsent ? `<label class="check"><input type="checkbox" name="marketing" value="כן"> <span>אני מאשר/ת קבלת עדכונים ותכנים שיווקיים ממשפחה פיננסית. אפשר להסיר את ההסכמה בכל עת.</span></label>` : `<!-- marketing consent component is off (content/site.json form.marketingConsent) -->`
 };
 
+
+const stepIcons = ["users-three", "chart-line-up", "target", "scales", "seal-check", "bank", "file-text", "handshake"];
+const processBlocks = {
+  "process-zigzag": () => services.process.map((s, i) => `<li class="zz-item ${i % 2 ? "zz-b" : "zz-a"}"><div class="zz-card"><div class="zz-top"><span class="icon-tile">${icon(stepIcons[i])}</span><span class="n num">${s.n}</span></div><h3>${s.title}</h3><p>${s.text}</p></div></li>`).join(""),
+  "process-grid": () => services.process.map((s, i) => `<div class="pg-card"><div class="pg-num num">${s.n}</div><span class="icon-tile ${["", "teal", "green", "amber", "", "teal", "green", "coral"][i]}">${icon(stepIcons[i])}</span><h3>${s.title}</h3><p>${s.text}</p></div>`).join(""),
+  "process-list": () => services.process.map((s, i) => `<li class="pl-item"><div class="pl-marker"><span class="num">${s.n}</span></div><div class="pl-body"><h3>${s.title}</h3><p>${s.text}</p></div></li>`).join(""),
+  "process-snap": () => services.process.map((s, i) => `<div class="ps-card"><span class="icon-tile">${icon(stepIcons[i])}</span><div class="ps-num num">${s.n}</div><h3>${s.title}</h3><p>${s.text}</p></div>`).join(""),
+  "process-tabs": () => `<div class="pt-tabs" role="tablist" aria-label="שלבי התהליך">${services.process.map((s, i) => `<button class="pt-tab" role="tab" id="pt-tab-${i}" aria-controls="pt-panel-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" type="button"><span class="num">${s.n}</span><span>${s.title}</span></button>`).join("")}</div>${services.process.map((s, i) => `<div class="pt-panel" role="tabpanel" id="pt-panel-${i}" aria-labelledby="pt-tab-${i}" ${i ? "hidden" : ""}><div class="pt-visual"><span class="icon-tile">${icon(stepIcons[i])}</span><div class="pt-big num">${s.n}</div><div class="pt-of">מתוך 08</div></div><div><h3>${s.title}</h3><p>${s.text}</p><div class="pt-progress" aria-hidden="true">${services.process.map((x, j) => `<i class="${j <= i ? "on" : ""}"></i>`).join("")}</div></div></div>`).join("")}`
+};
+Object.assign(blocks, processBlocks);
+
 function linkify(s) {
   return s.replace(/\[(https?:\/\/[^\]]+)\]/g, (m, u) => {
     let href = u; try { const d = decodeURIComponent(u.replace(/^https?:\/\/finance-family\.co\.il\//, "")).replace(/\/$/, ""); if (posts.some((p) => p.slug === d)) href = `/blog/${d}/`; } catch (e) {}
