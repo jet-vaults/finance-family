@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-09-24T16:14:25.059Z",
         "reason": "Claude decided: .prose blockquote start rule is a standard editorial pull-quote convention inside article bodies, not a card accent"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "projects/finance-family/src/pages/process-options.html"
+        ],
+        "createdAt": "2026-09-24T18:00:02.691Z",
+        "reason": "Claude decided: the only zero-padding bordered element is .pl-marker, a fixed 3.4rem circle with a two-digit number centred via grid; every card in the page has 1.25rem or more padding"
       }
     ]
   }

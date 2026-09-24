@@ -74,7 +74,7 @@
       if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
     });
   }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }) : null;
-  $$(".reveal, .reveal-stagger, .viz, .chart").forEach(function (el) {
+  $$(".reveal, .reveal-stagger, .viz, .chart, .pg-anim").forEach(function (el) {
     if (!io || reduceMotion()) { el.classList.add("is-in"); return; }
     io.observe(el);
   });

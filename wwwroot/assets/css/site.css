@@ -563,6 +563,34 @@ body[data-menu-open="true"] { overflow: hidden; }
   .step::before { top: 0.3rem; }
 }
 
+
+/* ---------- process grid (8 coloured cards, domino reveal) ---------- */
+.pg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.pg-card { --acc: var(--blue); --tint: var(--blue-100); position: relative; background: var(--tint); border-radius: var(--r); padding: 1.4rem 1.3rem 1.3rem; overflow: hidden; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.pg-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px color-mix(in srgb, var(--acc) 22%, transparent); }
+.pg-num { position: absolute; top: -0.55rem; inset-inline-end: 0.55rem; font-size: 4.4rem; line-height: 1; color: var(--acc); opacity: 0.16; font-weight: 900; letter-spacing: -0.04em; }
+.pg-card .icon-tile { position: relative; margin-bottom: 0.9rem; background: var(--surface); color: var(--acc); box-shadow: 0 4px 12px color-mix(in srgb, var(--acc) 18%, transparent); }
+.pg-card h3 { font-size: 1.08rem; position: relative; color: var(--ink); }
+.pg-card p { color: var(--ink-2); font-size: 0.92rem; margin-top: 0.4rem; position: relative; }
+.pg-c0 { --acc: #2457f5; --tint: #e3eaff; }
+.pg-c1 { --acc: #0aa89b; --tint: #dcf7f4; }
+.pg-c2 { --acc: #10a058; --tint: #dcf3e6; }
+.pg-c3 { --acc: #b8780a; --tint: #fff1d0; }
+.pg-c4 { --acc: #d9432c; --tint: #ffe3de; }
+.pg-c5 { --acc: #1b3a6b; --tint: #e1e7f2; }
+.pg-c6 { --acc: #6e8f00; --tint: #f1f8d3; }
+.pg-c7 { --acc: #1e7fbf; --tint: #ddf0fb; }
+:root[data-theme="dark"] .pg-card { --tint: color-mix(in srgb, var(--acc) 18%, var(--surface)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pg-card { --tint: color-mix(in srgb, var(--acc) 18%, var(--surface)); } }
+:root[data-contrast="high"] .pg-card { --tint: #fff; border: 1px solid var(--acc); }
+.pg-anim .pg-card { opacity: 0; transform: translateY(28px) scale(0.86); }
+.pg-anim.is-in .pg-card { animation: popIn 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) forwards; animation-delay: calc(var(--i) * 130ms); }
+@keyframes popIn { 0% { opacity: 0; transform: translateY(28px) scale(0.86); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@media (max-width: 1000px) { .pg { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .pg { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .pg-anim .pg-card { opacity: 1; transform: none; animation: none; } }
+:root[data-motion="reduce"] .pg-anim .pg-card { opacity: 1; transform: none; animation: none; }
+
 /* ---------- financial center ---------- */
 .fin-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
 .fin-tile {
