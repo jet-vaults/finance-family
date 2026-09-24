@@ -1,0 +1,161 @@
+<!--meta {"title":"אפשרויות לכרטיסים בחלק העליון","description":"עמוד השוואה פנימי: חמישה זוגות של כרטיסים לחלק העליון של דף הבית.","path":"/hero-cards/","noindex":true}-->
+{{> head}}
+{{> header}}
+<style>
+.opt-nav { position: sticky; top: var(--header-h); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.opt-nav .container { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-block: 0.6rem; align-items: center; }
+.opt-label { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--lime); color: var(--navy-950); font-weight: 800; font-size: 0.85rem; padding: 0.35rem 0.9rem; border-radius: var(--r-pill); }
+.opt-head { padding: 1.5rem 0 0.75rem; }
+.opt-head p { color: var(--muted); margin-top: 0.4rem; max-width: 70ch; }
+.hero { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.hero-card { min-width: 220px; max-width: 260px; }
+.hero-card .btn { width: 100%; margin-top: 0.6rem; }
+.hero-card .small { font-size: 0.85rem; color: #5f6e86; line-height: 1.45; margin-top: 0.3rem; }
+.hero-card .big-line { font-size: 1.05rem; font-weight: 800; color: var(--navy-900); line-height: 1.35; margin-top: 0.25rem; }
+.hero-card .big-line b { color: var(--blue-600); font-size: 1.35rem; }
+.avatars { display: flex; margin-top: 0.4rem; }
+.avatars span { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: var(--g-band); border: 2px solid #fff; margin-inline-start: -10px; display: grid; place-items: end center; }
+.avatars span:first-child { margin-inline-start: 0; }
+.avatars img { width: 90%; height: 90%; object-fit: cover; object-position: top; }
+.seal { display: flex; align-items: center; gap: 0.6rem; }
+.seal .icon-tile { width: 2.4rem; height: 2.4rem; }
+.steps-mini { display: flex; align-items: center; gap: 4px; margin-top: 0.5rem; }
+.steps-mini i { flex: 1; height: 6px; border-radius: 3px; background: var(--g-accent); }
+.steps-mini i:nth-child(n+6) { background: var(--surface-3); }
+.mini-slider { width: 100%; accent-color: var(--blue); margin-top: 0.4rem; }
+.quote-card { display: grid; grid-template-columns: 48px 1fr; gap: 0.6rem; align-items: start; }
+.quote-card .ph { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; background: var(--g-band); display: grid; place-items: end center; }
+.quote-card .ph img { width: 92%; height: 92%; object-fit: cover; object-position: top; }
+.quote-card q { quotes: "„" "“"; font-weight: 700; color: var(--navy-900); font-size: 0.95rem; line-height: 1.4; }
+.donut { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.4rem; }
+.donut svg { width: 64px; height: 64px; flex: none; }
+.donut .viz-legend { color: var(--navy-900); font-size: 0.8rem; }
+.news { font-size: 0.92rem; font-weight: 700; color: var(--navy-900); line-height: 1.4; margin-top: 0.3rem; }
+.news a { color: var(--blue-600); font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.35rem; }
+</style>
+
+<div class="opt-nav">
+  <div class="container">
+    <b>זוגות כרטיסים:</b>
+    <a class="chip" href="#c-1">1 כלל הפריים + הצוות</a>
+    <a class="chip" href="#c-2">2 מחשבון + הסמכות</a>
+    <a class="chip" href="#c-3">3 תהליך + ליווי</a>
+    <a class="chip" href="#c-4">4 ציטוט + הבנקים</a>
+    <a class="chip" href="#c-5">5 תמהיל + מרכז הידע</a>
+  </div>
+</div>
+
+<!-- 1 -->
+<div class="container opt-head" id="c-1">
+  <span class="opt-label">זוג 1</span>
+  <h2 class="mt-2">כלל הפריים + הצוות</h2>
+  <p>ההמלצה שלי: מספר שמתורגם לכסף בכיס של המשפחה, ולצידו שלושת היועצים עם הזמנה לשיחה בלי התחייבות.</p>
+</div>
+<section class="hero" aria-label="זוג 1">
+  <div class="container"><div class="hero-grid">
+    <div>
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+    </div>
+    <div class="hero-arch-wrap">
+      <div class="hero-arch"><img src="/assets/img/hero/family-play.webp" alt="" width="1600" height="1067"></div>
+      <div class="hero-card hero-card-1"><div class="viz-label">כמה שווה ירידת ריבית?</div><div class="big-line">כל 0.25% פחות בפריים = <b style="white-space:nowrap">15 ₪</b> פחות בחודש על כל <span style="white-space:nowrap">100,000 ₪</span></div><div class="viz-trend down mt-1">{{icon:trend-down}} ריבית בנק ישראל {{@boi-rate}}</div></div>
+      <div class="hero-card hero-card-2"><div class="viz-label">מי מלווה אתכם</div><div class="avatars"><span><img src="/assets/img/team-itay.webp" alt=""></span><span><img src="/assets/img/team-ariel.webp" alt=""></span><span><img src="/assets/img/team-omer.webp" alt=""></span></div><div class="big-line">3 יועצים מוסמכים, ליווי אישי</div><a class="btn btn-sm" href="/contact/">שיחה ראשונה בלי התחייבות</a></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 2 -->
+<div class="container opt-head" id="c-2">
+  <span class="opt-label">זוג 2</span>
+  <h2 class="mt-2">מחשבון חי + הסמכות</h2>
+  <p>הכרטיס התחתון הוא מחשבון זעיר: גוררים את הסכום וההחזר מתעדכן. למעלה שתי ההסמכות שמופיעות באתר.</p>
+</div>
+<section class="hero" aria-label="זוג 2">
+  <div class="container"><div class="hero-grid">
+    <div>
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+    </div>
+    <div class="hero-arch-wrap">
+      <div class="hero-arch"><img src="/assets/img/hero/family-play.webp" alt="" width="1600" height="1067"></div>
+      <div class="hero-card hero-card-1" data-mini-calc><div class="viz-label">החזר חודשי על <output name="amt">₪1,000,000</output></div><div class="viz-value num" data-out="m">₪5,278</div><input class="mini-slider" type="range" min="300000" max="3000000" step="50000" value="1000000" aria-label="סכום המשכנתא"><div class="small">25 שנים, ריבית 4.0%. <a href="/calculators/">למחשבון המלא</a></div></div>
+      <div class="hero-card hero-card-2"><div class="seal"><span class="icon-tile teal">{{icon:seal-check}}</span><div><div class="big-line" style="font-size:.95rem">חבר התאחדות יועצי המשכנתאות</div></div></div><div class="seal mt-2"><span class="icon-tile">{{icon:medal}}</span><div><div class="big-line" style="font-size:.95rem">מרצה בכיר במכללת פסגות</div></div></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 3 -->
+<div class="container opt-head" id="c-3">
+  <span class="opt-label">זוג 3</span>
+  <h2 class="mt-2">שמונה שלבים + ליווי גם אחרי</h2>
+  <p>הכרטיסים מסבירים את הדרך: פס התקדמות של שמונת השלבים, וכרטיס שמדגיש שהליווי לא נגמר בקבלת הכסף.</p>
+</div>
+<section class="hero" aria-label="זוג 3">
+  <div class="container"><div class="hero-grid">
+    <div>
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+    </div>
+    <div class="hero-arch-wrap">
+      <div class="hero-arch"><img src="/assets/img/hero/family-play.webp" alt="" width="1600" height="1067"></div>
+      <div class="hero-card hero-card-1"><div class="viz-label">איך זה עובד</div><div class="big-line">8 שלבים, תמונה אחת ברורה</div><div class="steps-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="small">מכירים, מנתחים, בונים תמהיל, מנהלים מכרז בין הבנקים. <a href="/services/#process">לכל השלבים</a></div></div>
+      <div class="hero-card hero-card-2"><div class="seal"><span class="icon-tile green">{{icon:handshake}}</span><div class="big-line" style="font-size:.95rem">ממשיכים ללוות גם אחרי קבלת המשכנתא</div></div><div class="small">בודקים שהתנאים עדיין אטרקטיביים ושהתמהיל עדיין מתאים.</div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 4 -->
+<div class="container opt-head" id="c-4">
+  <span class="opt-label">זוג 4</span>
+  <h2 class="mt-2">ציטוט של איתי + כל הבנקים</h2>
+  <p>הכי אישי: פנים ומשפט אחד של איתי, ולידו העובדה שעובדים מול כל הבנקים ומנהלים ביניהם מכרז.</p>
+</div>
+<section class="hero" aria-label="זוג 4">
+  <div class="container"><div class="hero-grid">
+    <div>
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+    </div>
+    <div class="hero-arch-wrap">
+      <div class="hero-arch"><img src="/assets/img/hero/family-play.webp" alt="" width="1600" height="1067"></div>
+      <div class="hero-card hero-card-1"><div class="quote-card"><div class="ph"><img src="/assets/img/team-itay.webp" alt=""></div><div><q>אני כאן כדי לחסוך לכם את הטעויות שלי.</q><div class="small">איתי גנור, מייסד</div></div></div></div>
+      <div class="hero-card hero-card-2"><div class="seal"><span class="icon-tile">{{icon:bank}}</span><div class="big-line" style="font-size:.95rem">עובדים עם כל הבנקים</div></div><div class="small">אישור עקרוני ממספר בנקים ומכרז ריביות עד להצעה המיטבית.</div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 5 -->
+<div class="container opt-head" id="c-5">
+  <span class="opt-label">זוג 5</span>
+  <h2 class="mt-2">תמהיל לדוגמה + מרכז הידע</h2>
+  <p>הכי "פיננסי": הדונאט של התמהיל עם ריבית הפריים, וכרטיס של מרכז הידע עם העדכון האחרון מהבלוג.</p>
+</div>
+<section class="hero" aria-label="זוג 5">
+  <div class="container"><div class="hero-grid">
+    <div>
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+    </div>
+    <div class="hero-arch-wrap">
+      <div class="hero-arch"><img src="/assets/img/hero/family-play.webp" alt="" width="1600" height="1067"></div>
+      <div class="hero-card hero-card-1"><div class="viz-label">תמהיל לדוגמה</div><div class="donut"><svg viewBox="0 0 90 90" aria-hidden="true"><circle r="34" cx="45" cy="45" fill="none" stroke="#2457f5" stroke-width="14" stroke-dasharray="70.5 213.6" transform="rotate(-90 45 45)"/><circle r="34" cx="45" cy="45" fill="none" stroke="#10c8b8" stroke-width="14" stroke-dasharray="72.6 213.6" stroke-dashoffset="-70.5" transform="rotate(-90 45 45)"/><circle r="34" cx="45" cy="45" fill="none" stroke="#c9f04b" stroke-width="14" stroke-dasharray="70.5 213.6" stroke-dashoffset="-143.1" transform="rotate(-90 45 45)"/></svg><div class="viz-legend"><span><i style="background:#2457f5"></i>פריים<b>33%</b></span><span><i style="background:#10c8b8"></i>קל"צ<b>34%</b></span><span><i style="background:#c9f04b"></i>משתנה<b>33%</b></span></div></div><div class="viz-trend mt-1">ריבית הפריים {{@prime-rate}}</div></div>
+      <div class="hero-card hero-card-2"><div class="viz-label">מרכז הידע</div><div class="big-line">{{@articles-count}} מאמרים, {{@glossary-count}} מונחים</div><div class="news">עדכון אחרון: הורדה נוספת בריבית בנק ישראל 01.09.2026<a href="/blog/הורדה-נוספת-בריבית-בנק-ישראל-01-09-2026/">לקריאה</a></div></div>
+    </div>
+  </div></div>
+</section>
+
+<script>
+document.querySelectorAll("[data-mini-calc]").forEach(function (c) {
+  var s = c.querySelector("input"), amt = c.querySelector("output[name=amt]"), m = c.querySelector("[data-out=m]");
+  function nis(n) { return "₪" + Math.round(n).toLocaleString("he-IL"); }
+  function upd() { var P = +s.value, r = 0.04 / 12, n = 300, pay = P * r / (1 - Math.pow(1 + r, -n)); amt.textContent = nis(P); m.textContent = nis(pay); }
+  s.addEventListener("input", upd); upd();
+});
+</script>
+{{> footer}}
