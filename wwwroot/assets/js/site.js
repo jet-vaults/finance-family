@@ -299,6 +299,69 @@
     $$("[data-consent-open]").forEach(function (b) { b.addEventListener("click", function () { consent.setAttribute("data-open", "true"); consent.setAttribute("data-settings", "true"); }); });
   }
 
+
+  /* ---------- interactive index line charts ---------- */
+  $$("[data-line-chart]").forEach(function (chart) {
+    var svg = $("svg", chart), tip = $(".chart-tip", chart), cross = $(".crosshair", chart), dataEl = $(".chart-data", chart.parentNode) || $(".chart-data", chart);
+    if (!svg || !tip || !dataEl) return;
+    var data; try { data = JSON.parse(dataEl.textContent); } catch (e) { return; }
+    var hidden = {}, current = -1;
+    var btns = $$(".legend-btn[data-year]", chart), allBtn = $(".legend-btn[data-all]", chart);
+    function applyYears() {
+      $$("[data-year]", svg).forEach(function (el) { el.classList.toggle("is-off", !!hidden[el.getAttribute("data-year")]); });
+      btns.forEach(function (bt) { bt.setAttribute("aria-pressed", hidden[bt.getAttribute("data-year")] ? "false" : "true"); });
+      if (allBtn) allBtn.hidden = !Object.keys(hidden).some(function (k) { return hidden[k]; });
+      if (current > -1) show(current);
+    }
+    btns.forEach(function (bt) {
+      bt.addEventListener("click", function () {
+        var y = bt.getAttribute("data-year");
+        var visible = data.years.filter(function (k) { return !hidden[k]; });
+        if (visible.length === 1 && visible[0] === y) return; // keep at least one year visible
+        hidden[y] = !hidden[y]; applyYears();
+      });
+      bt.addEventListener("dblclick", function () {
+        var y = bt.getAttribute("data-year");
+        data.years.forEach(function (k) { hidden[k] = k !== y; }); applyYears();
+      });
+    });
+    allBtn && allBtn.addEventListener("click", function () { hidden = {}; applyYears(); });
+    function fmt(v) { return (v > 0 ? "+" : "") + v.toFixed(1).replace(/\.0$/, "") + "%"; }
+    function show(i) {
+      current = i;
+      var rows = data.years.slice().reverse().filter(function (y) { return !hidden[y]; }).map(function (y) {
+        var v = data.series[y][i];
+        if (v === undefined) return "";
+        return '<span class="tip-row"><i style="background:' + data.palette[y] + '"></i><span>' + y + '</span><b class="num">' + fmt(v) + '</b></span>';
+      }).join("");
+      tip.innerHTML = '<b class="tip-title">' + data.months[i] + '</b>' + rows;
+      tip.hidden = false;
+      cross.setAttribute("x1", data.x[i]); cross.setAttribute("x2", data.x[i]); cross.style.display = "";
+      $$(".dot", svg).forEach(function (d) { d.classList.toggle("is-current", d.getAttribute("data-month") === String(i)); });
+      // position tooltip in CSS pixels
+      var r = svg.getBoundingClientRect(), scale = r.width / data.W;
+      var px = data.x[i] * scale, w = tip.offsetWidth, h = tip.offsetHeight;
+      var left = px + 14; if (left + w > r.width) left = px - w - 14; if (left < 0) left = 0;
+      tip.style.left = left + "px"; tip.style.top = Math.max(0, (data.padT * scale)) + "px";
+    }
+    function hide() { current = -1; tip.hidden = true; cross.style.display = "none"; $$(".dot.is-current", svg).forEach(function (d) { d.classList.remove("is-current"); }); }
+    function nearest(clientX) {
+      var r = svg.getBoundingClientRect(), vx = (clientX - r.left) / (r.width / data.W), best = 0, bd = Infinity;
+      data.x.forEach(function (xx, i) { var d = Math.abs(xx - vx); if (d < bd) { bd = d; best = i; } });
+      return best;
+    }
+    svg.addEventListener("mousemove", function (e) { show(nearest(e.clientX)); });
+    svg.addEventListener("mouseleave", hide);
+    svg.addEventListener("touchstart", function (e) { show(nearest(e.touches[0].clientX)); }, { passive: true });
+    svg.addEventListener("touchmove", function (e) { show(nearest(e.touches[0].clientX)); }, { passive: true });
+    svg.addEventListener("keydown", function (e) {
+      var n = data.x.length;
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); var d = e.key === "ArrowRight" ? 1 : -1; show(current < 0 ? (d > 0 ? 0 : n - 1) : (current + d + n) % n); }
+      else if (e.key === "Home") { e.preventDefault(); show(0); } else if (e.key === "End") { e.preventDefault(); show(n - 1); } else if (e.key === "Escape") hide();
+    });
+    svg.addEventListener("blur", hide);
+  });
+
   /* ---------- current nav item ---------- */
   var path = location.pathname.replace(/index\.html$/, "");
   $$(".nav-desktop a, .mobile-menu nav a").forEach(function (a) {

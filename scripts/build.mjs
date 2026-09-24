@@ -197,17 +197,19 @@ function indexLines(key) {
     const d = src.series[yr];
     const path = d.map((v, i) => (i === 0 ? "M" : "L") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join("");
     const cur = yr === years[years.length - 1];
-    lines += `<path class="line" d="${path}" fill="none" stroke="${palette[yr] || "#5f6e86"}" stroke-width="${cur ? 3.5 : 2}" stroke-linejoin="round" stroke-linecap="round" style="animation-delay:${yi * 120}ms" opacity="${cur ? 1 : 0.85}"/>`;
-    d.forEach((v, i) => { dots += `<circle class="dot" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${cur ? 4 : 3}" fill="${palette[yr] || "#5f6e86"}"><title>${monthsFull[i]} ${yr}: ${v}%</title></circle>`; });
+    lines += `<path class="line" data-year="${yr}" d="${path}" fill="none" stroke="${palette[yr] || "#5f6e86"}" stroke-width="${cur ? 3.5 : 2}" stroke-linejoin="round" stroke-linecap="round" style="animation-delay:${yi * 120}ms" opacity="${cur ? 1 : 0.85}"/>`;
+    d.forEach((v, i) => { dots += `<circle class="dot" data-year="${yr}" data-month="${i}" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${cur ? 4 : 3}" fill="${palette[yr] || "#5f6e86"}"><title>${monthsFull[i]} ${yr}: ${v}%</title></circle>`; });
   });
-  const legend = years.slice().reverse().map((yr) => `<span><i style="background:${palette[yr]}"></i>${yr}</span>`).join("");
+  const legend = years.slice().reverse().map((yr) => `<button type="button" class="legend-btn" data-year="${yr}" aria-pressed="true" style="--c:${palette[yr]}"><i></i>${yr}</button>`).join("") + `<button type="button" class="legend-btn legend-all" data-all>הכל</button>`;
+  const dataJson = JSON.stringify({ months: monthsFull, years, series: src.series, palette, x: years.length ? src.months.map((m, i) => +x(i).toFixed(1)) : [], padT, plotH: H - padB, W, H }).replace(/</g, "\\u003c");
   const rows = src.months.map((m, i) => `<tr><td>${monthsFull[i]}</td>${years.map((yr) => `<td class="num">${src.series[yr][i] === undefined ? "" : src.series[yr][i] + "%"}</td>`).join("")}</tr>`).join("");
   const desc = `שינוי חודשי ב${idx.name}, לפי שנה, ${years[0]} עד ${years[years.length - 1]}. השנה הנוכחית מודגשת.`;
   return `<div class="index-block">
   <h3>${idx.name}</h3>
-  <div class="chart chart-lines">
-    <div class="chart-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${attr(desc)}" direction="ltr">${grid}${lines}${dots}${labels}</svg></div>
-    <div class="chart-legend">${legend}</div>
+  <div class="chart chart-lines" data-line-chart>
+    <div class="chart-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${attr(desc)}" direction="ltr" tabindex="0">${grid}<line class="crosshair" x1="0" x2="0" y1="${padT}" y2="${H - padB}" style="display:none"/>${lines}${dots}${labels}</svg><div class="chart-tip" role="status" aria-live="polite" hidden></div></div>
+    <script type="application/json" class="chart-data">${dataJson}</script>
+    <div class="chart-legend chart-legend-buttons" aria-label="בחירת שנים להצגה">${legend}</div>
   </div>
   <table class="summary-table"><tbody>
     <tr><th>12 חודשים אחרונים</th><td class="num">${idx.last12.toFixed(2)}%</td></tr>
