@@ -497,7 +497,8 @@ body[data-menu-open="true"] { overflow: hidden; }
   padding: 0.9rem 1rem; border-radius: var(--r); border: 1px solid var(--line); background: var(--surface); cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.25s var(--ease), transform 0.2s var(--ease);
 }
-.needs-tab .icon-tile { width: 2.6rem; height: 2.6rem; background: var(--acc-bg); color: var(--acc); border-radius: 10px; transition: transform 0.3s var(--ease); }
+.needs-tab .icon-tile { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; flex: none; background: var(--acc-bg); color: var(--acc); border-radius: 10px; transition: transform 0.3s var(--ease); }
+.needs-tab .icon-tile svg { display: block; margin: 0; }
 .needs-tab b { display: block; font-weight: 700; }
 .needs-tab span { display: block; font-size: 0.86rem; color: var(--muted); }
 .needs-tab svg.caret { width: 1.1rem; height: 1.1rem; margin-inline-start: auto; color: var(--muted); opacity: 0; transform: translateX(6px); transition: opacity 0.2s, transform 0.3s var(--ease); }
