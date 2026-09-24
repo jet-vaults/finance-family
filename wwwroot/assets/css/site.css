@@ -458,9 +458,12 @@ body[data-menu-open="true"] { overflow: hidden; }
 .hero-card-1 { inset-inline-start: 0; bottom: 0; }
 .hero-card-2 { inset-inline-end: 0; top: 44px; }
 @media (max-width: 1023px) {
-  .hero-arch-wrap { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .hero-arch { grid-column: 1 / -1; width: min(100%, 420px); }
-  .hero-card { position: static; min-width: 0; }
+  .hero-arch-wrap { padding: 0; }
+  .hero-arch { width: min(100%, 420px); }
+  .hero-card { display: none; }
+  .hero-grid > div:first-child { text-align: center; }
+  .hero .lead { margin-inline: auto; }
+  .hero .btn-row { justify-content: center; }
 }
 
 /* ---------- trust band ---------- */
