@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Domain** | `https://finance-family.co.il` |
-| **Pages URL** | `https://finance-family.pages.dev` |
+| **Pages URL** | `https://finance-family-7rj.pages.dev` |
 | **Storage mode** | `Standard` (`standard`) |
 | **Storage account** | `jetvaults` |
 | **Public storage** | `https://jetvaults.blob.core.windows.net/finance-family/` |
