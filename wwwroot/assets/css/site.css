@@ -691,9 +691,9 @@ details.more[open] summary svg { transform: rotate(180deg); }
 details.more p { margin-top: 0.75rem; color: var(--ink-2); }
 .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: clamp(2rem, 4vw, 3.5rem); }
 @media (max-width: 720px) { .team-grid { grid-template-columns: 1fr; } }
-.team-card { display: grid; grid-template-columns: 150px 1fr; gap: 1.25rem; align-items: center; }
-@media (max-width: 480px) { .team-card { grid-template-columns: 1fr; } }
-.team-card .portrait { width: 150px; }
+.team-card { display: grid; grid-template-columns: 230px 1fr; gap: 1.5rem; align-items: center; }
+@media (max-width: 560px) { .team-card { grid-template-columns: 1fr; } .team-card .portrait { width: 100%; max-width: 280px; } }
+.team-card .portrait { width: 230px; }
 .team-card h3 { font-size: 1.25rem; }
 .team-card .role { color: var(--muted); font-size: 0.9rem; }
 .team-card p { margin-top: 0.6rem; color: var(--ink-2); font-size: 0.97rem; }

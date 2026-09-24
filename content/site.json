@@ -15,12 +15,30 @@
     "tiktok": "https://www.tiktok.com/@itayganor1"
   },
   "nav": [
-    { "label": "שירותים", "href": "/services/" },
-    { "label": "איך זה עובד", "href": "/services/#process" },
-    { "label": "מרכז פיננסי", "href": "/rates/" },
-    { "label": "מרכז ידע", "href": "/knowledge/" },
-    { "label": "אודות", "href": "/about/" },
-    { "label": "צור קשר", "href": "/contact/" }
+    {
+      "label": "אודות",
+      "href": "/about/"
+    },
+    {
+      "label": "שירותים",
+      "href": "/services/"
+    },
+    {
+      "label": "איך זה עובד",
+      "href": "/services/#process"
+    },
+    {
+      "label": "מרכז פיננסי",
+      "href": "/rates/"
+    },
+    {
+      "label": "מרכז ידע",
+      "href": "/knowledge/"
+    },
+    {
+      "label": "צור קשר",
+      "href": "/contact/"
+    }
   ],
   "ctaShort": "לתיאום שיחה",
   "cta": "לתיאום שיחת ייעוץ",
