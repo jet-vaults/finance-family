@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="משפחה פיננסית, לדף הבית">
+      <img src="/assets/img/logo.png" width="370" height="185" alt="" fetchpriority="high">
+      <span class="brand-text"><b>משפחה פיננסית</b><span>ייעוץ משכנתאות וכלכלת משפחה</span></span>
+    </a>
+    <nav class="nav-desktop" aria-label="ניווט ראשי">
+      {{@nav-links}}
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-sm" href="/contact/">{{site.ctaShort}}</a>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">{{icon:list}}</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" data-open="false" role="dialog" aria-modal="true" aria-label="תפריט">
+  <div class="bar">
+    <a class="brand" href="/" aria-label="משפחה פיננסית, לדף הבית"><img src="/assets/img/logo.png" width="370" height="185" alt=""></a>
+    <button class="icon-btn menu-close" type="button" aria-label="סגירת תפריט">{{icon:x}}</button>
+  </div>
+  <nav aria-label="ניווט ראשי (מובייל)">
+    {{@mobile-nav-links}}
+  </nav>
+  <div class="menu-cta">
+    <a class="btn btn-lg" href="/contact/">{{site.cta}}</a>
+    <a class="btn btn-whatsapp" href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a>
+  </div>
+  <div class="menu-contact">
+    <a href="{{site.phoneHref}}" class="ltr">{{site.phone}}</a>
+    <a href="mailto:{{site.email}}" class="ltr">{{site.email}}</a>
+  </div>
+</div>
+<main id="main" tabindex="-1">

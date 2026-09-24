@@ -4,16 +4,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>העמוד לא נמצא | משפחה פיננסית</title>
-<meta name="description" content="העמוד שחיפשתם לא נמצא באתר משפחה פיננסית.">
-<link rel="canonical" href="https://finance-family.co.il/404">
-<meta name="robots" content="noindex,follow">
+<title>מחשבוני משכנתא: החזר חודשי, תמהיל וזכאות | משפחה פיננסית</title>
+<meta name="description" content="מחשבון החזר חודשי לפי לוח שפיצר, מחשבון משכנתא מלא לפי מסלולים ומחשבון הלוואת זכאות. כלים חופשיים לתכנון המשכנתא של משפחה פיננסית.">
+<link rel="canonical" href="https://finance-family.co.il/calculators/">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="משפחה פיננסית">
 <meta property="og:locale" content="he_IL">
-<meta property="og:title" content="העמוד לא נמצא | משפחה פיננסית">
-<meta property="og:description" content="העמוד שחיפשתם לא נמצא באתר משפחה פיננסית.">
-<meta property="og:url" content="https://finance-family.co.il/404">
+<meta property="og:title" content="מחשבוני משכנתא: החזר חודשי, תמהיל וזכאות | משפחה פיננסית">
+<meta property="og:description" content="מחשבון החזר חודשי לפי לוח שפיצר, מחשבון משכנתא מלא לפי מסלולים ומחשבון הלוואת זכאות. כלים חופשיים לתכנון המשכנתא של משפחה פיננסית.">
+<meta property="og:url" content="https://finance-family.co.il/calculators/">
 <meta property="og:image" content="https://finance-family.co.il/assets/img/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b1f3a">
@@ -27,7 +27,7 @@
 <script>
 (function(){try{var p=JSON.parse(localStorage.getItem("ff-prefs")||"{}"),r=document.documentElement;["theme","contrast","textsize","motion"].forEach(function(k){if(p[k]&&p[k]!=="auto")r.setAttribute("data-"+k,p[k]);});}catch(e){}})();
 </script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://finance-family.co.il/"},{"@type":"ListItem","position":2,"name":"מרכז הידע","item":"https://finance-family.co.il/knowledge/"},{"@type":"ListItem","position":3,"name":"מחשבונים","item":"https://finance-family.co.il/calculators/"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">דלגו לתוכן הראשי</a>
@@ -76,17 +76,118 @@
 </div>
 <main id="main" tabindex="-1">
 
+<style>
+.tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 800px) { .tool-cards { grid-template-columns: 1fr; } }
+.tool-card { display: flex; flex-direction: column; gap: 1rem; padding: clamp(1.5rem, 3vw, 2.25rem); }
+.tool-card h3 { font-size: 1.4rem; }
+.tool-card p { color: var(--ink-2); }
+.tool-card .btn-row { margin-top: auto; padding-top: 0.5rem; }
+.rules { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+@media (max-width: 900px) { .rules { grid-template-columns: 1fr; } }
+.rules .value-item { grid-template-columns: 6rem 1fr; }
+.rules .value-item .n { font-size: 2rem; line-height: 1.1; }
+</style>
 
-<section class="section notfound">
-  <div class="container container-narrow">
-    <div class="big num" aria-hidden="true">404</div>
-    <h1 class="mt-2">העמוד לא נמצא</h1>
-    <p class="lead mt-2" style="margin-inline:auto">ייתכן שהכתובת השתנתה עם המעבר לאתר החדש, או שיש טעות בקישור. הנה כמה מקומות טובים להמשיך מהם.</p>
-    <div class="btn-row mt-4" style="justify-content:center">
-      <a class="btn btn-lg" href="/">לדף הבית</a>
-      <a class="btn btn-lg btn-secondary" href="/knowledge/">למרכז הידע</a>
+<section class="page-hero">
+  <div class="container">
+    <ol class="crumbs"><li><a href="/">דף הבית</a></li><li><a href="/knowledge/">מרכז הידע</a></li><li aria-current="page">מחשבונים</li></ol>
+    <h1>בואו נתחיל מהמספרים</h1>
+    <p class="lead maxw">שלושה כלים חופשיים: הערכת החזר חודשי מהירה כאן בעמוד, מחשבון משכנתא מלא לפי מסלולים, ומחשבון הלוואת זכאות. תהנו, ואם משהו לא ברור, אנחנו כאן.</p>
+  </div>
+</section>
+
+<section class="section" id="quick" aria-labelledby="quick-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="quick-title">הערכת החזר חודשי</h2>
+      <p>שחקו עם הסכום, התקופה והריבית וראו איך ההחזר החודשי משתנה. זו הערכה לפי לוח שפיצר, לא הצעה מהבנק.</p>
     </div>
-    <p class="muted mt-4">מחפשים משהו ספציפי? דברו איתנו: <a href="tel:+972504757888" class="ltr">050-4757888</a></p>
+    <div class="calc reveal" data-calc>
+      <form class="calc-form" onsubmit="return false">
+        <div class="range-field">
+          <label for="calc-amount">סכום המשכנתא <output data-out="amount" for="calc-amount">₪1,000,000</output></label>
+          <input type="range" id="calc-amount" name="amount" min="200000" max="4000000" step="10000" value="1000000">
+        </div>
+        <div class="range-field">
+          <label for="calc-years">תקופה <output data-out="years" for="calc-years">25 שנים</output></label>
+          <input type="range" id="calc-years" name="years" min="5" max="30" step="1" value="25">
+        </div>
+        <div class="range-field">
+          <label for="calc-rate">ריבית שנתית משוקללת <output data-out="rate" for="calc-rate">4.00%</output></label>
+          <input type="range" id="calc-rate" name="rate" min="1" max="8" step="0.05" value="4">
+        </div>
+        <p class="muted" style="font-size:.9rem">הריביות המקובלות בשוק לפי מסלול, מימון ותקופה נמצאות ב<a href="/rates/#tables">מרכז הפיננסי</a>.</p>
+      </form>
+      <div class="calc-result" aria-live="polite">
+        <div class="viz-label">החזר חודשי משוער</div>
+        <div class="big num" data-out="monthly">₪0</div>
+        <div class="calc-split">
+          <div><b class="num" data-out="total">₪0</b><span>סך ההחזר לאורך התקופה</span></div>
+          <div><b class="num" data-out="interest">₪0</b><span>מתוכו ריבית</span></div>
+        </div>
+        <div class="calc-bar" aria-hidden="true"><i data-out="bar-principal" style="width:60%"></i><i data-out="bar-interest" style="width:40%"></i></div>
+        <div class="viz-legend" style="grid-template-columns:1fr 1fr"><span><i style="background:var(--teal)"></i>קרן</span><span><i style="background:var(--amber)"></i>ריבית</span></div>
+        <p class="sr-only" data-out="text"></p>
+        <p class="calc-note">חישוב לפי לוח שפיצר, ללא הצמדה למדד, ביטוחים ועמלות. ההחזר בפועל נקבע לפי התמהיל והריביות שיאושרו.</p>
+        <a class="btn btn-light" href="/contact/">רוצים תמהיל אמיתי? לתיאום שיחת ייעוץ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="full" aria-labelledby="full-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="full-title">המחשבונים המלאים</h2>
+      <p>שני כלים מקצועיים על פלטפורמת Wisecard, פתוחים לשימוש חופשי. הם נפתחים בחלון חדש.</p>
+    </div>
+    <div class="tool-cards reveal-stagger">
+      <div class="card card-hover tool-card">
+        <span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"/></svg></span>
+        <h3>מחשבון משכנתא</h3>
+        <p>חישוב מלא של המשכנתא לפי מסלולים: פריים, קבועה, משתנה, צמודה ולא צמודה. מחלקים את הסכום בין המסלולים, קובעים ריבית ותקופה לכל אחד ומקבלים את ההחזר החודשי ולוח הסילוקין של התמהיל כולו.</p>
+        <div class="btn-row"><a class="btn" href="https://app.wisecard.co.il/calc/Itay%20Ganor" target="_blank" rel="noopener">למחשבון המשכנתא <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+      </div>
+      <div class="card card-hover tool-card">
+        <span class="icon-tile teal"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M239.43,133l-32-80h0a8,8,0,0,0-9.16-4.84L136,62V40a8,8,0,0,0-16,0V65.58L54.26,80.19A8,8,0,0,0,48.57,85h0v.06L16.57,165a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32a7.92,7.92,0,0,0-.57-3L66.92,93.77,120,82V208H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16H136V78.42L187,67.1,160.57,133a7.92,7.92,0,0,0-.57,3c0,23.31,24.54,32,40,32s40-8.69,40-32A7.92,7.92,0,0,0,239.43,133ZM56,184c-7.53,0-22.76-3.61-23.93-14.64L56,109.54l23.93,59.82C78.76,180.39,63.53,184,56,184Zm144-32c-7.53,0-22.76-3.61-23.93-14.64L200,77.54l23.93,59.82C222.76,148.39,207.53,152,200,152Z"/></svg></span>
+        <h3>מחשבון זכאות</h3>
+        <p>הערכה של הלוואת הזכאות המסובסדת ממשרד הבינוי והשיכון, לפי הניקוד שלכם: מצב משפחתי, שנות נישואין, אחים, שירות ועוד. ההלוואה ניתנת דרך הבנקים למשכנתאות כחלק מהמשכנתא הכוללת.</p>
+        <div class="btn-row"><a class="btn btn-teal" href="https://app.wisecard.co.il/zakaut/Itay%20Ganor" target="_blank" rel="noopener">למחשבון הזכאות <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules" aria-labelledby="rules-title">
+  <div class="container">
+    <div class="rules">
+      <div class="reveal">
+        <h2 id="rules-title">כללי אצבע לפני שמחשבים</h2>
+        <p class="lead mt-3">שלושה כללים של בנק ישראל שקובעים את גבולות המשחק. המספרים במחשבון צריכים להישאר בתוכם.</p>
+        <div class="btn-row mt-4"><a class="link-arrow" href="/glossary/">עוד מונחים במילון <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+      </div>
+      <div class="values-list reveal-stagger">
+        <div class="value-item"><div class="n num">25%</div><div><h3>הון עצמי מינימלי</h3><p>לרוכשי דירה יחידה נדרש הון עצמי של לפחות 25% משווי הנכס, כלומר מימון של עד 75%. לדירה חלופית עד 70%, ולדירה להשקעה עד 50%.</p></div></div>
+        <div class="value-item"><div class="n num">50%</div><div><h3>יחס החזר מהכנסה</h3><p>המגבלה הרגולטורית היא 50% מההכנסה הפנויה, אך בפועל רוב הבנקים מאשרים עד כ-40%, ורמה של עד שליש נחשבת בריאה ובטוחה יותר למשפחה.</p></div></div>
+        <div class="value-item"><div class="n num">1/3</div><div><h3>מגבלות התמהיל</h3><p>לפחות שליש מסכום המשכנתא חייב להיות בריבית קבועה, ורכיב הריבית המשתנה בתדירות של פחות מחמש שנים, כולל פריים, מוגבל לשני שלישים מההלוואה.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" aria-labelledby="calc-cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="calc-cta">המחשבון נותן מספר. אנחנו נותנים תמהיל.</h2>
+        <p class="lead">המספרים כאן הם נקודת פתיחה. בשיחת ייעוץ נבנה תמהיל שמתאים להכנסות, למטרות וליכולת ההחזר שלכם, וננהל את המכרז מול הבנקים.</p>
+      </div>
+      <div class="btn-row reveal">
+        <a class="btn btn-lg btn-light" href="/contact/">לתיאום שיחת ייעוץ <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a>
+        <a class="btn btn-lg btn-ghost-light" href="/services/">איך אנחנו עובדים</a>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -1,0 +1,67 @@
+</main>
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/logo.png" width="370" height="185" alt="משפחה פיננסית" loading="lazy">
+        <p>ייעוץ משכנתאות וכלכלת משפחה. ליווי אישי בתכנון המשכנתא, בבניית התמהיל, במכרז בין הבנקים ובבירוקרטיה, וגם אחרי קבלת הכסף.</p>
+        <div class="social">
+          <a href="{{site.social.facebook}}" target="_blank" rel="noopener" aria-label="פייסבוק">{{icon:facebook-logo}}</a>
+          <a href="{{site.social.instagram}}" target="_blank" rel="noopener" aria-label="אינסטגרם">{{icon:instagram-logo}}</a>
+          <a href="{{site.social.tiktok}}" target="_blank" rel="noopener" aria-label="טיקטוק">{{icon:tiktok-logo}}</a>
+          <a href="{{site.whatsapp}}" target="_blank" rel="noopener" aria-label="וואטסאפ">{{icon:whatsapp-logo}}</a>
+        </div>
+      </div>
+      <div>
+        <h4>ניווט</h4>
+        <ul class="footer-list">
+          <li><a href="/">דף הבית</a></li>
+          <li><a href="/services/">שירותים</a></li>
+          <li><a href="/services/#process">איך זה עובד</a></li>
+          <li><a href="/about/">אודות הצוות</a></li>
+          <li><a href="/contact/">צור קשר</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>שירותים</h4>
+        <ul class="footer-list">
+          <li><a href="/services/#new">משכנתא חדשה</a></li>
+          <li><a href="/services/#refinance">מחזור משכנתא</a></li>
+          <li><a href="/services/#any">משכנתא לכל מטרה</a></li>
+          <li><a href="/services/#reverse">משכנתא הפוכה</a></li>
+          <li><a href="/services/#family">כלכלת משפחה</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>מרכז הידע</h4>
+        <ul class="footer-list">
+          <li><a href="/knowledge/">מאמרים ועדכונים</a></li>
+          <li><a href="/rates/">מרכז פיננסי: ריביות ומדדים</a></li>
+          <li><a href="/glossary/">מילון מונחים</a></li>
+          <li><a href="/calculators/">מחשבונים</a></li>
+        </ul>
+        <h4 class="mt-4">דברו איתנו</h4>
+        <ul class="footer-list">
+          <li><a href="{{site.phoneHref}}" class="ltr">{{site.phone}}</a></li>
+          <li><a href="mailto:{{site.email}}" class="ltr">{{site.email}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© {{build.year}} {{site.owner}} | משפחה פיננסית. כל הזכויות שמורות.</div>
+      <nav aria-label="משפטי">
+        <a href="/privacy-policy/">מדיניות פרטיות</a>
+        <a href="/accessibility/">הצהרת נגישות</a>
+        <div class="prefs">
+          <button class="prefs-toggle" type="button" aria-expanded="false" aria-controls="prefs-panel" style="background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;font:inherit">העדפות תצוגה</button>
+          {{> prefs}}
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+<a class="whatsapp-float" href="{{site.whatsapp}}" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">{{icon:whatsapp-logo}}</a>
+{{@consent}}
+<script src="/assets/js/site.js?v={{build.version}}" defer></script>
+</body>
+</html>

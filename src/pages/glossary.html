@@ -1,0 +1,51 @@
+<!--meta {"title":"מילון מונחי המשכנתא","description":"מילון המשכנתא השלם של משפחה פיננסית: תמהיל, קל\"צ, פריים, אחוז מימון, יחס החזר, לוח שפיצר, עמלת היוון, משכנתא הפוכה ועוד עשרות מונחים בשפה פשוטה.","path":"/glossary/","priority":"0.8","crumbs":[{"name":"דף הבית","href":"/"},{"name":"מרכז הידע","href":"/knowledge/"},{"name":"מילון מונחים","href":"/glossary/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.glossary-bar { position: sticky; top: calc(var(--header-h) - 8px); z-index: 5; background: var(--bg); padding-block: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+.glossary-bar .glossary-search { flex: 1 1 320px; }
+.glossary-bar .count { color: var(--muted); font-size: 0.92rem; white-space: nowrap; }
+.glossary-list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 800px) { .glossary-list { grid-template-columns: minmax(0, 1fr); } }
+.term { min-width: 0; overflow-wrap: anywhere; }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    {{page.crumbs}}
+    <h1>מילון המשכנתא השלם</h1>
+    <p class="lead">בואו נעשה קצת סדר: {{@glossary-count}} מונחים בשפה פשוטה.</p>
+  </div>
+</section>
+
+<section class="section section-tight" aria-labelledby="terms-title">
+  <div class="container">
+    <h2 id="terms-title" class="sr-only">רשימת המונחים</h2>
+    <div class="glossary-bar">
+      <label class="glossary-search" for="glossary-q">
+        {{icon:magnifying-glass}}
+        <input type="search" id="glossary-q" data-glossary-search="#terms" aria-label="חיפוש מונח" placeholder="חפשו מונח, למשל קל&quot;צ" autocomplete="off">
+      </label>
+      <span class="count" aria-live="polite"><span data-glossary-count>{{@glossary-count}}</span> מונחים</span>
+    </div>
+    <div class="glossary-list" id="terms">
+      {{@glossary-list}}
+    </div>
+    <p class="glossary-empty">לא נמצאו מונחים. נסו מילה אחרת.</p>
+  </div>
+</section>
+<script type="application/ld+json">{{@glossary-jsonld}}</script>
+
+<section class="section section-tight cta-band" aria-labelledby="gcta-title">
+  <div class="container">
+    <div class="cta-grid" style="align-items:center">
+      <div class="reveal">
+        <h2 id="gcta-title">לא מצאתם את המונח?</h2>
+        <p class="lead">שאלו אותנו. נסביר בשפה פשוטה, ואם זה רלוונטי למשכנתא שלכם, נגיד גם מה כדאי לבדוק.</p>
+      </div>
+      <div class="btn-row reveal"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}}</a><a class="btn btn-lg btn-ghost-light" href="/knowledge/">למרכז הידע</a></div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

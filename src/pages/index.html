@@ -1,0 +1,225 @@
+<!--meta {"title":"משפחה פיננסית | ייעוץ משכנתאות וכלכלת משפחה","description":"ייעוץ משכנתאות אישי לכל המשפחה: משכנתא חדשה, מחזור משכנתא, משכנתא לכל מטרה ומשכנתא הפוכה. ניתוח כלכלי, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי.","path":"/","priority":"1.0"}-->
+{{> head}}
+{{> header}}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-title" class="fade-up">המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+        <p class="lead fade-up">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row fade-up">
+          <a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+          <a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a>
+        </div>
+      </div>
+      <div class="viz-wrap">
+        {{@hero-viz}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="למה לסמוך עלינו">
+  <div class="container">
+    <div class="trust-grid reveal-stagger">
+      {{@trust}}
+    </div>
+  </div>
+</section>
+
+<section class="section needs-section" aria-labelledby="needs-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">שירותים</span>
+      <h2 id="needs-title">מה אתם צריכים היום?</h2>
+      <p>בחרו את המצב שלכם ונראה לכם איך אנחנו ניגשים אליו. אין שתי משפחות זהות, ולכן אין שתי משכנתאות זהות.</p>
+    </div>
+    <div class="needs reveal">
+      <div class="needs-tabs" role="tablist" aria-label="סוגי שירות" aria-orientation="vertical">
+        {{@needs-tabs}}
+      </div>
+      <div class="needs-panels">
+        {{@needs-panels}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="why-title">
+  <div class="container">
+    <div class="values">
+      <div class="values-quote reveal">
+        <h2 id="why-title" class="sr-only">למה משפחה פיננסית</h2>
+        <blockquote>„לא צריך מהפכות גדולות כדי לייצר חיסכון גדול מאוד. צריך תכנון נכון, ומישהו שכבר עשה את הטעויות במקומכם.“</blockquote>
+        <cite>איתי גנור, מייסד משפחה פיננסית</cite>
+        <div class="btn-row mt-4"><a class="link-arrow" href="/about/">הכירו את הצוות {{icon:arrow-left}}</a></div>
+      </div>
+      <div class="values-list reveal-stagger">
+        {{@values}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark process" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="process-title">איך זה עובד: שמונה שלבים, תמונה אחת ברורה</h2>
+      <p>תהליך לקיחת משכנתא נראה מסורבל ומפחיד, אבל הוא לא חייב להיות כזה. כך אנחנו משאירים אתכם בתוך התמונה מהשיחה הראשונה ועד הרבה אחרי הכסף.</p>
+    </div>
+    <div class="timeline" role="list">
+      {{@process-steps}}
+    </div>
+    <div class="btn-row mt-6 reveal"><a class="btn btn-light" href="/contact/">{{site.cta}}</a><a class="link-arrow" href="/services/">כל השירותים והשאלות הנפוצות {{icon:arrow-left}}</a></div>
+  </div>
+</section>
+
+<section class="section" id="fin" aria-labelledby="fin-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">מרכז פיננסי</span>
+      <h2 id="fin-title">המספרים שמזיזים את המשכנתא שלכם</h2>
+      <p>ריבית בנק ישראל, הפריים והמדדים, כפי שהם משפיעים על ההחזר החודשי. מתעדכן עם כל החלטת ריבית ופרסום מדד.</p>
+    </div>
+    <div class="fin-grid reveal-stagger">
+      {{@fin-tiles-compact}}
+      <div class="fin-tile full">
+        <div class="fin-label">שינוי חודשי במדד המחירים לצרכן, 24 חודשים</div>
+        {{@cpi-chart}}
+      </div>
+    </div>
+    <div class="btn-row mt-4 reveal"><a class="btn btn-secondary" href="/rates/">לטבלאות הריבית המלאות {{icon:arrow-left}}</a><span class="muted" style="font-size:.9rem">עודכן לאחרונה: {{@rates-updated}}</span></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="knowledge" aria-labelledby="knowledge-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">מרכז הידע</span>
+      <h2 id="knowledge-title">ידע זה כוח. ריכזנו אותו בשבילכם.</h2>
+      <p>מאמרים, עדכוני שוק, מילון מונחים וכלים. השימוש חופשי, ואנחנו ממש בעד שתלמדו ותעשו חלק מהדרך בעצמכם.</p>
+    </div>
+    <div class="knowledge-grid">
+      {{@knowledge-featured}}
+      <div class="post-list reveal">
+        {{@knowledge-list}}
+        <div class="mt-3"><a class="link-arrow" href="/knowledge/">כל {{@articles-count}} המאמרים {{icon:arrow-left}}</a></div>
+      </div>
+    </div>
+    <div class="knowledge-tools reveal-stagger">
+      <a class="tool-link" href="/glossary/"><span class="icon-tile teal">{{icon:book-open-text}}</span><span><b>מילון מונחי המשכנתא</b><span>{{@glossary-count}} מונחים בשפה פשוטה</span></span>{{icon:arrow-left}}</a>
+      <a class="tool-link" href="/rates/"><span class="icon-tile">{{icon:percent}}</span><span><b>ריביות ומדדים</b><span>טבלאות לפי מסלול, מימון ותקופה</span></span>{{icon:arrow-left}}</a>
+      <a class="tool-link" href="{{site.social.tiktok}}" target="_blank" rel="noopener"><span class="icon-tile coral">{{icon:play-circle}}</span><span><b>סרטונים קצרים</b><span>למי שאין סבלנות לקרוא, בטיקטוק</span></span>{{icon:arrow-left}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="calc" aria-labelledby="calc-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="calc-title">בואו נתחיל מהמספרים</h2>
+      <p>שחקו עם הסכום, התקופה והריבית וראו איך ההחזר החודשי משתנה. זו הערכה לפי לוח שפיצר, לא הצעה מהבנק.</p>
+    </div>
+    <div class="calc reveal" data-calc>
+      <form class="calc-form" onsubmit="return false">
+        <div class="range-field">
+          <label for="calc-amount">סכום המשכנתא <output data-out="amount" for="calc-amount">₪1,000,000</output></label>
+          <input type="range" id="calc-amount" name="amount" min="200000" max="4000000" step="10000" value="1000000">
+        </div>
+        <div class="range-field">
+          <label for="calc-years">תקופה <output data-out="years" for="calc-years">25 שנים</output></label>
+          <input type="range" id="calc-years" name="years" min="5" max="30" step="1" value="25">
+        </div>
+        <div class="range-field">
+          <label for="calc-rate">ריבית שנתית משוקללת <output data-out="rate" for="calc-rate">4.00%</output></label>
+          <input type="range" id="calc-rate" name="rate" min="1" max="8" step="0.05" value="4">
+        </div>
+        <p class="muted" style="font-size:.9rem">רוצים חישוב מלא לפי מסלולים, הצמדה ותרחישים? <a href="/calculators/">למחשבונים המלאים</a>.</p>
+      </form>
+      <div class="calc-result" aria-live="polite">
+        <div class="viz-label">החזר חודשי משוער</div>
+        <div class="big num" data-out="monthly">₪0</div>
+        <div class="calc-split">
+          <div><b class="num" data-out="total">₪0</b><span>סך ההחזר לאורך התקופה</span></div>
+          <div><b class="num" data-out="interest">₪0</b><span>מתוכו ריבית</span></div>
+        </div>
+        <div class="calc-bar" aria-hidden="true"><i data-out="bar-principal" style="width:60%"></i><i data-out="bar-interest" style="width:40%"></i></div>
+        <div class="viz-legend" style="grid-template-columns:1fr 1fr"><span><i style="background:var(--teal)"></i>קרן</span><span><i style="background:var(--amber)"></i>ריבית</span></div>
+        <p class="sr-only" data-out="text"></p>
+        <p class="calc-note">חישוב לפי לוח שפיצר, ללא הצמדה למדד, ביטוחים ועמלות. ההחזר בפועל נקבע לפי התמהיל והריביות שיאושרו.</p>
+        <a class="btn btn-light" href="/contact/">רוצים תמהיל אמיתי? {{site.cta}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="team-title">אנשים, לא אלגוריתם</h2>
+      <p>שלושה יועצי משכנתאות שמלווים אתכם אישית. הכירו את מי שיושב מולכם, ומול הבנקים.</p>
+    </div>
+    {{@team-lead}}
+    <div class="team-grid reveal-stagger">
+      {{@team-grid}}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="cta-title">שיחת ייעוץ ראשונה, בלי התחייבות</h2>
+        <p class="lead">זה יכול להיות הצעד הראשון שלכם בדרך ליציבות כלכלית. השאירו פרטים ונחזור אליכם, או דברו איתנו ישירות.</p>
+        <div class="cta-contact">
+          <a href="{{site.phoneHref}}">{{icon:phone}} <span class="ltr">{{site.phone}}</span></a>
+          <a href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a>
+          <a href="mailto:{{site.email}}">{{icon:envelope-simple}} <span class="ltr">{{site.email}}</span></a>
+        </div>
+      </div>
+      <div class="form-card reveal">
+        <h3>השאירו פרטים לשיחת ייעוץ</h3>
+        <p>נחזור אליכם בהקדם, בדרך כלל באותו יום עבודה.</p>
+        <form class="lead-form" method="post" action="https://api.web3forms.com/submit" data-access-key="{{site.form.accessKey}}" novalidate>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <label for="f-name">שם מלא</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <span class="error" id="f-name-err" aria-live="polite"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">טלפון</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-err">
+              <span class="error" id="f-phone-err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">אימייל</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="f-email-err">
+              <span class="error" id="f-email-err" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-topic">תחום התעניינות</label>
+            <select id="f-topic" name="topic">
+              <option value="משכנתא חדשה">משכנתא חדשה</option>
+              <option value="מחזור משכנתא">מחזור משכנתא</option>
+              <option value="משכנתא לכל מטרה">משכנתא לכל מטרה</option>
+              <option value="משכנתא הפוכה">משכנתא הפוכה</option>
+              <option value="כלכלת משפחה">כלכלת משפחה</option>
+              <option value="אחר">אחר</option>
+            </select>
+          </div>
+          {{@marketing-consent}}
+          <p class="form-privacy">שליחת הטופס מהווה אישור לקריאת <a href="/privacy-policy/">מדיניות הפרטיות</a>. הפרטים משמשים ליצירת קשר בלבד.</p>
+          <div class="form-status" role="status" tabindex="-1"></div>
+          <button class="btn btn-lg" type="submit">שליחה {{icon:arrow-left}}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

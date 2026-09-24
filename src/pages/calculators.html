@@ -1,0 +1,119 @@
+<!--meta {"title":"מחשבוני משכנתא: החזר חודשי, תמהיל וזכאות","description":"מחשבון החזר חודשי לפי לוח שפיצר, מחשבון משכנתא מלא לפי מסלולים ומחשבון הלוואת זכאות. כלים חופשיים לתכנון המשכנתא של משפחה פיננסית.","path":"/calculators/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"מרכז הידע","href":"/knowledge/"},{"name":"מחשבונים","href":"/calculators/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 800px) { .tool-cards { grid-template-columns: 1fr; } }
+.tool-card { display: flex; flex-direction: column; gap: 1rem; padding: clamp(1.5rem, 3vw, 2.25rem); }
+.tool-card h3 { font-size: 1.4rem; }
+.tool-card p { color: var(--ink-2); }
+.tool-card .btn-row { margin-top: auto; padding-top: 0.5rem; }
+.rules { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+@media (max-width: 900px) { .rules { grid-template-columns: 1fr; } }
+.rules .value-item { grid-template-columns: 6rem 1fr; }
+.rules .value-item .n { font-size: 2rem; line-height: 1.1; }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    {{page.crumbs}}
+    <h1>בואו נתחיל מהמספרים</h1>
+    <p class="lead maxw">שלושה כלים חופשיים: הערכת החזר חודשי מהירה כאן בעמוד, מחשבון משכנתא מלא לפי מסלולים, ומחשבון הלוואת זכאות. תהנו, ואם משהו לא ברור, אנחנו כאן.</p>
+  </div>
+</section>
+
+<section class="section" id="quick" aria-labelledby="quick-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="quick-title">הערכת החזר חודשי</h2>
+      <p>שחקו עם הסכום, התקופה והריבית וראו איך ההחזר החודשי משתנה. זו הערכה לפי לוח שפיצר, לא הצעה מהבנק.</p>
+    </div>
+    <div class="calc reveal" data-calc>
+      <form class="calc-form" onsubmit="return false">
+        <div class="range-field">
+          <label for="calc-amount">סכום המשכנתא <output data-out="amount" for="calc-amount">₪1,000,000</output></label>
+          <input type="range" id="calc-amount" name="amount" min="200000" max="4000000" step="10000" value="1000000">
+        </div>
+        <div class="range-field">
+          <label for="calc-years">תקופה <output data-out="years" for="calc-years">25 שנים</output></label>
+          <input type="range" id="calc-years" name="years" min="5" max="30" step="1" value="25">
+        </div>
+        <div class="range-field">
+          <label for="calc-rate">ריבית שנתית משוקללת <output data-out="rate" for="calc-rate">4.00%</output></label>
+          <input type="range" id="calc-rate" name="rate" min="1" max="8" step="0.05" value="4">
+        </div>
+        <p class="muted" style="font-size:.9rem">הריביות המקובלות בשוק לפי מסלול, מימון ותקופה נמצאות ב<a href="/rates/#tables">מרכז הפיננסי</a>.</p>
+      </form>
+      <div class="calc-result" aria-live="polite">
+        <div class="viz-label">החזר חודשי משוער</div>
+        <div class="big num" data-out="monthly">₪0</div>
+        <div class="calc-split">
+          <div><b class="num" data-out="total">₪0</b><span>סך ההחזר לאורך התקופה</span></div>
+          <div><b class="num" data-out="interest">₪0</b><span>מתוכו ריבית</span></div>
+        </div>
+        <div class="calc-bar" aria-hidden="true"><i data-out="bar-principal" style="width:60%"></i><i data-out="bar-interest" style="width:40%"></i></div>
+        <div class="viz-legend" style="grid-template-columns:1fr 1fr"><span><i style="background:var(--teal)"></i>קרן</span><span><i style="background:var(--amber)"></i>ריבית</span></div>
+        <p class="sr-only" data-out="text"></p>
+        <p class="calc-note">חישוב לפי לוח שפיצר, ללא הצמדה למדד, ביטוחים ועמלות. ההחזר בפועל נקבע לפי התמהיל והריביות שיאושרו.</p>
+        <a class="btn btn-light" href="/contact/">רוצים תמהיל אמיתי? {{site.cta}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="full" aria-labelledby="full-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="full-title">המחשבונים המלאים</h2>
+      <p>שני כלים מקצועיים על פלטפורמת Wisecard, פתוחים לשימוש חופשי. הם נפתחים בחלון חדש.</p>
+    </div>
+    <div class="tool-cards reveal-stagger">
+      <div class="card card-hover tool-card">
+        <span class="icon-tile">{{icon:calculator}}</span>
+        <h3>מחשבון משכנתא</h3>
+        <p>חישוב מלא של המשכנתא לפי מסלולים: פריים, קבועה, משתנה, צמודה ולא צמודה. מחלקים את הסכום בין המסלולים, קובעים ריבית ותקופה לכל אחד ומקבלים את ההחזר החודשי ולוח הסילוקין של התמהיל כולו.</p>
+        <div class="btn-row"><a class="btn" href="{{site.calculators.mortgage}}" target="_blank" rel="noopener">למחשבון המשכנתא {{icon:arrow-left}}</a></div>
+      </div>
+      <div class="card card-hover tool-card">
+        <span class="icon-tile teal">{{icon:scales}}</span>
+        <h3>מחשבון זכאות</h3>
+        <p>הערכה של הלוואת הזכאות המסובסדת ממשרד הבינוי והשיכון, לפי הניקוד שלכם: מצב משפחתי, שנות נישואין, אחים, שירות ועוד. ההלוואה ניתנת דרך הבנקים למשכנתאות כחלק מהמשכנתא הכוללת.</p>
+        <div class="btn-row"><a class="btn btn-teal" href="{{site.calculators.eligibility}}" target="_blank" rel="noopener">למחשבון הזכאות {{icon:arrow-left}}</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules" aria-labelledby="rules-title">
+  <div class="container">
+    <div class="rules">
+      <div class="reveal">
+        <h2 id="rules-title">כללי אצבע לפני שמחשבים</h2>
+        <p class="lead mt-3">שלושה כללים של בנק ישראל שקובעים את גבולות המשחק. המספרים במחשבון צריכים להישאר בתוכם.</p>
+        <div class="btn-row mt-4"><a class="link-arrow" href="/glossary/">עוד מונחים במילון {{icon:arrow-left}}</a></div>
+      </div>
+      <div class="values-list reveal-stagger">
+        <div class="value-item"><div class="n num">25%</div><div><h3>הון עצמי מינימלי</h3><p>לרוכשי דירה יחידה נדרש הון עצמי של לפחות 25% משווי הנכס, כלומר מימון של עד 75%. לדירה חלופית עד 70%, ולדירה להשקעה עד 50%.</p></div></div>
+        <div class="value-item"><div class="n num">50%</div><div><h3>יחס החזר מהכנסה</h3><p>המגבלה הרגולטורית היא 50% מההכנסה הפנויה, אך בפועל רוב הבנקים מאשרים עד כ-40%, ורמה של עד שליש נחשבת בריאה ובטוחה יותר למשפחה.</p></div></div>
+        <div class="value-item"><div class="n num">1/3</div><div><h3>מגבלות התמהיל</h3><p>לפחות שליש מסכום המשכנתא חייב להיות בריבית קבועה, ורכיב הריבית המשתנה בתדירות של פחות מחמש שנים, כולל פריים, מוגבל לשני שלישים מההלוואה.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" aria-labelledby="calc-cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="calc-cta">המחשבון נותן מספר. אנחנו נותנים תמהיל.</h2>
+        <p class="lead">המספרים כאן הם נקודת פתיחה. בשיחת ייעוץ נבנה תמהיל שמתאים להכנסות, למטרות וליכולת ההחזר שלכם, וננהל את המכרז מול הבנקים.</p>
+      </div>
+      <div class="btn-row reveal">
+        <a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+        <a class="btn btn-lg btn-ghost-light" href="/services/">איך אנחנו עובדים</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

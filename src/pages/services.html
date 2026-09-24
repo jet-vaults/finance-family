@@ -1,0 +1,89 @@
+<!--meta {"title":"ייעוץ משכנתאות: משכנתא חדשה, מחזור, לכל מטרה והפוכה","description":"כל שירותי הייעוץ של משפחה פיננסית: משכנתא חדשה, מחזור משכנתא, משכנתא לכל מטרה, משכנתא הפוכה וכלכלת משפחה. שמונה שלבי עבודה, שאלות נפוצות ושיחת ייעוץ ראשונה בלי התחייבות.","path":"/services/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"שירותים","href":"/services/"}]}-->
+{{> head}}
+{{> header}}
+
+<section class="page-hero" aria-labelledby="svc-title">
+  <div class="container">
+    {{page.crumbs}}
+    <h1 id="svc-title">ייעוץ משכנתאות שמתחיל מהמשפחה</h1>
+    <p class="lead">תהליך לקיחת משכנתא הוא תהליך מסורבל ומורכב שלעתים נראה מפחיד, אבל זה לא אמור להיות כך. בעזרת שירות אישי, נגיש ובגובה העיניים אנחנו משאירים אתכם בתוך התמונה ומסירים כל חשש או חוסר ודאות בדרך.</p>
+    <div class="btn-row mt-4">
+      <a class="btn btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+      <a class="btn btn-ghost-light" href="#process">שלבי העבודה</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="main-services-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">השירותים שלנו</span>
+      <h2 id="main-services-title">חמישה מצבים, פתרון אחד מותאם לכל משפחה</h2>
+      <p>עובדים עם כל הבנקים וגם מול גופי מימון חוץ-בנקאיים. התהליך כולל ניתוח פיננסי מקיף ואבחון כלל הצרכים, כדי לייצר פתרון מימוני מותאם אישית לכל לווה.</p>
+    </div>
+    {{@services-blocks}}
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="more-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="more-title">עוד פתרונות מימון</h2>
+      <p>מצבים פחות שגרתיים שאנחנו פוגשים לעיתים קרובות. גם כאן מתחילים בניתוח, לא בטופס.</p>
+    </div>
+    <div class="service-more reveal-stagger">
+      {{@services-more}}
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark process" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="process-title">שלבי העבודה</h2>
+      <p>תהליך העבודה שלנו מקיף וכולל עבודה משותפת עם הלקוחות: ניתוח פיננסי, אבחון צרכים, תמהיל אישי, מכרז בין הבנקים וליווי שנמשך גם אחרי קבלת המשכנתא.</p>
+    </div>
+    <div class="timeline" role="list">
+      {{@process-steps}}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="grid grid-12" style="align-items:start">
+      <div class="span-4 reveal">
+        <h2 id="faq-title">שאלות נפוצות</h2>
+        <p class="lead mt-2">לא מצאתם תשובה? שאלו אותנו ישירות, זה לא מחייב.</p>
+        <div class="btn-row mt-3"><a class="btn btn-secondary" href="/contact/">{{site.cta}}</a></div>
+      </div>
+      <div class="span-8 faq reveal">
+        {{@faq}}
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{{@faq-jsonld}}</script>
+
+<section class="section cta-band" aria-labelledby="svc-cta-title">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="svc-cta-title">משכנתא לא צריכה להיות כל כך מפחידה</h2>
+        <p class="lead">שיחת ייעוץ ראשונה, בלי התחייבות. נבין את המצב שלכם ונגיד בכנות מה כדאי לבדוק.</p>
+      </div>
+      <div class="reveal">
+        <div class="btn-row">
+          <a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+          <a class="btn btn-lg btn-ghost-light" href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a>
+        </div>
+        <div class="cta-contact">
+          <a href="{{site.phoneHref}}">{{icon:phone}} <span class="ltr">{{site.phone}}</span></a>
+          <a href="mailto:{{site.email}}">{{icon:envelope-simple}} <span class="ltr">{{site.email}}</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

@@ -1,0 +1,95 @@
+<!--meta {"title":"מרכז הידע: מאמרים, עדכוני שוק וכלים","description":"מרכז הידע של משפחה פיננסית: מאמרים על משכנתאות, ריביות, מחזור, נדל\"ן וכלכלת משפחה, עדכוני שוק, מילון מונחים, ריביות ומדדים ומחשבונים. השימוש חופשי.","path":"/knowledge/","priority":"0.8","crumbs":[{"name":"דף הבית","href":"/"},{"name":"מרכז הידע","href":"/knowledge/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.videos-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: center; }
+.videos-panel { background: var(--navy-900); color: var(--on-dark); border-radius: var(--r-lg); padding: clamp(1.5rem, 3vw, 2.25rem); display: grid; gap: 0.75rem; }
+.videos-panel .icon-tile { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.videos-panel p { color: var(--on-dark-muted); font-size: 0.95rem; }
+@media (max-width: 900px) { .videos-split { grid-template-columns: 1fr; } }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    {{page.crumbs}}
+    <h1>מרכז הידע של משפחה פיננסית</h1>
+    <p class="lead">ידע זה כוח. ריכזנו עבורכם מאמרים, עדכוני שוק, מילון מונחים וכלים, כדי שתוכלו לקרוא, ללמוד ואולי אפילו לעשות בעצמכם חלק מהדרך. השימוש חופשי, ואנחנו ממש בעד.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="latest-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="latest-title">המאמרים האחרונים</h2>
+    </div>
+    <div class="knowledge-grid">
+      {{@knowledge-featured}}
+      <div class="post-list reveal">
+        {{@knowledge-list}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="articles-section" aria-labelledby="all-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="all-title">כל המאמרים</h2>
+      <p>סננו לפי נושא. מציג <span data-filter-count>{{@articles-count}}</span> מאמרים.</p>
+    </div>
+    <div class="filter-bar" data-filter-bar="#articles" role="group" aria-label="סינון לפי נושא">
+      {{@category-filters}}
+    </div>
+    <div class="article-grid" id="articles">
+      {{@articles-all}}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight" aria-labelledby="tools-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">כלים</span>
+      <h2 id="tools-title">כלים ומשאבים</h2>
+    </div>
+    <div class="knowledge-tools reveal-stagger" style="margin-top:0">
+      <a class="tool-link" href="/glossary/"><span class="icon-tile teal">{{icon:book-open-text}}</span><span><b>מילון מונחי המשכנתא</b><span>{{@glossary-count}} מונחים בשפה פשוטה</span></span>{{icon:arrow-left}}</a>
+      <a class="tool-link" href="/rates/"><span class="icon-tile">{{icon:percent}}</span><span><b>ריביות ומדדים</b><span>טבלאות לפי מסלול, מימון ותקופה</span></span>{{icon:arrow-left}}</a>
+      <a class="tool-link" href="/calculators/"><span class="icon-tile green">{{icon:calculator}}</span><span><b>מחשבונים</b><span>החזר חודשי, זכאות ותרחישים</span></span>{{icon:arrow-left}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="videos" aria-labelledby="videos-title">
+  <div class="container">
+    <div class="videos-split">
+      <div class="reveal">
+        <h2 id="videos-title">סרטונים קצרים</h2>
+        <p class="lead mt-2">למי שאין סבלנות לקרוא. איתי מסביר בסרטונים קצרים על ריביות, תמהילים, מחזורים ומה שקורה בשוק, בטיקטוק ובאינסטגרם.</p>
+        <div class="btn-row mt-4">
+          <a class="btn" href="{{site.social.tiktok}}" target="_blank" rel="noopener">{{icon:tiktok-logo}} לסרטונים בטיקטוק</a>
+          <a class="btn btn-secondary" href="{{site.social.instagram}}" target="_blank" rel="noopener">{{icon:instagram-logo}} לאינסטגרם</a>
+        </div>
+      </div>
+      <div class="videos-panel reveal">
+        <span class="icon-tile">{{icon:play-circle}}</span>
+        <h3>מה תמצאו שם</h3>
+        <p>הסברים קצרים על מונחים, תגובות להחלטות ריבית של בנק ישראל ועדכונים משוק המשכנתאות. הסרטונים מתארחים בטיקטוק ובאינסטגרם ואינם נטענים באתר.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight cta-band" aria-labelledby="kcta-title">
+  <div class="container">
+    <div class="cta-grid" style="align-items:center">
+      <div class="reveal">
+        <h2 id="kcta-title">קראתם ועדיין יש שאלה?</h2>
+        <p class="lead">שיחת ייעוץ ראשונה בלי התחייבות. נבין את המצב שלכם ונגיד בכנות מה כדאי לבדוק.</p>
+      </div>
+      <div class="btn-row reveal"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}}</a><a class="btn btn-lg btn-ghost-light" href="/services/">לשירותים שלנו</a></div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

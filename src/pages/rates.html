@@ -1,0 +1,125 @@
+<!--meta {"title":"מרכז פיננסי: ריביות משכנתא, ריבית בנק ישראל ומדדים","description":"ריבית בנק ישראל, ריבית הפריים, מדד המחירים לצרכן ומדד תשומות הבנייה, וטבלאות ריביות משכנתא לפי מסלול, אחוז מימון ותקופה. מתעדכן עם כל החלטת ריבית.","path":"/rates/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"מרכז פיננסי","href":"/rates/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.fin-grid > .fin-tile.accent { grid-column: span 12; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.fin-grid > .fin-tile.accent .fin-label { flex-basis: 100%; }
+.fin-grid > .fin-tile.accent .fin-value { margin-top: 0; }
+.fin-grid > .fin-tile.accent .fin-sub { margin-top: 0; padding-top: 0; max-width: 46ch; }
+.swipe-hint { display: none; font-size: 0.82rem; color: var(--muted); margin: 0 0 0.5rem; }
+@media (max-width: 720px) { .swipe-hint { display: block; } }
+.abbr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.abbr-grid div { padding: 1rem 1.1rem; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); }
+.abbr-grid dt { font-weight: 800; font-size: 1.15rem; color: var(--navy-800); }
+.abbr-grid dd { margin: 0.25rem 0 0; font-size: 0.92rem; color: var(--ink-2); }
+:root[data-theme="dark"] .abbr-grid dt { color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .abbr-grid dt { color: #fff; } }
+@media (max-width: 900px) { .abbr-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .abbr-grid { grid-template-columns: 1fr; } }
+.rule-card { background: var(--navy-900); color: var(--on-dark); border-radius: var(--r-lg); padding: clamp(1.5rem, 3vw, 2.25rem); display: grid; gap: 0.75rem; align-content: start; }
+.rule-card .fin-value { color: #fff; }
+.rule-card .fin-value small { color: var(--on-dark-muted); }
+.rule-card p { color: var(--on-dark-muted); font-size: 0.95rem; }
+.rule-card .example { border-top: 1px solid var(--dark-line); padding-top: 0.9rem; margin-top: 0.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.rule-card .example b { display: block; font-size: 1.35rem; color: #fff; }
+.rule-card .example span { font-size: 0.82rem; color: var(--on-dark-muted); }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    {{page.crumbs}}
+    <h1>מרכז פיננסי: ריביות ומדדים</h1>
+    <p class="lead maxw">ריבית בנק ישראל, הפריים, המדדים וטווחי ריביות המשכנתא המקובלים בשוק, כפי שהצוות שלנו מעדכן אותם אחרי כל החלטת ריבית ופרסום מדד. עודכן לאחרונה: {{@rates-updated}}.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="dash-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="dash-title">התמונה היום</h2>
+      <p>המספרים שמשפיעים ישירות על ההחזר החודשי שלכם, במקום אחד.</p>
+    </div>
+    <div class="fin-grid reveal-stagger">
+      {{@fin-tiles}}
+      <div class="fin-tile full">
+        <div class="fin-label">שינוי חודשי במדד המחירים לצרכן, 24 חודשים</div>
+        {{@cpi-chart}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="tables" aria-labelledby="tables-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">טבלאות ריבית</span>
+      <h2 id="tables-title">ריביות משכנתא לפי מסלול</h2>
+      <p>לכל מסלול טווח ריבית לפי אחוז המימון (יחס המשכנתא לשווי הנכס) והתקופה. בחרו מסלול כדי לראות את הטבלה שלו.</p>
+    </div>
+    <div class="reveal">
+      <p class="swipe-hint" aria-hidden="true">גללו את הטבלה לצדדים לעמודות נוספות</p>
+      {{@rate-tables}}
+    </div>
+    <p class="track-note mt-3">הטווחים הם ריביות מקובלות בשוק נכון ל-{{@rates-updated}}, לצורך התמצאות והשוואה בלבד. הם אינם הצעה מחייבת; הריבית בפועל נקבעת לפי נתוני הלווים, הנכס והמכרז מול הבנקים.</p>
+    <h3 class="mt-6">איך קוראים את הטבלאות</h3>
+    <dl class="abbr-grid reveal-stagger">
+      <div><dt>אחוז מימון</dt><dd>היחס בין סכום המשכנתא לשווי הנכס (LTV). ככל שהוא גבוה יותר, הריבית המוצעת בדרך כלל גבוהה יותר.</dd></div>
+      <div><dt>תקופה</dt><dd>משך חיי ההלוואה. תקופה ארוכה מקטינה את ההחזר החודשי אך מגדילה את סך הריבית.</dd></div>
+      <div><dt>קל"צ</dt><dd>ריבית קבועה לא צמודה: ההחזר ידוע מראש עד התשלום האחרון, והקרן אינה צמודה למדד.</dd></div>
+      <div><dt>ק"צ</dt><dd>ריבית קבועה צמודה: הריבית קבועה, אך הקרן צמודה למדד המחירים לצרכן.</dd></div>
+      <div><dt>מל"צ</dt><dd>משתנה לא צמודה: הריבית מתעדכנת בתחנות של 5 שנים, ללא הצמדת הקרן למדד.</dd></div>
+      <div><dt>מ"צ</dt><dd>משתנה צמודה: הריבית מתעדכנת בתחנות של 5 שנים, והקרן צמודה למדד.</dd></div>
+      <div><dt>פריים</dt><dd>ריבית בנק ישראל בתוספת 1.5%. משתנה עם כל החלטת ריבית, ללא עמלת היוון בפירעון מוקדם.</dd></div>
+      <div><dt>זכאות</dt><dd>הלוואה מסובסדת ממשרד הבינוי והשיכון לזכאים לפי ניקוד, בריבית אחידה לכל אחוזי המימון.</dd></div>
+    </dl>
+    <div class="mt-3"><a class="link-arrow" href="/glossary/">כל המונחים במילון המשכנתא {{icon:arrow-left}}</a></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="grid grid-12" style="align-items:center">
+      <div class="span-7 reveal">
+        <h2 id="impact-title">מה זה אומר על ההחזר שלכם</h2>
+        <p class="lead mt-3">כל שינוי בריבית בנק ישראל משפיע מיד רק על מסלול הפריים בהלוואה. מי שאין לו מסלול פריים לא ירגיש שינוי; מי שיש לו, ההחזר החודשי מתעדכן כבר בחודש שאחרי ההחלטה.</p>
+        <p class="mt-3">החישוב המקובל: על כל 100,000 ש"ח במסלול הפריים, כל הוזלה של 0.25% שווה ירידה של כ-15 ש"ח בהחזר החודשי. שאר המסלולים אינם משתנים עם ההחלטה, אלא אם הגיעו לתחנת עדכון.</p>
+        <div class="btn-row mt-4">
+          <a class="btn" href="/calculators/">לחשב את ההחזר שלכם {{icon:arrow-left}}</a>
+          <a class="link-arrow" href="/blog/הורדה-נוספת-בריבית-בנק-ישראל-01-09-2026/">להסבר המלא על ההחלטה האחרונה {{icon:arrow-left}}</a>
+        </div>
+      </div>
+      <div class="span-5 reveal">
+        <div class="rule-card">
+          <div class="viz-label">כלל אצבע למסלול הפריים</div>
+          <div class="fin-value num">₪15<small> בחודש</small></div>
+          <p>ירידה בהחזר החודשי על כל 100,000 ש"ח במסלול הפריים, לכל הוזלה של 0.25% בריבית בנק ישראל.</p>
+          <div class="example">
+            <div><b class="num">₪350,000</b><span>יתרה במסלול פריים, לדוגמה</span></div>
+            <div><b class="num">כ-₪50</b><span>ירידה חודשית אחרי הורדה של 0.25%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="mt-6 mb-3">עדכוני ריבית ומדדים מהבלוג</h3>
+    <div class="article-grid reveal-stagger">
+      {{@latest-posts-3}}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" aria-labelledby="rates-cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="rates-cta">רוצים לדעת מה המספרים האלה עושים למשכנתא שלכם?</h2>
+        <p class="lead">בשיחת ייעוץ ראשונה נבדוק את המסלולים שלכם מול סביבת הריבית הנוכחית ונגיד בכנות אם יש מה לשפר.</p>
+      </div>
+      <div class="btn-row reveal">
+        <a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+        <a class="btn btn-lg btn-ghost-light" href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

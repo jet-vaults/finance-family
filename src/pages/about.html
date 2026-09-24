@@ -1,0 +1,67 @@
+<!--meta {"title":"אודות: הצוות של משפחה פיננסית","description":"הכירו את איתי גנור, אריאל הלל ועומר דור, יועצי המשכנתאות של משפחה פיננסית. חברי התאחדות יועצי המשכנתאות, מרצה בכיר במכללת פסגות, ועבודה מול כל הבנקים.","path":"/about/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"אודות","href":"/about/"}]}-->
+{{> head}}
+{{> header}}
+
+<section class="page-hero" aria-labelledby="about-title">
+  <div class="container">
+    {{page.crumbs}}
+    <h1 id="about-title">אנשים, לא אלגוריתם</h1>
+    <p class="lead">שלושה יועצי משכנתאות שמלווים אתכם אישית, מהשיחה הראשונה ועד הרבה אחרי הכסף. הכירו את מי שיושב מולכם, ומול הבנקים.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="team-title">
+  <div class="container">
+    <h2 id="team-title" class="sr-only">הצוות</h2>
+    {{@team-lead}}
+    <div class="team-grid reveal-stagger">
+      {{@team-grid}}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="values-title">
+  <div class="container">
+    <div class="values">
+      <div class="values-quote reveal">
+        <h2 id="values-title" class="sr-only">מה מנחה אותנו</h2>
+        <blockquote>„אין שתי משפחות זהות, ולכן לא יכולות להיות שתי משכנתאות זהות.“</blockquote>
+        <cite>מתוך תפיסת העבודה של משפחה פיננסית</cite>
+      </div>
+      <div class="values-list reveal-stagger">
+        {{@values}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="עובדות על הצוות">
+  <div class="container">
+    <div class="trust-grid reveal-stagger">
+      {{@trust}}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" aria-labelledby="about-cta-title">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="about-cta-title">בואו נדבר על המשכנתא שלכם</h2>
+        <p class="lead">שיחת ייעוץ ראשונה בלי התחייבות. מספרים לכם בכנות מה כדאי לבדוק ומה לא.</p>
+      </div>
+      <div class="reveal">
+        <div class="btn-row">
+          <a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a>
+          <a class="btn btn-lg btn-ghost-light" href="/services/">מה אנחנו עושים</a>
+        </div>
+        <div class="cta-contact">
+          <a href="{{site.phoneHref}}">{{icon:phone}} <span class="ltr">{{site.phone}}</span></a>
+          <a href="{{site.whatsapp}}" target="_blank" rel="noopener">{{icon:whatsapp-logo}} וואטסאפ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

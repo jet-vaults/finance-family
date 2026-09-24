@@ -1,0 +1,108 @@
+<!--meta {"title":"צור קשר: שיחת ייעוץ ראשונה בלי התחייבות","description":"דברו עם משפחה פיננסית: טלפון 050-4757888, וואטסאפ או טופס פנייה. שיחת ייעוץ משכנתאות ראשונה בלי התחייבות.","path":"/contact/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"צור קשר","href":"/contact/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; }
+.contact-list li { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.contact-list li:last-child { border-bottom: 1px solid var(--line); }
+.contact-list b { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.contact-list a { font-size: 1.15rem; font-weight: 700; text-decoration: none; color: var(--ink); }
+.contact-list a:hover { color: var(--blue-600); }
+.contact-note { margin-top: 1.5rem; color: var(--ink-2); }
+.contact-social { display: flex; gap: 0.5rem; margin-top: 1.25rem; }
+.contact-social a { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line); }
+.contact-social a:hover { background: var(--blue-100); color: var(--blue-600); }
+.contact-social svg { width: 1.2rem; height: 1.2rem; }
+.contact-page .form-card { box-shadow: var(--shadow); }
+.contact-tools { margin-top: 0; grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 720px) { .contact-tools { grid-template-columns: 1fr; } }
+.contact-page .hp { left: auto; inset-inline-start: 0; top: 0; clip: rect(0 0 0 0); overflow: hidden; }
+</style>
+
+<section class="page-hero" aria-labelledby="contact-title">
+  <div class="container">
+    {{page.crumbs}}
+    <h1 id="contact-title">דברו איתנו</h1>
+    <p class="lead">נשמח לעמוד לשירותכם, להתייעץ, לעזור או אפילו סתם לשוחח.</p>
+  </div>
+</section>
+
+<section class="section contact-page" aria-labelledby="contact-ways">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 id="contact-ways">איך נוח לכם?</h2>
+        <ul class="contact-list mt-3">
+          <li><span class="icon-tile">{{icon:phone}}</span><div><b>טלפון</b><a href="{{site.phoneHref}}" class="ltr">{{site.phone}}</a></div></li>
+          <li><span class="icon-tile green">{{icon:whatsapp-logo}}</span><div><b>וואטסאפ</b><a href="{{site.whatsapp}}" target="_blank" rel="noopener">שליחת הודעה בוואטסאפ</a></div></li>
+          <li><span class="icon-tile teal">{{icon:envelope-simple}}</span><div><b>אימייל</b><a href="mailto:{{site.email}}" class="ltr">{{site.email}}</a></div></li>
+        </ul>
+        <p class="contact-note">פגישות הייעוץ מתקיימות בטלפון, בשיחת וידאו או בפגישה, לפי מה שנוח לכם ובתיאום מראש.</p>
+        <div class="contact-social">
+          <a href="{{site.social.facebook}}" target="_blank" rel="noopener" aria-label="פייסבוק">{{icon:facebook-logo}}</a>
+          <a href="{{site.social.instagram}}" target="_blank" rel="noopener" aria-label="אינסטגרם">{{icon:instagram-logo}}</a>
+          <a href="{{site.social.tiktok}}" target="_blank" rel="noopener" aria-label="טיקטוק">{{icon:tiktok-logo}}</a>
+        </div>
+      </div>
+      <div class="form-card reveal">
+        <h3>השאירו לנו פנייה</h3>
+        <p>נחזור אליכם בהקדם, בדרך כלל באותו יום עבודה.</p>
+        <form class="lead-form" method="post" action="https://api.web3forms.com/submit" data-access-key="{{site.form.accessKey}}" novalidate>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <label for="f-name">שם מלא</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <span class="error" id="f-name-err" aria-live="polite"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">טלפון</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-err">
+              <span class="error" id="f-phone-err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">אימייל</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="f-email-err">
+              <span class="error" id="f-email-err" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-topic">תחום התעניינות</label>
+            <select id="f-topic" name="topic">
+              <option value="משכנתא חדשה" data-key="new">משכנתא חדשה</option>
+              <option value="מחזור משכנתא" data-key="refinance">מחזור משכנתא</option>
+              <option value="משכנתא לכל מטרה" data-key="any">משכנתא לכל מטרה</option>
+              <option value="משכנתא הפוכה" data-key="reverse">משכנתא הפוכה</option>
+              <option value="כלכלת משפחה" data-key="family">כלכלת משפחה</option>
+              <option value="אחר">אחר</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">הודעה <span class="hint">(לא חובה)</span></label>
+            <textarea id="f-message" name="message" rows="4"></textarea>
+          </div>
+          {{@marketing-consent}}
+          <p class="form-privacy">שליחת הטופס מהווה אישור לקריאת <a href="/privacy-policy/">מדיניות הפרטיות</a>. הפרטים משמשים ליצירת קשר בלבד.</p>
+          <div class="form-status" role="status" tabindex="-1"></div>
+          <button class="btn btn-lg" type="submit">שליחה {{icon:arrow-left}}</button>
+        </form>
+        <script>
+        (function(){try{var t=new URLSearchParams(location.search).get("topic");if(!t)return;var o=document.querySelector('#f-topic option[data-key="'+t.replace(/[^a-z]/g,"")+'"]');if(o)o.selected=true;}catch(e){}})();
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight section-alt" aria-label="עוד באתר">
+  <div class="container">
+    <div class="knowledge-tools contact-tools reveal-stagger">
+      <a class="tool-link" href="/knowledge/"><span class="icon-tile teal">{{icon:book-open-text}}</span><span><b>מרכז הידע</b><span>מאמרים, מילון מונחים וכלים</span></span>{{icon:arrow-left}}</a>
+      <a class="tool-link" href="/rates/"><span class="icon-tile">{{icon:percent}}</span><span><b>מרכז פיננסי</b><span>ריביות, מדדים וטבלאות עדכניות</span></span>{{icon:arrow-left}}</a>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

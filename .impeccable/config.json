@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "projects/finance-family/wwwroot/assets/css/site.css"
+        ],
+        "createdAt": "2026-09-24T16:14:25.059Z",
+        "reason": "Claude decided: .prose blockquote start rule is a standard editorial pull-quote convention inside article bodies, not a card accent"
+      }
+    ]
+  }
+}

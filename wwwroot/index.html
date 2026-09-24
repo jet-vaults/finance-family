@@ -1,104 +1,480 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>finance-family</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Outfit', sans-serif;
-      background: #fafaf8;
-      color: #18181b;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: -40%;
-      right: -20%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(215, 200, 255, 0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -30%;
-      left: -15%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255, 220, 180, 0.2) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 520px;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: #71717a;
-      line-height: 1.7;
-      max-width: 380px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #fff;
-      border: 1px solid #e4e4e7;
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: #71717a;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-
-    .pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #a3e635;
-      flex-shrink: 0;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>משפחה פיננסית | ייעוץ משכנתאות וכלכלת משפחה</title>
+<meta name="description" content="ייעוץ משכנתאות אישי לכל המשפחה: משכנתא חדשה, מחזור משכנתא, משכנתא לכל מטרה ומשכנתא הפוכה. ניתוח כלכלי, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי.">
+<link rel="canonical" href="https://finance-family.co.il/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="משפחה פיננסית">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משפחה פיננסית | ייעוץ משכנתאות וכלכלת משפחה">
+<meta property="og:description" content="ייעוץ משכנתאות אישי לכל המשפחה: משכנתא חדשה, מחזור משכנתא, משכנתא לכל מטרה ומשכנתא הפוכה. ניתוח כלכלי, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי.">
+<meta property="og:url" content="https://finance-family.co.il/">
+<meta property="og:image" content="https://finance-family.co.il/assets/img/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1f3a">
+<link rel="icon" href="/assets/img/icon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/img/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/heebo-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/heebo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=mufqlu44">
+<script>
+(function(){try{var p=JSON.parse(localStorage.getItem("ff-prefs")||"{}"),r=document.documentElement;["theme","contrast","textsize","motion"].forEach(function(k){if(p[k]&&p[k]!=="auto")r.setAttribute("data-"+k,p[k]);});}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialService","name":"משפחה פיננסית","alternateName":"Finance Family","url":"https://finance-family.co.il","telephone":"+972-50-475-7888","email":"itay.igm@gmail.com","description":"ייעוץ משכנתאות וכלכלת משפחה: משכנתא חדשה, מחזור משכנתא, משכנתא לכל מטרה ומשכנתא הפוכה.","areaServed":"IL","founder":{"@type":"Person","name":"איתי גנור"},"sameAs":["https://www.facebook.com/itaymf","https://www.instagram.com/mishpacha_finnacit/","https://www.tiktok.com/@itayganor1"],"logo":"https://finance-family.co.il/assets/img/og-default.png"}</script>
 </head>
 <body>
-  <div class="page">
-    <h1>Something great is<br>on its way</h1>
-    <p class="subtitle">We're putting the finishing touches on this site. It'll be ready before you know it.</p>
-    <div class="pill">
-      <span class="dot"></span>
-      In progress
+<a class="skip-link" href="#main">דלגו לתוכן הראשי</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="משפחה פיננסית, לדף הבית">
+      <img src="/assets/img/logo.png" width="370" height="185" alt="" fetchpriority="high">
+      <span class="brand-text"><b>משפחה פיננסית</b><span>ייעוץ משכנתאות וכלכלת משפחה</span></span>
+    </a>
+    <nav class="nav-desktop" aria-label="ניווט ראשי">
+      <a href="/services/">שירותים</a>
+<a href="/services/#process">איך זה עובד</a>
+<a href="/rates/">מרכז פיננסי</a>
+<a href="/knowledge/">מרכז ידע</a>
+<a href="/about/">אודות</a>
+<a href="/contact/">צור קשר</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-sm" href="/contact/">לתיאום שיחה</a>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg></button>
     </div>
   </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" data-open="false" role="dialog" aria-modal="true" aria-label="תפריט">
+  <div class="bar">
+    <a class="brand" href="/" aria-label="משפחה פיננסית, לדף הבית"><img src="/assets/img/logo.png" width="370" height="185" alt=""></a>
+    <button class="icon-btn menu-close" type="button" aria-label="סגירת תפריט"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
+  </div>
+  <nav aria-label="ניווט ראשי (מובייל)">
+    <a href="/services/">שירותים <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+<a href="/services/#process">איך זה עובד <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+<a href="/rates/">מרכז פיננסי <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+<a href="/knowledge/">מרכז ידע <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+<a href="/about/">אודות <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+<a href="/contact/">צור קשר <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></a>
+  </nav>
+  <div class="menu-cta">
+    <a class="btn btn-lg" href="/contact/">לתיאום שיחת ייעוץ</a>
+    <a class="btn btn-whatsapp" href="https://wa.me/972504757888" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg> וואטסאפ</a>
+  </div>
+  <div class="menu-contact">
+    <a href="tel:+972504757888" class="ltr">050-4757888</a>
+    <a href="mailto:itay.igm@gmail.com" class="ltr">itay.igm@gmail.com</a>
+  </div>
+</div>
+<main id="main" tabindex="-1">
+
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-title" class="fade-up">המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+        <p class="lead fade-up">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row fade-up">
+          <a class="btn btn-lg btn-light" href="/contact/">לתיאום שיחת ייעוץ <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a>
+          <a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a>
+        </div>
+      </div>
+      <div class="viz-wrap">
+        <div class="viz" role="group" aria-label="הדגמת תכנון משכנתא">
+  <div class="viz-card span-3"><div class="viz-label">החזר חודשי משוער</div><div class="viz-value num" data-count="6334" data-prefix="₪">₪0</div><div class="viz-trend trend-flat">₪1.2M, 25 שנים, ריבית 4.0%</div></div>
+  <div class="viz-card span-3"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num" data-count="3.25" data-dec="2" data-suffix="%">0%</div><div class="viz-trend trend-down"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128v64a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h44.69L136,107.31l-34.34,34.35a8,8,0,0,1-11.32,0l-72-72A8,8,0,0,1,29.66,58.34L96,124.69l34.34-34.35a8,8,0,0,1,11.32,0L224,172.69V128a8,8,0,0,1,16,0Z"/></svg> 5 הורדות ב-12 חודשים</div></div>
+  <div class="viz-card span-6"><div class="viz-label">יתרת הקרן לאורך חיי ההלוואה</div><div class="viz-chart"><svg viewBox="0 0 600 170" role="img" aria-label="גרף המדגים ירידה הדרגתית של יתרת הקרן מ-1.2 מיליון שקל לאפס לאורך 25 שנים" direction="ltr"><defs><linearGradient id="vizFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10c8b8" stop-opacity=".45"/><stop offset="1" stop-color="#10c8b8" stop-opacity="0"/></linearGradient></defs><path class="fill-area" d="M6.0 10.0L17.8 11.6L29.5 13.3L41.3 15.0L53.0 16.7L64.8 18.5L76.6 20.2L88.3 22.1L100.1 23.9L111.8 25.9L123.6 27.8L135.4 29.8L147.1 31.8L158.9 33.9L170.6 36.0L182.4 38.1L194.2 40.3L205.9 42.5L217.7 44.8L229.4 47.2L241.2 49.5L253.0 51.9L264.7 54.4L276.5 56.9L288.2 59.5L300.0 62.1L311.8 64.8L323.5 67.5L335.3 70.3L347.0 73.2L358.8 76.1L370.6 79.0L382.3 82.0L394.1 85.1L405.8 88.2L417.6 91.4L429.4 94.7L441.1 98.0L452.9 101.4L464.6 104.9L476.4 108.4L488.2 112.1L499.9 115.7L511.7 119.5L523.4 123.3L535.2 127.2L547.0 131.2L558.7 135.3L570.5 139.4L582.2 143.7L594.0 148.0L594.0 148.0 L594.0 148.0 L6.0 148.0 Z" fill="url(#vizFill)"/><path class="draw" d="M6.0 10.0L17.8 11.6L29.5 13.3L41.3 15.0L53.0 16.7L64.8 18.5L76.6 20.2L88.3 22.1L100.1 23.9L111.8 25.9L123.6 27.8L135.4 29.8L147.1 31.8L158.9 33.9L170.6 36.0L182.4 38.1L194.2 40.3L205.9 42.5L217.7 44.8L229.4 47.2L241.2 49.5L253.0 51.9L264.7 54.4L276.5 56.9L288.2 59.5L300.0 62.1L311.8 64.8L323.5 67.5L335.3 70.3L347.0 73.2L358.8 76.1L370.6 79.0L382.3 82.0L394.1 85.1L405.8 88.2L417.6 91.4L429.4 94.7L441.1 98.0L452.9 101.4L464.6 104.9L476.4 108.4L488.2 112.1L499.9 115.7L511.7 119.5L523.4 123.3L535.2 127.2L547.0 131.2L558.7 135.3L570.5 139.4L582.2 143.7L594.0 148.0L594.0 148.0" fill="none" stroke="#7ff0e6" stroke-width="2.5" stroke-linecap="round"/><text x="6.0" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">היום</text><text x="123.6" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">5 שנ'</text><text x="241.2" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">10 שנ'</text><text x="358.8" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">15 שנ'</text><text x="476.4" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">20 שנ'</text><text x="594.0" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)">25 שנ'</text></svg></div></div>
+  <div class="viz-card span-3"><div class="viz-label">תמהיל לדוגמה</div><div class="viz-mix"><svg width="90" height="90" viewBox="0 0 90 90" role="img" aria-label="תמהיל לדוגמה: שליש פריים, שליש ריבית קבועה לא צמודה, שליש ריבית משתנה"><circle class="donut-seg" r="34" cx="45" cy="45" stroke="#2457f5" stroke-dasharray="70.5 213.6" stroke-dashoffset="0.0" transform="rotate(-90 45 45)"/><circle class="donut-seg" r="34" cx="45" cy="45" stroke="#10c8b8" stroke-dasharray="72.6 213.6" stroke-dashoffset="-70.5" transform="rotate(-90 45 45)"/><circle class="donut-seg" r="34" cx="45" cy="45" stroke="#c9f04b" stroke-dasharray="70.5 213.6" stroke-dashoffset="-143.1" transform="rotate(-90 45 45)"/></svg><div class="viz-legend"><span><i style="background:#2457f5"></i>פריים<b>33%</b></span><span><i style="background:#10c8b8"></i>קל"צ<b>34%</b></span><span><i style="background:#c9f04b"></i>משתנה<b>33%</b></span></div></div></div>
+  <div class="viz-card span-3"><div class="viz-label">מדד המחירים, 6 חודשים</div><div class="viz-value num">1.5<small>% ב-12 חוד'</small></div><svg width="108" height="40" viewBox="0 0 108 40" role="img" aria-label="שינוי חודשי במדד בששת החודשים האחרונים" direction="ltr" style="margin-top:.4rem"><rect class="bar" x="0" y="24.8" width="12" height="11.2" rx="2" fill="#10c8b8" style="animation-delay:600ms"/><rect class="bar" x="18" y="2.4" width="12" height="33.6" rx="2" fill="#10c8b8" style="animation-delay:680ms"/><rect class="bar" x="36" y="36.0" width="12" height="8.4" rx="2" fill="#ff6b57" style="animation-delay:760ms"/><rect class="bar" x="54" y="36.0" width="12" height="2.0" rx="2" fill="#10c8b8" style="animation-delay:840ms"/><rect class="bar" x="72" y="27.6" width="12" height="8.4" rx="2" fill="#10c8b8" style="animation-delay:920ms"/><rect class="bar" x="90" y="16.4" width="12" height="19.6" rx="2" fill="#10c8b8" style="animation-delay:1000ms"/></svg></div>
+  <div class="viz-foot">ההחזר והתמהיל הם הדגמה ולא נתוני לקוח. ריבית בנק ישראל והמדד: נתונים אמיתיים, עודכנו 06.09.2026.</div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="למה לסמוך עלינו">
+  <div class="container">
+    <div class="trust-grid reveal-stagger">
+      <div class="trust-item"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg><div><b>חבר התאחדות יועצי המשכנתאות</b><span>ייעוץ מוסמך לפי כללי ההתאחדות</span></div></div>
+<div class="trust-item"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96ZM168,227.06l-36.43-18.21a8,8,0,0,0-7.16,0L88,227.06V174.37a87.89,87.89,0,0,0,80,0ZM128,152A56,56,0,1,0,72,96,56.06,56.06,0,0,0,128,152Zm0-96A40,40,0,1,1,88,96,40,40,0,0,1,128,56Z"/></svg><div><b>מרצה בכיר במכללת פסגות</b><span>איתי גנור מלמד את תחום המשכנתאות</span></div></div>
+<div class="trust-item"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></svg><div><b>עובדים עם כל הבנקים</b><span>וגם מול גופי מימון חוץ-בנקאיים</span></div></div>
+<div class="trust-item"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M254.3,107.91,228.78,56.85a16,16,0,0,0-21.47-7.15L182.44,62.13,130.05,48.27a8.14,8.14,0,0,0-4.1,0L73.56,62.13,48.69,49.7a16,16,0,0,0-21.47,7.15L1.7,107.9a16,16,0,0,0,7.15,21.47l27,13.51,55.49,39.63a8.06,8.06,0,0,0,2.71,1.25l64,16a8,8,0,0,0,7.6-2.1l55.07-55.08,26.42-13.21a16,16,0,0,0,7.15-21.46Zm-54.89,33.37L165,113.72a8,8,0,0,0-10.68.61C136.51,132.27,116.66,130,104,122L147.24,80h31.81l27.21,54.41ZM41.53,64,62,74.22,36.43,125.27,16,115.06Zm116,119.13L99.42,168.61l-49.2-35.14,28-56L128,64.28l9.8,2.59-45,43.68-.08.09a16,16,0,0,0,2.72,24.81c20.56,13.13,45.37,11,64.91-5L188,152.66Zm62-57.87-25.52-51L214.47,64,240,115.06Zm-87.75,92.67a8,8,0,0,1-7.75,6.06,8.13,8.13,0,0,1-1.95-.24L80.41,213.33a7.89,7.89,0,0,1-2.71-1.25L51.35,193.26a8,8,0,0,1,9.3-13l25.11,17.94L126,208.24A8,8,0,0,1,131.82,217.94Z"/></svg><div><b>ליווי אישי לאורך כל הדרך</b><span>מהשיחה הראשונה ועד אחרי קבלת המשכנתא</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section needs-section" aria-labelledby="needs-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">שירותים</span>
+      <h2 id="needs-title">מה אתם צריכים היום?</h2>
+      <p>בחרו את המצב שלכם ונראה לכם איך אנחנו ניגשים אליו. אין שתי משפחות זהות, ולכן אין שתי משכנתאות זהות.</p>
+    </div>
+    <div class="needs reveal">
+      <div class="needs-tabs" role="tablist" aria-label="סוגי שירות" aria-orientation="vertical">
+        <button class="needs-tab" role="tab" id="need-tab-new" aria-controls="need-new" aria-selected="true" tabindex="0" data-accent="blue" type="button"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/></svg></span><span><b>משכנתא חדשה</b><span>רוכשים דירה</span></span><svg class="icon caret" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+<button class="needs-tab" role="tab" id="need-tab-refinance" aria-controls="need-refinance" aria-selected="false" tabindex="-1" data-accent="teal" type="button"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></svg></span><span><b>מחזור משכנתא</b><span>יש לכם משכנתא</span></span><svg class="icon caret" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+<button class="needs-tab" role="tab" id="need-tab-any" aria-controls="need-any" aria-selected="false" tabindex="-1" data-accent="green" type="button"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57ZM232,132c0,13.22-30.79,28-72,28-3.73,0-7.43-.13-11.08-.37C170.49,151.77,184,139,184,124V105.74C213.87,110.19,232,122.27,232,132ZM72,150.25V126.46A183.74,183.74,0,0,0,96,128a183.74,183.74,0,0,0,24-1.54v23.79A163,163,0,0,1,96,152,163,163,0,0,1,72,150.25Zm96-40.32V124c0,8.39-12.41,17.4-32,22.87V123.5C148.91,120.37,159.84,115.71,168,109.93ZM96,56c41.21,0,72,14.78,72,28s-30.79,28-72,28S24,97.22,24,84,54.79,56,96,56ZM24,124V109.93c8.16,5.78,19.09,10.44,32,13.57v23.37C36.41,141.4,24,132.39,24,124Zm64,48v-4.17c2.63.1,5.29.17,8,.17,3.88,0,7.67-.13,11.39-.35A121.92,121.92,0,0,0,120,171.41v23.46C100.41,189.4,88,180.39,88,172Zm48,26.25V174.4a179.48,179.48,0,0,0,24,1.6,183.74,183.74,0,0,0,24-1.54v23.79a165.45,165.45,0,0,1-48,0Zm64-3.38V171.5c12.91-3.13,23.84-7.79,32-13.57V172C232,180.39,219.59,189.4,200,194.87Z"/></svg></span><span><b>משכנתא לכל מטרה</b><span>מימון כנגד נכס קיים</span></span><svg class="icon caret" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+<button class="needs-tab" role="tab" id="need-tab-reverse" aria-controls="need-reverse" aria-selected="false" tabindex="-1" data-accent="amber" type="button"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"/></svg></span><span><b>משכנתא הפוכה</b><span>לגיל השלישי</span></span><svg class="icon caret" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+<button class="needs-tab" role="tab" id="need-tab-family" aria-controls="need-family" aria-selected="false" tabindex="-1" data-accent="coral" type="button"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"/></svg></span><span><b>כלכלת משפחה</b><span>תכנון תקציב ואשראי</span></span><svg class="icon caret" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+      </div>
+      <div class="needs-panels">
+        <div class="needs-panel" role="tabpanel" id="need-new" aria-labelledby="need-tab-new" data-accent="blue" >
+  <span class="chip">משכנתא חדשה</span>
+  <h3>משכנתא חדשה שמתאימה בדיוק לכם</h3>
+  <p>רוכשים דירה? נבנה עבורכם תמהיל משכנתא המותאם להכנסות, ליכולות ההחזר ולמטרות שלכם, נבחן את כל האפשרויות הקיימות וננהל משא ומתן מול הבנקים כדי להשיג תנאים טובים יותר וחיסכון לאורך השנים.</p>
+  <ul class="needs-points"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>בניית תמהיל אישי</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>אישור עקרוני ממספר בנקים</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>מכרז ריביות בין הבנקים</span></li></ul>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=new">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/#new">לפרטים על משכנתא חדשה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+</div>
+<div class="needs-panel" role="tabpanel" id="need-refinance" aria-labelledby="need-tab-refinance" data-accent="teal" hidden>
+  <span class="chip">מחזור משכנתא</span>
+  <h3>בדיקה האם המשכנתא הקיימת עדיין נכונה לכם</h3>
+  <p>אם לקחתם משכנתא לפני מספר שנים, ייתכן שניתן לשפר את התנאים. נבדוק את המשכנתא הנוכחית, נבחן את אפשרויות המחזור ונחשב את החיסכון האפשרי כדי להקטין את ההחזר החודשי או לקצר את תקופת ההלוואה.</p>
+  <ul class="needs-points"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ניתוח דוח יתרות לסילוק</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>חישוב כדאיות ועמלות</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>מחזור פנימי או לבנק אחר</span></li></ul>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=refinance">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/#refinance">לפרטים על מחזור משכנתא <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+</div>
+<div class="needs-panel" role="tabpanel" id="need-any" aria-labelledby="need-tab-any" data-accent="green" hidden>
+  <span class="chip">משכנתא לכל מטרה</span>
+  <h3>מימון בתנאי משכנתא לכל מטרה חוקית</h3>
+  <p>זקוקים למימון לשיפוץ, סגירת חובות או כל מטרה אחרת? בעלי נכסים יכולים לקבל מימון כנגד הנכס הקיים בתנאים נוחים יותר מהלוואות רגילות. נבחן את האפשרויות ונמצא את הפתרון המתאים ביותר לצרכים שלכם.</p>
+  <ul class="needs-points"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>איחוד הלוואות יקרות</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>שיפוץ או עזרה לילדים</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>עד 50% משווי הנכס, ובמקרים מסוימים יותר</span></li></ul>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=any">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/#any">לפרטים על משכנתא לכל מטרה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+</div>
+<div class="needs-panel" role="tabpanel" id="need-reverse" aria-labelledby="need-tab-reverse" data-accent="amber" hidden>
+  <span class="chip">משכנתא הפוכה</span>
+  <h3>שחרור הון מהנכס בלי למכור אותו</h3>
+  <p>בעלי נכסים בגיל השלישי יכולים לקבל מימון כנגד הנכס שברשותם מבלי למכור אותו. נבחן יחד את האפשרויות העומדות בפניכם, נסביר את המשמעויות הכלכליות ונמצא את הפתרון המתאים ביותר עבורכם.</p>
+  <ul class="needs-points"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ללא החזר חודשי שוטף</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ללא הוכחת כושר החזר</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>פנסיה, עזרה לילדים או סיעוד</span></li></ul>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=reverse">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/#reverse">לפרטים על משכנתא הפוכה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+</div>
+<div class="needs-panel" role="tabpanel" id="need-family" aria-labelledby="need-tab-family" data-accent="coral" hidden>
+  <span class="chip">כלכלת משפחה</span>
+  <h3>סדר בתקציב, באשראי ובהתחייבויות</h3>
+  <p>ניהול נכון של תקציב המשפחה הוא בסיס לצמיחה. ננתח יחד הכנסות, הוצאות, התחייבויות וחסכונות, נבנה תקציב מימון לכלל האשראי ונוודא שהמשכנתא משתלבת נכון בתמונה הכלכלית של המשפחה.</p>
+  <ul class="needs-points"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ניתוח כלכלי משפחתי מקיף</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>תקציב מימון לכלל האשראי</span></li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><span>ליווי גם אחרי קבלת המשכנתא</span></li></ul>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=family">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/#family">לפרטים על כלכלת משפחה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="why-title">
+  <div class="container">
+    <div class="values">
+      <div class="values-quote reveal">
+        <h2 id="why-title" class="sr-only">למה משפחה פיננסית</h2>
+        <blockquote>„לא צריך מהפכות גדולות כדי לייצר חיסכון גדול מאוד. צריך תכנון נכון, ומישהו שכבר עשה את הטעויות במקומכם.“</blockquote>
+        <cite>איתי גנור, מייסד משפחה פיננסית</cite>
+        <div class="btn-row mt-4"><a class="link-arrow" href="/about/">הכירו את הצוות <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+      </div>
+      <div class="values-list reveal-stagger">
+        <div class="value-item"><div class="n num">01</div><div><h3>חדשנות</h3><p>אנחנו מקפידים על למידה מתמדת, על הכרת כל כלי המימון החדשים ביותר, על הכרת כלל גופי המימון, ועל שימוש בטכנולוגיות חדשות לניתוח פיננסי של הלווים, לתכנון משכנתאות ולתפעולן.</p></div></div>
+<div class="value-item"><div class="n num">02</div><div><h3>מקצועיות</h3><p>ייעוץ משכנתאות הוא קודם כל הבנה של משמעות הכסף בתוך המשפחה. אין שתי משפחות זהות ולכן לא יכולות להיות שתי משכנתאות זהות. כל לווה הוא עולם ומלואו, ואנחנו לא מתפשרים עד שנמצא את הפתרון שמתאים בדיוק עבורו ובמחיר הנכון.</p></div></div>
+<div class="value-item"><div class="n num">03</div><div><h3>ניסיון</h3><p>ההיכרות שלנו עם הכלים השונים ועם הפתרונות הייחודיים מאפשרת לנו להתאים הלוואות וגופים מלווים לצרכי הלקוח, להשיג את התנאים האופטימליים, לייעל את התהליך, לקצר לוחות זמנים ולקחת מהלקוח חלק מכאב הראש של לקיחת משכנתא.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark process" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="process-title">איך זה עובד: שמונה שלבים, תמונה אחת ברורה</h2>
+      <p>תהליך לקיחת משכנתא נראה מסורבל ומפחיד, אבל הוא לא חייב להיות כזה. כך אנחנו משאירים אתכם בתוך התמונה מהשיחה הראשונה ועד הרבה אחרי הכסף.</p>
+    </div>
+    <div class="timeline" role="list">
+      <div class="step"><div class="n num">01</div><h3>מכירים אתכם</h3><p>הכרת הלקוחות וצרכי המימון שלהם.</p></div>
+<div class="step"><div class="n num">02</div><h3>מנתחים את התמונה הכלכלית</h3><p>ניתוח כלכלי משפחתי מקיף: הכנסות, הוצאות, התחייבויות, חסכונות ומטרות.</p></div>
+<div class="step"><div class="n num">03</div><h3>בונים אסטרטגיית מימון</h3><p>ניתוח אשראי קיים ובניית תקציב מימון לכלל האשראי, כולל המשכנתא החדשה.</p></div>
+<div class="step"><div class="n num">04</div><h3>מתכננים תמהיל</h3><p>בניית תמהיל הלוואה ייחודי ואישי.</p></div>
+<div class="step"><div class="n num">05</div><h3>מקבלים אישורים</h3><p>קבלת אישור עקרוני לתמהיל שנבחר ממספר בנקים.</p></div>
+<div class="step"><div class="n num">06</div><h3>מנהלים מכרז בין הבנקים</h3><p>ניהול מכרז ריביות מול הבנקים עד לקבלת ההצעה המיטבית.</p></div>
+<div class="step"><div class="n num">07</div><h3>מלווים את הבירוקרטיה</h3><p>סיוע והכוונה בטיפול בניירת לאורך כל התהליך.</p></div>
+<div class="step"><div class="n num">08</div><h3>ממשיכים ללוות גם אחרי</h3><p>ליווי שוטף גם לאחר קבלת המשכנתא, כדי לוודא שהתנאים עדיין אטרקטיביים ושהתמהיל עדיין תואם את הצרכים והמטרות שלכם.</p></div>
+    </div>
+    <div class="btn-row mt-6 reveal"><a class="btn btn-light" href="/contact/">לתיאום שיחת ייעוץ</a><a class="link-arrow" href="/services/">כל השירותים והשאלות הנפוצות <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+  </div>
+</section>
+
+<section class="section" id="fin" aria-labelledby="fin-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">מרכז פיננסי</span>
+      <h2 id="fin-title">המספרים שמזיזים את המשכנתא שלכם</h2>
+      <p>ריבית בנק ישראל, הפריים והמדדים, כפי שהם משפיעים על ההחזר החודשי. מתעדכן עם כל החלטת ריבית ופרסום מדד.</p>
+    </div>
+    <div class="fin-grid reveal-stagger">
+      <div class="fin-tile dark"><div class="fin-label">ריבית בנק ישראל <span class="fin-trend "><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128v64a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h44.69L136,107.31l-34.34,34.35a8,8,0,0,1-11.32,0l-72-72A8,8,0,0,1,29.66,58.34L96,124.69l34.34-34.35a8,8,0,0,1,11.32,0L224,172.69V128a8,8,0,0,1,16,0Z"/></svg>ירידה</span></div><div class="fin-value num">3.25<small>%</small></div><div class="fin-sub">בתוקף מ-01.09.2026. הורדה שלישית ברציפות; 5 הורדות ב-12 החודשים האחרונים, ירידה מצטברת של 1.25%.</div></div>
+<div class="fin-tile"><div class="fin-label">ריבית הפריים</div><div class="fin-value num">4.75<small>%</small></div><div class="fin-sub">ריבית בנק ישראל בתוספת 1.5%</div></div>
+<div class="fin-tile"><div class="fin-label">מדד המחירים לצרכן</div><div class="fin-value num">1.5<small>%</small></div><div class="fin-mini"><div><b class="num">2.1%</b><span>מצטבר 2026</span></div><div><b class="num">0.7%</b><span>אוגוסט 2026</span></div><div><b class="num">1-3%</b><span>יעד האינפלציה</span></div></div><div class="fin-sub">שינוי ב-12 החודשים האחרונים</div></div>
+<div class="fin-tile"><div class="fin-label">מדד תשומות הבנייה</div><div class="fin-value num">3.5<small>%</small></div><div class="fin-mini"><div><b class="num">2.7%</b><span>מצטבר 2026</span></div><div><b class="num">0.4%</b><span>אוגוסט 2026</span></div></div><div class="fin-sub">שינוי ב-12 החודשים האחרונים</div></div>
+      <div class="fin-tile full">
+        <div class="fin-label">שינוי חודשי במדד המחירים לצרכן, 24 חודשים</div>
+        <div class="chart" aria-hidden="false">
+<svg viewBox="0 0 720 220" role="img" aria-label="שינוי חודשי במדד המחירים לצרכן, 2024 עד 2026. ערכים חיוביים בטורקיז, שליליים בכתום." direction="ltr"><line class="grid-line" x1="34" x2="712" y1="40.4" y2="40.4"/><text x="28" y="44.4" text-anchor="end">1%</text><line class="grid-line" x1="34" x2="712" y1="84.4" y2="84.4"/><text x="28" y="88.4" text-anchor="end">0.5%</text><line class="axis" x1="34" x2="712" y1="128.4" y2="128.4"/><text x="28" y="132.4" text-anchor="end">0%</text><line class="grid-line" x1="34" x2="712" y1="172.4" y2="172.4"/><text x="28" y="176.4" text-anchor="end">-0.5%</text><rect class="bar bar-neg" x="39.6" y="128.4" width="16.9" height="17.6" rx="2" style="animation-delay:0ms"><title>ספט 2024: -0.2%</title></rect><rect class="bar bar-pos" x="67.9" y="84.4" width="16.9" height="44.0" rx="2" style="animation-delay:30ms"><title>אוק 2024: 0.5%</title></rect><rect class="bar bar-pos" x="96.2" y="93.2" width="16.9" height="35.2" rx="2" style="animation-delay:60ms"><title>נוב 2024: 0.4%</title></rect><rect class="bar bar-neg" x="124.4" y="128.4" width="16.9" height="26.4" rx="2" style="animation-delay:90ms"><title>דצמ 2024: -0.3%</title></rect><rect class="bar bar-pos" x="152.7" y="75.6" width="16.9" height="52.8" rx="2" style="animation-delay:120ms"><title>ינו 2025: 0.6%</title></rect><rect class="bar bar-pos" x="180.9" y="128.4" width="16.9" height="1.0" rx="2" style="animation-delay:150ms"><title>פבר 2025: 0%</title></rect><rect class="bar bar-pos" x="209.2" y="84.4" width="16.9" height="44.0" rx="2" style="animation-delay:180ms"><title>מרץ 2025: 0.5%</title></rect><rect class="bar bar-pos" x="237.4" y="31.6" width="16.9" height="96.8" rx="2" style="animation-delay:210ms"><title>אפר 2025: 1.1%</title></rect><rect class="bar bar-neg" x="265.6" y="128.4" width="16.9" height="26.4" rx="2" style="animation-delay:240ms"><title>מאי 2025: -0.3%</title></rect><rect class="bar bar-pos" x="293.9" y="102.0" width="16.9" height="26.4" rx="2" style="animation-delay:270ms"><title>יוני 2025: 0.3%</title></rect><rect class="bar bar-pos" x="322.1" y="93.2" width="16.9" height="35.2" rx="2" style="animation-delay:300ms"><title>יולי 2025: 0.4%</title></rect><rect class="bar bar-pos" x="350.4" y="66.8" width="16.9" height="61.6" rx="2" style="animation-delay:330ms"><title>אוג 2025: 0.7%</title></rect><rect class="bar bar-neg" x="378.6" y="128.4" width="16.9" height="52.8" rx="2" style="animation-delay:360ms"><title>ספט 2025: -0.6%</title></rect><rect class="bar bar-pos" x="406.9" y="84.4" width="16.9" height="44.0" rx="2" style="animation-delay:390ms"><title>אוק 2025: 0.5%</title></rect><rect class="bar bar-neg" x="435.1" y="128.4" width="16.9" height="44.0" rx="2" style="animation-delay:420ms"><title>נוב 2025: -0.5%</title></rect><rect class="bar bar-pos" x="463.4" y="128.4" width="16.9" height="1.0" rx="2" style="animation-delay:450ms"><title>דצמ 2025: 0%</title></rect><rect class="bar bar-neg" x="491.6" y="128.4" width="16.9" height="26.4" rx="2" style="animation-delay:480ms"><title>ינו 2026: -0.3%</title></rect><rect class="bar bar-pos" x="519.9" y="110.8" width="16.9" height="17.6" rx="2" style="animation-delay:510ms"><title>פבר 2026: 0.2%</title></rect><rect class="bar bar-pos" x="548.1" y="93.2" width="16.9" height="35.2" rx="2" style="animation-delay:540ms"><title>מרץ 2026: 0.4%</title></rect><rect class="bar bar-pos" x="576.4" y="22.8" width="16.9" height="105.6" rx="2" style="animation-delay:570ms"><title>אפר 2026: 1.2%</title></rect><rect class="bar bar-neg" x="604.6" y="128.4" width="16.9" height="26.4" rx="2" style="animation-delay:600ms"><title>מאי 2026: -0.3%</title></rect><rect class="bar bar-pos" x="632.9" y="128.4" width="16.9" height="1.0" rx="2" style="animation-delay:630ms"><title>יוני 2026: 0%</title></rect><rect class="bar bar-pos" x="661.1" y="102.0" width="16.9" height="26.4" rx="2" style="animation-delay:660ms"><title>יולי 2026: 0.3%</title></rect><rect class="bar bar-pos" x="689.4" y="66.8" width="16.9" height="61.6" rx="2" style="animation-delay:690ms"><title>אוג 2026: 0.7%</title></rect><text x="48.1" y="212" text-anchor="middle">2024</text><text x="76.4" y="212" text-anchor="middle">אוק</text><text x="161.1" y="212" text-anchor="middle">2025</text><text x="245.9" y="212" text-anchor="middle">אפר</text><text x="330.6" y="212" text-anchor="middle">יולי</text><text x="415.4" y="212" text-anchor="middle">אוק</text><text x="500.1" y="212" text-anchor="middle">2026</text><text x="584.9" y="212" text-anchor="middle">אפר</text><text x="669.6" y="212" text-anchor="middle">יולי</text></svg>
+<div class="chart-legend"><span><i style="background:var(--teal)"></i>עלייה חודשית</span><span><i style="background:var(--coral)"></i>ירידה חודשית</span><span>מקור: הלשכה המרכזית לסטטיסטיקה, כפי שפורסם באתר</span></div>
+<details class="more mt-2"><summary>הנתונים בטבלה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th><th class="num">שינוי</th></tr></thead><tbody><tr><td>ספט 2024</td><td class="num">-0.2%</td></tr><tr><td>אוק 2024</td><td class="num">0.5%</td></tr><tr><td>נוב 2024</td><td class="num">0.4%</td></tr><tr><td>דצמ 2024</td><td class="num">-0.3%</td></tr><tr><td>ינו 2025</td><td class="num">0.6%</td></tr><tr><td>פבר 2025</td><td class="num">0%</td></tr><tr><td>מרץ 2025</td><td class="num">0.5%</td></tr><tr><td>אפר 2025</td><td class="num">1.1%</td></tr><tr><td>מאי 2025</td><td class="num">-0.3%</td></tr><tr><td>יוני 2025</td><td class="num">0.3%</td></tr><tr><td>יולי 2025</td><td class="num">0.4%</td></tr><tr><td>אוג 2025</td><td class="num">0.7%</td></tr><tr><td>ספט 2025</td><td class="num">-0.6%</td></tr><tr><td>אוק 2025</td><td class="num">0.5%</td></tr><tr><td>נוב 2025</td><td class="num">-0.5%</td></tr><tr><td>דצמ 2025</td><td class="num">0%</td></tr><tr><td>ינו 2026</td><td class="num">-0.3%</td></tr><tr><td>פבר 2026</td><td class="num">0.2%</td></tr><tr><td>מרץ 2026</td><td class="num">0.4%</td></tr><tr><td>אפר 2026</td><td class="num">1.2%</td></tr><tr><td>מאי 2026</td><td class="num">-0.3%</td></tr><tr><td>יוני 2026</td><td class="num">0%</td></tr><tr><td>יולי 2026</td><td class="num">0.3%</td></tr><tr><td>אוג 2026</td><td class="num">0.7%</td></tr></tbody></table></div></details>
+</div>
+      </div>
+    </div>
+    <div class="btn-row mt-4 reveal"><a class="btn btn-secondary" href="/rates/">לטבלאות הריבית המלאות <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a><span class="muted" style="font-size:.9rem">עודכן לאחרונה: 06.09.2026</span></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="knowledge" aria-labelledby="knowledge-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">מרכז הידע</span>
+      <h2 id="knowledge-title">ידע זה כוח. ריכזנו אותו בשבילכם.</h2>
+      <p>מאמרים, עדכוני שוק, מילון מונחים וכלים. השימוש חופשי, ואנחנו ממש בעד שתלמדו ותעשו חלק מהדרך בעצמכם.</p>
+    </div>
+    <div class="knowledge-grid">
+      <a class="featured reveal" href="/blog/%D7%94%D7%99%D7%A4%D7%95%D7%9A-%D7%9C%D7%95%D7%95%D7%99%D7%9D-%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%A0%D7%95%D7%94%D7%9C%D7%99-%D7%91%D7%A0%D7%A7-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%A1%D7%A4%D7%98/"><span class="chip">ריביות</span><h3>היפוך לווים - עדכון נוהלי בנק ישראל (ספטמבר 2026)</h3><p>היפוך לווים, מוצר ייחודי של בנק מזרחי טפחות, אפשר לנו עד היום (ספטמבר 2026) לעשות הפרדה בין הרוכשים (בעליה נכס) ובין הלווים (קרובי משפחה מדרגה ראשונה בלבד), באופן שבו, הכיר הבנק ב…</p><div class="meta">17.09.2026 · 1 דק' קריאה</div></a>
+      <div class="post-list reveal">
+        <a class="post-row" href="/blog/%D7%9E%D7%99%D7%A1%D7%95%D7%99-%D7%9E%D7%A7%D7%A8%D7%A7%D7%A2%D7%99%D7%9F-%D7%95%D7%AA%D7%9B%D7%A0%D7%95%D7%9F-%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90/"><h4>מיסוי מקרקעין ותכנון משכנתא</h4><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><div class="meta"><span>משכנתאות</span><span class="meta-dot">15.09.2026</span></div></a>
+<a class="post-row" href="/blog/%D7%9E%D7%95%D7%A9%D7%92%D7%99-%D7%99%D7%A1%D7%95%D7%93-%D7%91%D7%9B%D7%9C%D7%9B%D7%9C%D7%94-%D7%95%D7%94%D7%A9%D7%A4%D7%A2%D7%AA%D7%9D-%D7%A2%D7%9C-%D7%A9%D7%95%D7%A7-%D7%94%D7%9E%D7%A9%D7%9B%D7%A0/"><h4>מושגי יסוד בכלכלה והשפעתם על שוק המשכנתאות</h4><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><div class="meta"><span>משכנתאות</span><span class="meta-dot">13.09.2026</span></div></a>
+<a class="post-row" href="/blog/%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%AA-%D7%93%D7%99%D7%A8%D7%94-%D7%91%D7%94%D7%A0%D7%97%D7%94/"><h4>תוכנית דירה בהנחה</h4><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><div class="meta"><span>נדל"ן</span><span class="meta-dot">08.09.2026</span></div></a>
+<a class="post-row" href="/blog/%D7%AA%D7%99%D7%A7%D7%95%D7%9F-%D7%9C%D7%97%D7%95%D7%A7-%D7%A0%D7%AA%D7%95%D7%A0%D7%99-%D7%90%D7%A9%D7%A8%D7%90%D7%99-%D7%AA%D7%99%D7%A7%D7%95%D7%9F-%D7%9E%D7%A1-6/"><h4>תיקון לחוק נתוני אשראי (תיקון מס' 6)</h4><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><div class="meta"><span>חדשות ועדכונים</span><span class="meta-dot">07.09.2026</span></div></a>
+<a class="post-row" href="/blog/%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA-%D7%91%D7%A0%D7%A7-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%9C%D7%92%D7%91%D7%99-%D7%94%D7%9C%D7%95%D7%95%D7%90%D7%95%D7%AA-%D7%9C%D7%93%D7%99%D7%95%D7%A8-451-329/"><h4>הוראות בנק ישראל לגבי הלוואות לדיור - 451 + 329</h4><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg><div class="meta"><span>ריביות</span><span class="meta-dot">05.09.2026</span></div></a>
+        <div class="mt-3"><a class="link-arrow" href="/knowledge/">כל 68 המאמרים <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="knowledge-tools reveal-stagger">
+      <a class="tool-link" href="/glossary/"><span class="icon-tile teal"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64ZM160,88h40a8,8,0,0,1,0,16H160a8,8,0,0,1,0-16Zm48,40a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h40A8,8,0,0,1,208,128Zm0,32a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h40A8,8,0,0,1,208,160Z"/></svg></span><span><b>מילון מונחי המשכנתא</b><span>54 מונחים בשפה פשוטה</span></span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a>
+      <a class="tool-link" href="/rates/"><span class="icon-tile"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,61.64l-144,144a8,8,0,0,1-11.32-11.32l144-144a8,8,0,0,1,11.32,11.31ZM50.54,101.44a36,36,0,0,1,50.92-50.91h0a36,36,0,0,1-50.92,50.91ZM56,76A20,20,0,1,0,90.14,61.84h0A20,20,0,0,0,56,76ZM216,180a36,36,0,1,1-10.54-25.46h0A35.76,35.76,0,0,1,216,180Zm-16,0a20,20,0,1,0-5.86,14.14A19.87,19.87,0,0,0,200,180Z"/></svg></span><span><b>ריביות ומדדים</b><span>טבלאות לפי מסלול, מימון ותקופה</span></span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a>
+      <a class="tool-link" href="https://www.tiktok.com/@itayganor1" target="_blank" rel="noopener"><span class="icon-tile coral"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z"/></svg></span><span><b>סרטונים קצרים</b><span>למי שאין סבלנות לקרוא, בטיקטוק</span></span><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="calc" aria-labelledby="calc-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="calc-title">בואו נתחיל מהמספרים</h2>
+      <p>שחקו עם הסכום, התקופה והריבית וראו איך ההחזר החודשי משתנה. זו הערכה לפי לוח שפיצר, לא הצעה מהבנק.</p>
+    </div>
+    <div class="calc reveal" data-calc>
+      <form class="calc-form" onsubmit="return false">
+        <div class="range-field">
+          <label for="calc-amount">סכום המשכנתא <output data-out="amount" for="calc-amount">₪1,000,000</output></label>
+          <input type="range" id="calc-amount" name="amount" min="200000" max="4000000" step="10000" value="1000000">
+        </div>
+        <div class="range-field">
+          <label for="calc-years">תקופה <output data-out="years" for="calc-years">25 שנים</output></label>
+          <input type="range" id="calc-years" name="years" min="5" max="30" step="1" value="25">
+        </div>
+        <div class="range-field">
+          <label for="calc-rate">ריבית שנתית משוקללת <output data-out="rate" for="calc-rate">4.00%</output></label>
+          <input type="range" id="calc-rate" name="rate" min="1" max="8" step="0.05" value="4">
+        </div>
+        <p class="muted" style="font-size:.9rem">רוצים חישוב מלא לפי מסלולים, הצמדה ותרחישים? <a href="/calculators/">למחשבונים המלאים</a>.</p>
+      </form>
+      <div class="calc-result" aria-live="polite">
+        <div class="viz-label">החזר חודשי משוער</div>
+        <div class="big num" data-out="monthly">₪0</div>
+        <div class="calc-split">
+          <div><b class="num" data-out="total">₪0</b><span>סך ההחזר לאורך התקופה</span></div>
+          <div><b class="num" data-out="interest">₪0</b><span>מתוכו ריבית</span></div>
+        </div>
+        <div class="calc-bar" aria-hidden="true"><i data-out="bar-principal" style="width:60%"></i><i data-out="bar-interest" style="width:40%"></i></div>
+        <div class="viz-legend" style="grid-template-columns:1fr 1fr"><span><i style="background:var(--teal)"></i>קרן</span><span><i style="background:var(--amber)"></i>ריבית</span></div>
+        <p class="sr-only" data-out="text"></p>
+        <p class="calc-note">חישוב לפי לוח שפיצר, ללא הצמדה למדד, ביטוחים ועמלות. ההחזר בפועל נקבע לפי התמהיל והריביות שיאושרו.</p>
+        <a class="btn btn-light" href="/contact/">רוצים תמהיל אמיתי? לתיאום שיחת ייעוץ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 id="team-title">אנשים, לא אלגוריתם</h2>
+      <p>שלושה יועצי משכנתאות שמלווים אתכם אישית. הכירו את מי שיושב מולכם, ומול הבנקים.</p>
+    </div>
+    <div class="team-lead">
+  <div class="portrait reveal"><img src="/assets/img/team-itay.webp" alt="איתי גנור" width="408" height="584" loading="lazy"></div>
+  <div class="reveal">
+    <blockquote>„אני כאן כדי לחסוך לכם את הטעויות שלי.“</blockquote>
+    <h3>איתי גנור</h3>
+    <div class="role">מייסד, יועץ משכנתאות מוסמך</div>
+    <ul class="cred-list"><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg>חבר התאחדות יועצי המשכנתאות</li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg>מרצה בכיר למשכנתאות במכללת פסגות</li><li><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg>בעלים של משפחה פיננסית</li></ul>
+    <p class="maxw">אחרי 20 שנה של ניהול עסקים וחברות, כשכיר וכעצמאי, אחרי שנים של לימודים ואחרי שתי משכנתאות, הבנתי שאני לא מבין. הבנתי שהאגו שלי, שגרם לי לחשוב שאני יודע הכל בתחום המימון, עלה לי כמה מאות אלפי שקלים של משכנתאות לא מתוכננות ולא מתאימות.</p>
+    <details class="more"><summary>הסיפור המלא <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></summary><p class="maxw">חזרתי ללימודים, התמחיתי, בניתי קשרים מקצועיים, והבנתי שלא צריך מהפכות גדולות כדי לייצר חיסכון גדול מאוד. אני מלווה משפחות ויחידים בתהליכי המשכנתא השונים, החל משלב התכנון, דרך ההתאמה האישית של המשכנתא לכל לווה, וכלה בקבלת התנאים המסחריים הטובים ביותר מהבנקים או מגופים חוץ-בנקאיים. אני מתפרנס ממתן ייעוץ בנושאי מימון ומשכנתאות, אבל אני גם נהנה מהערך המוסף, מפתרון בעיות מימון, ובעיקר מהחיסכון העצום שאני מייצר למשפחות שאני מלווה.</p></details>
+  </div>
+</div>
+    <div class="team-grid reveal-stagger">
+      <div class="team-card"><div class="portrait sm"><img src="/assets/img/team-ariel.webp" alt="אריאל הלל" loading="lazy" width="300" height="400"></div><div><h3>אריאל הלל</h3><div class="role">שותף, יועץ משכנתאות מוסמך</div><p>אני מתמחה בבניית תמהילי משכנתא מותאמים אישית ובניהול התיקים מול הדרגים השונים בבנקים. התפקיד שלי הוא לייצר עבורכם קשרים אסטרטגיים ופתרונות חכמים, שמעניקים לכם יתרון כלכלי משמעותי וערך לאורך זמן.</p></div></div>
+<div class="team-card"><div class="portrait sm"><img src="/assets/img/team-omer.webp" alt="עומר דור" loading="lazy" width="300" height="400"></div><div><h3>עומר דור</h3><div class="role">שותף, יועץ משכנתאות מוסמך</div><p>אני מלווה משפחות ומשקיעים בתהליכי מימון מגוונים, מרכישת דירה ועד למיחזור משכנתאות קיימות. אני דואג לנהל מקרוב את התיק שלכם, לטפל בכל הבירוקרטיה מול הבנקים ולוודא שהתהליך שלכם מתקדם בצורה חלקה עד לקבלת המשכנתא.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 id="cta-title">שיחת ייעוץ ראשונה, בלי התחייבות</h2>
+        <p class="lead">זה יכול להיות הצעד הראשון שלכם בדרך ליציבות כלכלית. השאירו פרטים ונחזור אליכם, או דברו איתנו ישירות.</p>
+        <div class="cta-contact">
+          <a href="tel:+972504757888"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg> <span class="ltr">050-4757888</span></a>
+          <a href="https://wa.me/972504757888" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg> וואטסאפ</a>
+          <a href="mailto:itay.igm@gmail.com"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg> <span class="ltr">itay.igm@gmail.com</span></a>
+        </div>
+      </div>
+      <div class="form-card reveal">
+        <h3>השאירו פרטים לשיחת ייעוץ</h3>
+        <p>נחזור אליכם בהקדם, בדרך כלל באותו יום עבודה.</p>
+        <form class="lead-form" method="post" action="https://api.web3forms.com/submit" data-access-key="REPLACE_WITH_WEB3FORMS_ACCESS_KEY" novalidate>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <label for="f-name">שם מלא</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <span class="error" id="f-name-err" aria-live="polite"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">טלפון</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-err">
+              <span class="error" id="f-phone-err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">אימייל</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="f-email-err">
+              <span class="error" id="f-email-err" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-topic">תחום התעניינות</label>
+            <select id="f-topic" name="topic">
+              <option value="משכנתא חדשה">משכנתא חדשה</option>
+              <option value="מחזור משכנתא">מחזור משכנתא</option>
+              <option value="משכנתא לכל מטרה">משכנתא לכל מטרה</option>
+              <option value="משכנתא הפוכה">משכנתא הפוכה</option>
+              <option value="כלכלת משפחה">כלכלת משפחה</option>
+              <option value="אחר">אחר</option>
+            </select>
+          </div>
+          <!-- marketing consent component is off (content/site.json form.marketingConsent) -->
+          <p class="form-privacy">שליחת הטופס מהווה אישור לקריאת <a href="/privacy-policy/">מדיניות הפרטיות</a>. הפרטים משמשים ליצירת קשר בלבד.</p>
+          <div class="form-status" role="status" tabindex="-1"></div>
+          <button class="btn btn-lg" type="submit">שליחה <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/logo.png" width="370" height="185" alt="משפחה פיננסית" loading="lazy">
+        <p>ייעוץ משכנתאות וכלכלת משפחה. ליווי אישי בתכנון המשכנתא, בבניית התמהיל, במכרז בין הבנקים ובבירוקרטיה, וגם אחרי קבלת הכסף.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/itaymf" target="_blank" rel="noopener" aria-label="פייסבוק"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"/></svg></a>
+          <a href="https://www.instagram.com/mishpacha_finnacit/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a>
+          <a href="https://www.tiktok.com/@itayganor1" target="_blank" rel="noopener" aria-label="טיקטוק"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></svg></a>
+          <a href="https://wa.me/972504757888" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>ניווט</h4>
+        <ul class="footer-list">
+          <li><a href="/">דף הבית</a></li>
+          <li><a href="/services/">שירותים</a></li>
+          <li><a href="/services/#process">איך זה עובד</a></li>
+          <li><a href="/about/">אודות הצוות</a></li>
+          <li><a href="/contact/">צור קשר</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>שירותים</h4>
+        <ul class="footer-list">
+          <li><a href="/services/#new">משכנתא חדשה</a></li>
+          <li><a href="/services/#refinance">מחזור משכנתא</a></li>
+          <li><a href="/services/#any">משכנתא לכל מטרה</a></li>
+          <li><a href="/services/#reverse">משכנתא הפוכה</a></li>
+          <li><a href="/services/#family">כלכלת משפחה</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>מרכז הידע</h4>
+        <ul class="footer-list">
+          <li><a href="/knowledge/">מאמרים ועדכונים</a></li>
+          <li><a href="/rates/">מרכז פיננסי: ריביות ומדדים</a></li>
+          <li><a href="/glossary/">מילון מונחים</a></li>
+          <li><a href="/calculators/">מחשבונים</a></li>
+        </ul>
+        <h4 class="mt-4">דברו איתנו</h4>
+        <ul class="footer-list">
+          <li><a href="tel:+972504757888" class="ltr">050-4757888</a></li>
+          <li><a href="mailto:itay.igm@gmail.com" class="ltr">itay.igm@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 איתי גנור | משפחה פיננסית. כל הזכויות שמורות.</div>
+      <nav aria-label="משפטי">
+        <a href="/privacy-policy/">מדיניות פרטיות</a>
+        <a href="/accessibility/">הצהרת נגישות</a>
+        <div class="prefs">
+          <button class="prefs-toggle" type="button" aria-expanded="false" aria-controls="prefs-panel" style="background:none;border:0;padding:0;color:inherit;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;font:inherit">העדפות תצוגה</button>
+          <div class="prefs-panel" id="prefs-panel" data-open="false">
+  <h4>העדפות תצוגה</h4>
+  <fieldset>
+    <legend>ניגודיות</legend>
+    <div class="seg">
+      <label><input type="radio" name="contrast" value="auto"><span>רגילה</span></label>
+      <label><input type="radio" name="contrast" value="high"><span>גבוהה</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>גודל טקסט</legend>
+    <div class="seg">
+      <label><input type="radio" name="textsize" value="auto"><span>רגיל</span></label>
+      <label><input type="radio" name="textsize" value="large"><span>גדול</span></label>
+      <label><input type="radio" name="textsize" value="xlarge"><span>גדול מאוד</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>תנועה ואנימציות</legend>
+    <div class="seg">
+      <label><input type="radio" name="motion" value="auto"><span>לפי המערכת</span></label>
+      <label><input type="radio" name="motion" value="reduce"><span>מופחתת</span></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>ערכת צבע</legend>
+    <div class="seg">
+      <label><input type="radio" name="theme" value="auto"><span>אוטומטי</span></label>
+      <label><input type="radio" name="theme" value="light"><span>בהיר</span></label>
+      <label><input type="radio" name="theme" value="dark"><span>כהה</span></label>
+    </div>
+  </fieldset>
+  <button type="button" class="btn btn-secondary btn-sm prefs-reset">איפוס העדפות</button>
+</div>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/972504757888" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg></a>
+
+<script src="/assets/js/site.js?v=mufqlu44" defer></script>
 </body>
 </html>
+

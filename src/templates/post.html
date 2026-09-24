@@ -1,0 +1,46 @@
+{{> head}}
+{{> header}}
+
+<section class="page-hero article-head">
+  <div class="container container-narrow">
+    {{page.crumbs}}
+    <span class="chip" style="background:rgba(255,255,255,.14);color:#fff;margin-bottom:1rem">{{post.category}}</span>
+    <h1>{{post.titleEsc}}</h1>
+    <div class="meta">
+      <span>{{icon:calendar-blank}} פורסם {{post.dateHe}}</span>
+      <span>{{icon:clock}} {{post.readMinutes}} דקות קריאה</span>
+      <span>{{icon:user-circle}} איתי גנור</span>
+    </div>
+  </div>
+</section>
+
+<article class="section">
+  <div class="container container-narrow">
+    <div class="prose article-body">
+      {{post.html}}
+    </div>
+    <div class="share-row">
+      <span>עודכן לאחרונה {{post.modifiedHe}}.</span>
+      <a class="chip" href="https://wa.me/?text={{post.urlEnc}}" target="_blank" rel="noopener">שיתוף בוואטסאפ</a>
+      <a class="chip" href="https://www.facebook.com/sharer/sharer.php?u={{post.urlEnc}}" target="_blank" rel="noopener">שיתוף בפייסבוק</a>
+    </div>
+    <div class="article-nav">
+      {{postNav}}
+    </div>
+  </div>
+</article>
+
+<section class="section section-alt">
+  <div class="container">
+    {{related}}
+    <div class="cta-grid mt-6" style="align-items:center">
+      <div>
+        <h2>יש לכם שאלה על המשכנתא שלכם?</h2>
+        <p class="lead">שיחת ייעוץ ראשונה בלי התחייבות. נבין את המצב שלכם ונגיד לכם בכנות מה כדאי לבדוק.</p>
+      </div>
+      <div class="btn-row"><a class="btn btn-lg" href="/contact/">{{site.cta}}</a><a class="btn btn-lg btn-secondary" href="/knowledge/">למרכז הידע</a></div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}
