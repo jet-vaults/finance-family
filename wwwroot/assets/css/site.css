@@ -618,8 +618,8 @@ body[data-menu-open="true"] { overflow: hidden; }
 .chart-lines.is-in .dot, .reveal.is-in .chart-lines .dot { opacity: 1; transition-delay: 1.2s; }
 .chart-lines .dot:hover { r: 6; }
 .summary-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
-.summary-table th { text-align: start; font-weight: 600; padding: 0.7rem 0.5rem; border-top: 1px solid var(--line); color: var(--ink-2); }
-.summary-table td { text-align: end; padding: 0.7rem 0.5rem; border-top: 1px solid var(--line); font-size: 1.15rem; }
+.summary-table th { text-align: start; font-weight: 600; padding: 0.75rem 0.75rem; border-top: 1px solid var(--line); color: var(--ink-2); }
+.summary-table td { text-align: end; padding: 0.75rem 0.75rem; border-top: 1px solid var(--line); font-size: 1.15rem; }
 .summary-table tr:first-child th { font-weight: 800; color: var(--ink); }
 .summary-table tr:first-child td { color: var(--blue-600); font-size: 1.3rem; }
 @media (prefers-reduced-motion: reduce) { .chart-lines .line { stroke-dashoffset: 0; } .chart-lines .dot { opacity: 1; } }
