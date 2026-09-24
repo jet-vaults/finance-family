@@ -1,0 +1,215 @@
+<!--meta {"title":"אפשרויות עיצוב לחלק העליון","description":"עמוד השוואה פנימי: חמש אפשרויות לחלק העליון של דף הבית.","path":"/hero-options/","noindex":true}-->
+{{> head}}
+{{> header}}
+<style>
+.opt-nav { position: sticky; top: var(--header-h); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.opt-nav .container { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-block: 0.6rem; align-items: center; }
+.opt-nav b { margin-inline-end: 0.5rem; }
+.opt-label { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--lime); color: var(--navy-950); font-weight: 800; font-size: 0.85rem; padding: 0.35rem 0.9rem; border-radius: var(--r-pill); }
+.opt-head { padding: 1.5rem 0 0.75rem; }
+.opt-head p { color: var(--muted); margin-top: 0.4rem; max-width: 70ch; }
+.h { position: relative; overflow: hidden; }
+.h .hero-grid { align-items: center; }
+.h h1 { font-size: var(--fs-display); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; }
+.h .lead { margin-top: 1.4rem; font-size: 1.15rem; max-width: 50ch; }
+.h .btn-row { margin-top: 2rem; }
+.mini { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--r); padding: 0.9rem 1.1rem; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 18px 40px rgba(6,21,48,0.35); color: #fff; }
+.mini .viz-label { color: rgba(255,255,255,0.75); }
+.mini .viz-value { font-size: 1.6rem; }
+.mini.light { background: var(--surface); border-color: var(--line); color: var(--ink); box-shadow: var(--shadow-lg); }
+.mini.light .viz-label { color: var(--muted); }
+.mini.light .viz-value { color: var(--ink); }
+.photo { position: relative; border-radius: var(--r-lg); overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* A: split photo + floating data */
+.hA { background: var(--g-hero); color: var(--on-dark); padding-block: clamp(3rem, 6vw, 5rem); }
+.hA h1 { color: #fff; } .hA .lead { color: var(--on-dark-muted); }
+.hA .photo { aspect-ratio: 5 / 4; }
+.hA .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(200deg, transparent 55%, rgba(6,21,48,0.55)); }
+.hA .float-1 { position: absolute; inset-inline-start: -18px; bottom: 28px; z-index: 2; min-width: 210px; }
+.hA .float-2 { position: absolute; inset-inline-end: -18px; top: 28px; z-index: 2; min-width: 190px; }
+.hA .photo-wrap { position: relative; padding: 18px; }
+
+/* B: full-bleed photo with gradient scrim */
+.hB { min-height: 620px; display: flex; align-items: center; color: #fff; padding-block: clamp(3rem, 6vw, 5rem); }
+.hB .bg { position: absolute; inset: 0; }
+.hB .bg img { width: 100%; height: 100%; object-fit: cover; object-position: 12% 50%; }
+.hB .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(270deg, rgba(6,21,48,0.94) 0%, rgba(6,21,48,0.86) 38%, rgba(6,21,48,0.35) 70%, rgba(6,21,48,0.15) 100%); }
+[dir="rtl"] .hB .bg::after { background: linear-gradient(90deg, rgba(6,21,48,0.96) 0%, rgba(6,21,48,0.9) 42%, rgba(6,21,48,0.45) 68%, rgba(6,21,48,0.12) 100%); }
+.hB .container { position: relative; z-index: 1; }
+.hB .text { max-width: 560px; }
+.hB h1 { color: #fff; } .hB .lead { color: rgba(255,255,255,0.85); }
+.hB .strip { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+.hB .strip .mini { min-width: 170px; }
+
+/* C: light editorial with arch photo */
+.hC { background: var(--bg); color: var(--ink); padding-block: clamp(3rem, 6vw, 5rem); }
+.hC h1 { color: var(--navy-900); } .hC h1 .accent { background: var(--g-accent); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hC .lead { color: var(--ink-2); }
+.hC .arch { position: relative; width: min(100%, 520px); margin-inline: auto; aspect-ratio: 4 / 5; border-radius: 260px 260px var(--r-lg) var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.hC .arch img { width: 100%; height: 100%; object-fit: cover; }
+.hC .arch-wrap { position: relative; padding: 0 24px 24px; }
+.hC .arch-wrap::before { content: ""; position: absolute; inset: 40px -10px auto auto; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(16,200,184,0.25), transparent 65%); z-index: 0; }
+.hC .float-1 { position: absolute; inset-inline-start: 0; bottom: 0; z-index: 2; min-width: 230px; }
+.hC .float-2 { position: absolute; inset-inline-end: 0; top: 40px; z-index: 2; min-width: 180px; }
+
+/* D: bento family + data */
+.hD { background: var(--g-hero); color: var(--on-dark); padding-block: clamp(3rem, 6vw, 5rem); }
+.hD h1 { color: #fff; } .hD .lead { color: var(--on-dark-muted); }
+.hD .bento { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 150px; gap: 0.9rem; }
+.hD .bento .photo { border-radius: var(--r); }
+.hD .p1 { grid-column: span 4; grid-row: span 2; }
+.hD .p2 { grid-column: span 2; grid-row: span 2; }
+.hD .c1 { grid-column: span 2; }
+.hD .c2 { grid-column: span 4; }
+.hD .bento .mini { display: grid; align-content: center; }
+.hD .c2 svg { width: 100%; height: 70px; }
+
+/* E: community illustration */
+.hE { background: var(--g-hero); color: var(--on-dark); padding-block: clamp(3rem, 6vw, 5rem); }
+.hE h1 { color: #fff; } .hE .lead { color: var(--on-dark-muted); }
+.hE .ill { position: relative; display: grid; place-items: center; padding: 1rem; }
+.hE .ill::before { content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(16,200,184,0.35), rgba(36,87,245,0.12) 55%, transparent 72%); filter: blur(6px); }
+.hE .ill img { position: relative; width: min(100%, 480px); filter: drop-shadow(0 24px 40px rgba(0,0,0,0.35)); }
+.hE .float-1 { position: absolute; inset-inline-start: 0; bottom: 8%; min-width: 200px; }
+.hE .float-2 { position: absolute; inset-inline-end: 0; top: 8%; min-width: 180px; }
+
+@media (max-width: 1023px) {
+  .hA .photo-wrap, .hC .arch-wrap { padding: 0 0 18px; }
+  .hA .float-1, .hA .float-2, .hC .float-1, .hC .float-2, .hE .float-1, .hE .float-2 { position: static; margin-top: 0.75rem; display: inline-block; }
+  .hD .bento { grid-auto-rows: 120px; }
+  .hD .p1 { grid-column: span 6; } .hD .p2 { grid-column: span 3; } .hD .c1 { grid-column: span 3; } .hD .c2 { grid-column: span 6; }
+}
+.opt-note { padding: 1rem 0 3rem; color: var(--muted); font-size: 0.9rem; }
+</style>
+
+<div class="opt-nav">
+  <div class="container">
+    <b>אפשרויות לחלק העליון:</b>
+    <a class="chip" href="#opt-1">1 תמונה + נתונים צפים</a>
+    <a class="chip" href="#opt-2">2 תמונה ברוחב מלא</a>
+    <a class="chip" href="#opt-3">3 בהיר ועריכתי</a>
+    <a class="chip" href="#opt-4">4 בנטו משפחה ונתונים</a>
+    <a class="chip" href="#opt-5">5 האיור מהאתר הישן</a>
+  </div>
+</div>
+
+<!-- ===== Option 1 ===== -->
+<div class="container opt-head" id="opt-1">
+  <span class="opt-label">אפשרות 1</span>
+  <h2 class="mt-2">תמונת משפחה גדולה, נתונים צפים עליה</h2>
+  <p>הרקע הכהה נשאר, אבל במקום לוח הנתונים המלא יש תמונה אחת חמה של משפחה בפתח הבית, ושני כרטיסי נתונים קטנים שנוגעים בה. שומר על התחושה הפיננסית, מוסיף חום.</p>
+</div>
+<section class="h hA">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent" style="background:var(--g-accent);-webkit-background-clip:text;background-clip:text;color:transparent">מתכננים נכון.</span></h1>
+        <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+      </div>
+      <div class="photo-wrap">
+        <div class="photo"><img src="/assets/img/hero/family-door.webp" alt="הורים וילד מחובקים בפתח הבית" width="1600" height="1067"></div>
+        <div class="mini float-1"><div class="viz-label">החזר חודשי משוער</div><div class="viz-value num">₪6,334</div><div class="viz-trend trend-flat">₪1.2M, 25 שנים, ריבית 4.0%</div></div>
+        <div class="mini float-2"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num">{{@boi-rate}}</div><div class="viz-trend trend-down">{{icon:trend-down}} 5 הורדות ב-12 חודשים</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Option 2 ===== -->
+<div class="container opt-head" id="opt-2">
+  <span class="opt-label">אפשרות 2</span>
+  <h2 class="mt-2">תמונה ברוחב מלא עם מעבר לכחול הכהה</h2>
+  <p>המשפחה בסלון ממלאת את כל הרוחב, הטקסט יושב על מעבר צבע לכחול הכהה של המותג, ורצועת נתונים קצרה מתחת לכפתורים.</p>
+</div>
+<section class="h hB">
+  <div class="bg"><img src="/assets/img/hero/family-living.webp" alt="" width="1600" height="1067"></div>
+  <div class="container">
+    <div class="text">
+      <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span style="color:var(--teal)">מתכננים נכון.</span></h1>
+      <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+      <div class="strip">
+        <div class="mini"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num">{{@boi-rate}}</div></div>
+        <div class="mini"><div class="viz-label">ריבית הפריים</div><div class="viz-value num">{{@prime-rate}}</div></div>
+        <div class="mini"><div class="viz-label">מדד, 12 חודשים</div><div class="viz-value num">{{@cpi-12}}</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Option 3 ===== -->
+<div class="container opt-head" id="opt-3">
+  <span class="opt-label">אפשרות 3</span>
+  <h2 class="mt-2">בהיר ועריכתי, תמונה בקשת</h2>
+  <p>רקע בהיר במקום כהה. כותרת בכחול הכהה, תמונה של הורים משחקים עם ילד בצורת קשת, ושני כרטיסי נתונים לבנים שצפים עליה. תחושה קלילה ומשפחתית יותר.</p>
+</div>
+<section class="h hC">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span class="accent">מתכננים נכון.</span></h1>
+        <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row"><a class="btn btn-lg" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-secondary" href="/services/#process">איך אנחנו עובדים</a></div>
+      </div>
+      <div class="arch-wrap">
+        <div class="arch"><img src="/assets/img/hero/family-play.webp" alt="הורים משחקים עם ילד על המיטה" width="1600" height="1067"></div>
+        <div class="mini light float-1"><div class="viz-label">החזר חודשי משוער</div><div class="viz-value num">₪6,334</div><div class="viz-trend" style="background:var(--teal-100);color:var(--teal-600)">₪1.2M, 25 שנים, 4.0%</div></div>
+        <div class="mini light float-2"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num">{{@boi-rate}}</div><div class="viz-trend" style="background:var(--green-100);color:var(--green)">{{icon:trend-down}} 5 הורדות</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Option 4 ===== -->
+<div class="container opt-head" id="opt-4">
+  <span class="opt-label">אפשרות 4</span>
+  <h2 class="mt-2">בנטו: שתי תמונות משפחה ושני כרטיסי נתונים</h2>
+  <p>רשת של ארבעה אריחים: תמונה גדולה של הורים עם תינוק, תמונה קטנה של סבא ונכד, כרטיס ריבית וגרף יתרת הקרן. משפחה ונתונים באותו משקל.</p>
+</div>
+<section class="h hD">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span style="background:var(--g-accent);-webkit-background-clip:text;background-clip:text;color:transparent">מתכננים נכון.</span></h1>
+        <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+      </div>
+      <div class="bento">
+        <div class="photo p1"><img src="/assets/img/hero/family-baby.webp" alt="הורים עם תינוק על ספה" width="1600" height="1067"></div>
+        <div class="photo p2"><img src="/assets/img/hero/family-grandpa.webp" alt="סבא משחק עם נכדה" width="1600" height="1067"></div>
+        <div class="mini c1"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num">{{@boi-rate}}</div></div>
+        <div class="mini c2"><div class="viz-label">יתרת הקרן לאורך 25 שנים, ₪1.2M</div><svg viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="hdFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10c8b8" stop-opacity=".5"/><stop offset="1" stop-color="#10c8b8" stop-opacity="0"/></linearGradient></defs><path d="M0 6 C150 12, 300 30, 450 50 S560 66, 600 68 L600 70 L0 70 Z" fill="url(#hdFill)"/><path d="M0 6 C150 12, 300 30, 450 50 S560 66, 600 68" fill="none" stroke="#7ff0e6" stroke-width="2.5"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Option 5 ===== -->
+<div class="container opt-head" id="opt-5">
+  <span class="opt-label">אפשרות 5</span>
+  <h2 class="mt-2">האיור מהאתר הישן, עם זוהר ונתונים</h2>
+  <p>המעגל של האנשים מהאתר הקיים, על הרקע הכהה עם זוהר טורקיז ושני כרטיסי נתונים בצדדים. המשכיות עם מה שהלקוחות מכירים.</p>
+</div>
+<section class="h hE">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>המשכנתא שלכם.<br>העתיד הכלכלי שלכם.<br><span style="background:var(--g-accent);-webkit-background-clip:text;background-clip:text;color:transparent">מתכננים נכון.</span></h1>
+        <p class="lead">ליווי אישי בתכנון המשכנתא ובכלכלת המשפחה: ניתוח, תמהיל מותאם, מכרז בין הבנקים וליווי גם אחרי קבלת הכסף.</p>
+        <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}} {{icon:arrow-left}}</a><a class="btn btn-lg btn-ghost-light" href="/services/#process">איך אנחנו עובדים</a></div>
+      </div>
+      <div class="ill">
+        <img src="/assets/img/hero/community.webp" alt="איור של קהילה יושבת במעגל" width="1200" height="1178">
+        <div class="mini float-1"><div class="viz-label">החזר חודשי משוער</div><div class="viz-value num">₪6,334</div></div>
+        <div class="mini float-2"><div class="viz-label">ריבית בנק ישראל</div><div class="viz-value num">{{@boi-rate}}</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container opt-note">התמונות הן תמונות מאגר חופשיות (Unsplash, Pexels) לצורך הדגמה. לפני עלייה לאוויר נחליף לתמונה שתבחרו או לצילום של הלקוח.</div>
+
+{{> footer}}
