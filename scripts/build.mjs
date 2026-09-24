@@ -44,6 +44,7 @@ const needIcon = { new: "house-line", refinance: "arrows-clockwise", any: "coins
 
 const blocks = {
   "nav-links": () => site.nav.map((n) => `<a href="${n.href}">${n.label}</a>`).join("\n"),
+  "nav-demo": () => site.nav.map((n, i) => `<a href="#" ${i === 2 ? 'aria-current="page"' : ""} onclick="return false">${n.label}</a>`).join(""),
   "mobile-nav-links": () => site.nav.map((n) => `<a href="${n.href}">${n.label} ${icon("caret-left")}</a>`).join("\n"),
   "consent": () => {
     if (!site.tracking.enabled) return "";

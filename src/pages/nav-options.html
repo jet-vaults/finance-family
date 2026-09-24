@@ -1,0 +1,61 @@
+<!--meta {"title":"אפשרויות ריחוף לתפריט","description":"עמוד השוואה פנימי: חמישה סגנונות ריחוף לקישורי התפריט.","path":"/nav-options/","noindex":true}-->
+{{> head}}
+{{> header}}
+<style>
+.opt-head { padding: 1.5rem 0 0.75rem; }
+.opt-head p { color: var(--muted); margin-top: 0.4rem; max-width: 70ch; }
+.opt-label { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--lime); color: var(--navy-950); font-weight: 800; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--r-pill); }
+.demo-bar { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-sm); }
+.demo-bar img { height: 40px; width: auto; }
+.demo-nav { display: flex; align-items: center; gap: 0.25rem; }
+.demo-nav a { position: relative; display: inline-block; padding: 0.55rem 0.8rem; color: var(--ink-2); font-weight: 500; font-size: 0.97rem; text-decoration: none; border-radius: var(--r-pill); transition: color 0.2s, background 0.25s, transform 0.25s var(--ease); }
+.demo-nav a[aria-current="page"] { color: var(--blue-600); }
+
+/* 1 underline grows from the start edge */
+.hv1 a::after { content: ""; position: absolute; inset-inline: 0.8rem; bottom: 0.3rem; height: 2px; border-radius: 2px; background: var(--g-accent); transform: scaleX(0); transform-origin: right center; transition: transform 0.3s var(--ease); }
+[dir="ltr"] .hv1 a::after { transform-origin: left center; }
+.hv1 a:hover, .hv1 a:focus-visible { color: var(--ink); }
+.hv1 a:hover::after, .hv1 a:focus-visible::after, .hv1 a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* 2 underline grows from the centre, text turns blue */
+.hv2 a::after { content: ""; position: absolute; inset-inline: 0.8rem; bottom: 0.3rem; height: 2px; border-radius: 2px; background: var(--blue); transform: scaleX(0); transform-origin: center; transition: transform 0.3s var(--ease); }
+.hv2 a:hover, .hv2 a:focus-visible { color: var(--blue-600); }
+.hv2 a:hover::after, .hv2 a:focus-visible::after, .hv2 a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* 3 soft blue pill fades in (brand tint instead of grey) */
+.hv3 a:hover, .hv3 a:focus-visible { background: var(--blue-100); color: var(--blue-600); }
+.hv3 a[aria-current="page"] { background: var(--blue-100); }
+
+/* 4 lift with a short teal bar beneath */
+.hv4 a::after { content: ""; position: absolute; inset-inline-start: 50%; bottom: 0.15rem; width: 18px; height: 3px; margin-inline-start: -9px; border-radius: 3px; background: var(--teal); opacity: 0; transform: translateY(4px); transition: opacity 0.25s, transform 0.3s var(--ease); }
+.hv4 a:hover, .hv4 a:focus-visible { color: var(--ink); transform: translateY(-2px); }
+.hv4 a:hover::after, .hv4 a:focus-visible::after, .hv4 a[aria-current="page"]::after { opacity: 1; transform: none; }
+
+/* 5 highlighter stroke behind the lower half of the word */
+.hv5 a { z-index: 0; }
+.hv5 a::before { content: ""; position: absolute; inset-inline: 0.7rem; bottom: 0.45rem; height: 0.55em; border-radius: 3px; background: linear-gradient(90deg, rgba(16, 200, 184, 0.35), rgba(201, 240, 75, 0.55)); transform: scaleX(0); transform-origin: right center; transition: transform 0.3s var(--ease); z-index: -1; }
+[dir="ltr"] .hv5 a::before { transform-origin: left center; }
+.hv5 a:hover, .hv5 a:focus-visible { color: var(--navy-900); }
+.hv5 a:hover::before, .hv5 a:focus-visible::before, .hv5 a[aria-current="page"]::before { transform: scaleX(1); }
+</style>
+
+<div class="container opt-head"><h1>סגנונות ריחוף לתפריט</h1><p>עברו עם העכבר על הקישורים. בכל שורה "איך זה עובד" מסומן כעמוד הנוכחי כדי להראות גם את מצב "אתם כאן". הטקסט בכל הגרסאות במשקל רגיל, לא מודגש.</p></div>
+
+<div class="container">
+  <span class="opt-label">1 קו שנמשך מהצד</span><h2 class="mt-2 mb-3" style="font-size:1.2rem">קו גרדיאנט דק שנמשך מימין לשמאל מתחת למילה</h2>
+  <div class="demo-bar"><nav class="demo-nav hv1" aria-label="דוגמה 1">{{@nav-demo}}</nav><img src="/assets/img/logo.png" alt=""></div>
+
+  <span class="opt-label">2 קו מהמרכז, טקסט כחול</span><h2 class="mt-2 mb-3" style="font-size:1.2rem">קו כחול שנפתח מהאמצע, והמילה נצבעת בכחול</h2>
+  <div class="demo-bar"><nav class="demo-nav hv2" aria-label="דוגמה 2">{{@nav-demo}}</nav><img src="/assets/img/logo.png" alt=""></div>
+
+  <span class="opt-label">3 גלולה בגוון המותג</span><h2 class="mt-2 mb-3" style="font-size:1.2rem">כמו היום, אבל בגוון כחול בהיר במקום אפור, וטקסט כחול</h2>
+  <div class="demo-bar"><nav class="demo-nav hv3" aria-label="דוגמה 3">{{@nav-demo}}</nav><img src="/assets/img/logo.png" alt=""></div>
+
+  <span class="opt-label">4 הרמה קלה ופס טורקיז</span><h2 class="mt-2 mb-3" style="font-size:1.2rem">המילה עולה שני פיקסלים ופס טורקיז קצר מופיע מתחתיה</h2>
+  <div class="demo-bar"><nav class="demo-nav hv4" aria-label="דוגמה 4">{{@nav-demo}}</nav><img src="/assets/img/logo.png" alt=""></div>
+
+  <span class="opt-label">5 מרקר</span><h2 class="mt-2 mb-3" style="font-size:1.2rem">פס צבע כמו מרקר שנמשך מאחורי החצי התחתון של המילה</h2>
+  <div class="demo-bar"><nav class="demo-nav hv5" aria-label="דוגמה 5">{{@nav-demo}}</nav><img src="/assets/img/logo.png" alt=""></div>
+</div>
+<div style="height:3rem"></div>
+{{> footer}}
