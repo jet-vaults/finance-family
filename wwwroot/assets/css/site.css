@@ -448,6 +448,11 @@ body[data-menu-open="true"] { overflow: hidden; }
 .hero-card .viz-value { color: var(--navy-900); font-size: 1.7rem; }
 .hero-card .viz-trend { background: var(--teal-100); color: var(--teal-600); }
 .hero-card .viz-trend.down { background: var(--green-100); color: var(--green); }
+.hero-card { max-width: 260px; }
+.hero-card .seal { display: flex; align-items: center; gap: 0.65rem; }
+.hero-card .seal .icon-tile { width: 2.5rem; height: 2.5rem; }
+.hero-card .big-line { font-size: 0.98rem; font-weight: 800; color: var(--navy-900); line-height: 1.35; }
+.hero-card .small { font-size: 0.85rem; color: #5f6e86; line-height: 1.45; margin-top: 0.5rem; }
 .hero-card-1 { inset-inline-start: 0; bottom: 0; }
 .hero-card-2 { inset-inline-end: 0; top: 44px; }
 @media (max-width: 1023px) {
