@@ -578,8 +578,8 @@ body[data-menu-open="true"] { overflow: hidden; }
 
 
 /* ---------- process grid (8 coloured cards, domino reveal) ---------- */
-.pg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-.pg-card { --acc: var(--blue); --tint: var(--blue-100); position: relative; background: var(--tint); border-radius: var(--r); padding: 1.4rem 1.3rem 1.3rem; overflow: hidden; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.pg { display: grid; grid-template-columns: repeat(auto-fit, min(270px, 100%)); grid-auto-rows: 1fr; justify-content: center; gap: 1rem; }
+.pg-card { --acc: var(--blue); --tint: var(--blue-100); position: relative; min-height: 270px; background: var(--tint); border-radius: var(--r); padding: 1.4rem 1.3rem 1.3rem; overflow: hidden; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
 .pg-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px color-mix(in srgb, var(--acc) 22%, transparent); }
 .pg-num { position: absolute; top: -0.55rem; inset-inline-end: 0.55rem; font-size: 4.4rem; line-height: 1; color: var(--acc); opacity: 0.16; font-weight: 900; letter-spacing: -0.04em; }
 .pg-card .icon-tile { position: relative; margin-bottom: 0.9rem; background: var(--surface); color: var(--acc); box-shadow: 0 4px 12px color-mix(in srgb, var(--acc) 18%, transparent); }
@@ -599,8 +599,6 @@ body[data-menu-open="true"] { overflow: hidden; }
 .pg-anim .pg-card { opacity: 0; transform: translateY(28px) scale(0.86); }
 .pg-anim.is-in .pg-card { animation: popIn 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) forwards; animation-delay: calc(var(--i) * 130ms); }
 @keyframes popIn { 0% { opacity: 0; transform: translateY(28px) scale(0.86); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
-@media (max-width: 1000px) { .pg { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .pg { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .pg-anim .pg-card { opacity: 1; transform: none; animation: none; } }
 :root[data-motion="reduce"] .pg-anim .pg-card { opacity: 1; transform: none; animation: none; }
 
