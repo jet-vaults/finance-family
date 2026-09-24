@@ -413,7 +413,7 @@ body[data-menu-open="true"] { overflow: hidden; }
 .viz-label { font-size: 0.8rem; color: var(--on-dark-muted); font-weight: 600; letter-spacing: 0.02em; }
 .viz-value { font-size: 1.9rem; color: #fff; margin-top: 0.15rem; line-height: 1.1; }
 .viz-value small { font-size: 0.95rem; color: var(--on-dark-muted); font-weight: 600; margin-inline-start: 0.2rem; }
-.viz-trend { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; font-weight: 700; margin-top: 0.4rem; padding: 0.15rem 0.55rem; border-radius: var(--r-pill); }
+.viz-trend { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; font-weight: 700; margin-top: 0.45rem; padding: 0.35rem 0.7rem; border-radius: var(--r-pill); }
 .viz-trend svg { width: 0.95rem; height: 0.95rem; }
 .trend-down { background: rgba(16, 200, 184, 0.18); color: #7ff0e6; }
 .trend-up { background: rgba(255, 200, 87, 0.18); color: #ffd982; }
@@ -574,7 +574,7 @@ body[data-menu-open="true"] { overflow: hidden; }
 .fin-value { font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1.05; margin-top: 0.35rem; }
 .fin-value small { font-size: 1.1rem; font-weight: 700; margin-inline-start: 0.15rem; opacity: 0.85; }
 .fin-sub { font-size: 0.85rem; color: var(--muted); margin-top: auto; padding-top: 0.5rem; }
-.fin-trend { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: var(--r-pill); background: var(--green-100); color: var(--green); }
+.fin-trend { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; font-weight: 700; padding: 0.35rem 0.7rem; border-radius: var(--r-pill); background: var(--green-100); color: var(--green); }
 .fin-trend svg { width: 0.95rem; height: 0.95rem; }
 .fin-trend.up { background: var(--amber-100); color: #8a5a00; }
 .fin-tile.dark .fin-trend { background: rgba(16, 200, 184, 0.2); color: #7ff0e6; }
