@@ -185,7 +185,7 @@ function indexLines(key) {
   const all = years.flatMap((y) => src.series[y]);
   const step = 0.5;
   const max = Math.ceil(Math.max(...all) / step) * step, min = Math.floor(Math.min(...all) / step) * step;
-  const W = 600, H = 330, padL = 48, padR = 14, padT = 16, padB = 36;
+  const W = 1000, H = 380, padL = 52, padR = 16, padT = 16, padB = 38;
   const x = (m) => padL + (m / 11) * (W - padL - padR);
   const y = (v) => padT + (max - v) / (max - min) * (H - padT - padB);
   let grid = "";
