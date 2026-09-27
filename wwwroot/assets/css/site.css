@@ -610,6 +610,7 @@ body[data-menu-open="true"] { overflow: hidden; }
 .pg-anim .pg-card { opacity: 0; transform: translateY(28px) scale(0.86); }
 .pg-anim.is-in .pg-card { animation: popIn 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) forwards; animation-delay: calc(var(--i) * 130ms); }
 @keyframes popIn { 0% { opacity: 0; transform: translateY(28px) scale(0.86); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@media (max-width: 560px) { .pg { grid-template-columns: 1fr; } .pg-card { min-height: 0; } }
 @media (prefers-reduced-motion: reduce) { .pg-anim .pg-card { opacity: 1; transform: none; animation: none; } }
 :root[data-motion="reduce"] .pg-anim .pg-card { opacity: 1; transform: none; animation: none; }
 
