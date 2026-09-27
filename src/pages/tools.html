@@ -1,0 +1,69 @@
+<!--meta {"title":"מחשבוני משכנתא וכלי תכנון","description":"מחשבון משכנתא מלא, מחשבון הלוואת זכאות וכלי לתכנון משכנתא, ישירות באתר משפחה פיננסית.","path":"/tools/","crumbs":[{"name":"דף הבית","href":"/"},{"name":"מרכז הידע","href":"/knowledge/"},{"name":"כלי חישוב ותכנון","href":"/tools/"}]}-->
+{{> head}}
+{{> header}}
+<style>
+.tool-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.tool-nav a { color: #fff; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); }
+.tool-nav a:hover { background: rgba(255, 255, 255, 0.2); color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.tool-section { scroll-margin-top: calc(var(--header-h) + 16px); }
+.tool-head { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+.tool-head .icon-tile { flex: none; }
+.tool-head p { color: var(--ink-2); margin-top: 0.25rem; max-width: 60ch; }
+.tool-frame { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 0.75rem; box-shadow: var(--shadow-sm); }
+.tool-frame iframe { display: block; width: 100%; border: 0; border-radius: var(--r); background: var(--surface-2); min-height: 500px; }
+@media (max-width: 640px) { .tool-frame { padding: 0.35rem; } }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    {{page.crumbs}}
+    <h1>מחשבוני משכנתא וכלי תכנון</h1>
+    <p class="lead">שלושה כלים לעבודה עצמית: חישוב משכנתא מלא לפי מסלולים, בדיקת הלוואת הזכאות, ותכנון המשכנתא שלכם צעד אחר צעד. חינם, בלי הרשמה.</p>
+    <nav class="tool-nav" aria-label="קפיצה לכלי">
+      <a class="chip" href="#mortgage">מחשבון משכנתא</a>
+      <a class="chip" href="#zakaut">מחשבון הלוואת זכאות</a>
+      <a class="chip" href="#planner">כלי לתכנון משכנתא</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section tool-section" id="mortgage" aria-labelledby="tool-mortgage">
+  <div class="container">
+    <div class="tool-head"><span class="icon-tile">{{icon:calculator}}</span><div><h2 id="tool-mortgage">מחשבון משכנתא</h2><p>בונים תמהיל ממסלולים שונים, מגדירים ריבית ותקופה לכל מסלול ומקבלים החזר חודשי, לוח סילוקין וסך הריבית.</p></div></div>
+    <div class="tool-frame">
+      <iframe data-wise src="https://www.wisetools.co.il/mortgage/index.php?key=wse_70b15020eca00ad19d20e74acfa62ea00f8dd57f57a041a7" title="מחשבון משכנתא" loading="lazy" referrerpolicy="origin" height="900" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt tool-section" id="zakaut" aria-labelledby="tool-zakaut">
+  <div class="container">
+    <div class="tool-head"><span class="icon-tile teal">{{icon:seal-check}}</span><div><h2 id="tool-zakaut">מחשבון הלוואת זכאות</h2><p>בודקים את הניקוד ואת גובה הלוואת הזכאות המסובסדת ממשרד הבינוי והשיכון, לפי מצב משפחתי, שנות נישואין, אחים ושירות.</p></div></div>
+    <div class="tool-frame">
+      <iframe data-wise src="https://www.wisetools.co.il/zakaut/index.php?key=wse_7c97457a242c34b295ea06b2a06f5355a7f74357f0ba7690" title="מחשבון הלוואת זכאות" loading="lazy" referrerpolicy="origin" height="900" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section tool-section" id="planner" aria-labelledby="tool-planner">
+  <div class="container">
+    <div class="tool-head"><span class="icon-tile green">{{icon:target}}</span><div><h2 id="tool-planner">כלי לתכנון משכנתא</h2><p>מסדרים את הנתונים שלכם לפני הפגישה: הון עצמי, הכנסות, התחייבויות ומטרות, ומקבלים תמונה ראשונית של מה שאפשר.</p></div></div>
+    <div class="tool-frame">
+      <iframe data-wise src="https://www.wisetools.co.il/client-tools/index.php?key=wse_77f4d096d5eb3f153f9523e2fee7b86c0bc" title="כלי לתכנון משכנתא" loading="lazy" referrerpolicy="origin" height="900" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band" aria-labelledby="tools-cta">
+  <div class="container">
+    <div class="cta-grid" style="align-items:center">
+      <div>
+        <h2 id="tools-cta">המספרים ברורים? עכשיו נדבר על התמהיל שלכם</h2>
+        <p class="lead">המחשבונים נותנים כיוון. תמהיל אמיתי, מכרז בין הבנקים והתנאים בפועל נבנים בשיחה.</p>
+      </div>
+      <div class="btn-row"><a class="btn btn-lg btn-light" href="/contact/">{{site.cta}}</a><a class="btn btn-lg btn-ghost-light" href="/calculators/">מחשבון מהיר</a></div>
+    </div>
+  </div>
+</section>
+
+{{> footer}}

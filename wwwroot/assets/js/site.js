@@ -375,6 +375,22 @@
     svg.addEventListener("blur", hide);
   });
 
+
+  /* ---------- Wisetools calculator frames: auto height ---------- */
+  var wiseFrames = $$("iframe[data-wise]");
+  if (wiseFrames.length) {
+    window.addEventListener("message", function (e) {
+      if (!e.data || e.data.type !== "wise-calculator-height") return;
+      wiseFrames.forEach(function (f) {
+        if (e.source !== f.contentWindow) return;
+        var expected; try { expected = new URL(f.src).origin; } catch (err) { return; }
+        if (e.origin !== expected) return;
+        var h = Math.max(500, Math.min(1800, Number(e.data.height) || 900));
+        f.style.height = h + "px";
+      });
+    });
+  }
+
   /* ---------- current nav item ---------- */
   var path = location.pathname.replace(/index\.html$/, "");
   $$(".nav-desktop a, .mobile-menu nav a").forEach(function (a) {
