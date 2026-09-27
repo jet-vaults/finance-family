@@ -63,3 +63,7 @@ No analytics or pixels are installed. To add one, set `tracking.enabled` to `tru
 ### Old URLs
 
 `wwwroot/_redirects` maps the WordPress Hebrew page slugs and all article URLs to the new paths with 301 redirects. Article slugs are preserved under `/blog/`.
+
+### Preview mirror
+
+A second Pages project, `finance-family-8rj` (repo `jet-vaults/finance-family-8rj`, cloned at `projects/finance-family-8rj`), serves an indexing-blocked copy at https://finance-family-8rj.pages.dev. After building, run `bash scripts/mirror-preview.sh` to push the same `wwwroot/` there.
