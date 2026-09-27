@@ -83,8 +83,11 @@
       <h2 id="fin-title">המספרים שמזיזים את המשכנתא שלכם</h2>
       <p>ריבית בנק ישראל, הפריים והמדדים, כפי שהם משפיעים על ההחזר החודשי. מתעדכן עם כל החלטת ריבית ופרסום מדד.</p>
     </div>
-    <div class="fin-grid reveal-stagger">
-      {{@fin-tiles-compact}}
+    <div class="fin-split reveal">
+      <div class="fin-split-tiles">
+        {{@fin-two}}
+      </div>
+      {{@cpi-lines-compact}}
     </div>
     <div class="btn-row mt-4 reveal"><a class="btn btn-secondary" href="/rates/">לטבלאות הריבית המלאות {{icon:arrow-left}}</a><span class="muted" style="font-size:.9rem">עודכן לאחרונה: {{@rates-updated}}</span></div>
   </div>

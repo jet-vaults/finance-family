@@ -725,6 +725,18 @@ body[data-menu-open="true"] { overflow: hidden; }
 .legend-btn[hidden] { display: none; }
 .chart-hint { font-size: 0.82rem; color: var(--muted); }
 
+
+/* home: two tiles + chart split */
+.fin-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1.25rem; align-items: stretch; }
+.fin-split-tiles { display: grid; grid-template-rows: 1fr 1fr; gap: 1.25rem; }
+.fin-split-tiles .fin-tile { grid-column: auto; }
+.fin-split .index-block { min-width: 0; }
+.fin-split .index-block .summary-table { max-width: none; }
+.fin-split .chart-lines text { font-size: 18px; }
+.fin-split .chart-lines .line { stroke-width: 3; }
+@media (max-width: 1023px) { .fin-split { grid-template-columns: 1fr; } .fin-split-tiles { grid-template-rows: auto; grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .fin-split-tiles { grid-template-columns: 1fr; } }
+
 /* ---------- knowledge ---------- */
 .knowledge-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 3vw, 2.5rem); }
 @media (max-width: 900px) { .knowledge-grid { grid-template-columns: 1fr; } }

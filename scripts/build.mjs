@@ -82,6 +82,8 @@ const blocks = {
   "fin-tiles-compact": () => finTiles(true),
   "cpi-chart": cpiChart,
   "cpi-lines": () => indexLines("cpi"),
+  "cpi-lines-compact": () => indexLines("cpi", true),
+  "fin-two": () => finTiles(true).split("\n").slice(0, 2).join("\n"),
   "construction-lines": () => indexLines("construction"),
   "rate-tables": rateTables,
   "rate-preview": ratePreview,
@@ -187,7 +189,7 @@ function cpiChart() {
 }
 
 
-function indexLines(key) {
+function indexLines(key, compact) {
   // classic year-over-year line chart, one line per year, real data from content/rates.json
   const idx = rates.indices.find((i) => i.key === key);
   const src = key === "cpi" ? rates.cpiMonthly : rates.constructionMonthly;
@@ -228,7 +230,7 @@ function indexLines(key) {
     <tr><th>מצטבר ${years[years.length - 1]}</th><td class="num">${idx.ytd.toFixed(2)}%</td></tr>
     <tr><th>מדד חודש ${idx.lastMonth.label}</th><td class="num">${idx.lastMonth.value.toFixed(2)}%</td></tr>
   </tbody></table>
-  <details class="more"><summary>הנתונים החודשיים בטבלה ${icon("caret-down")}</summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th>${years.map((yr) => `<th class="num">${yr}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div></details>
+  ${compact ? "" : `<details class="more"><summary>הנתונים החודשיים בטבלה ${icon("caret-down")}</summary><div class="table-wrap mt-2"><table class="rate-table"><thead><tr><th>חודש</th>${years.map((yr) => `<th class="num">${yr}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div></details>`}
 </div>`;
 }
 
