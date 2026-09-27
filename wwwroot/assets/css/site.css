@@ -216,6 +216,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 .section-dark .muted { color: var(--on-dark-muted); }
 .section-alt { background: var(--surface-2); }
 .section-head { max-width: 66ch; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+@media (min-width: 900px) { .section-head .one-line { text-wrap: initial; white-space: nowrap; } }
 .section-head p { color: var(--ink-2); font-size: 1.1rem; margin-top: 0.85rem; }
 .section-dark .section-head p { color: var(--on-dark-muted); }
 .grid { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); }
