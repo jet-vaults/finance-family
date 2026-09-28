@@ -65,7 +65,7 @@ const blocks = {
   <h3>${n.title}</h3>
   <p>${n.text}</p>
   <ul class="needs-points">${n.points.map((p) => `<li>${icon("check")}<span>${p}</span></li>`).join("")}</ul>
-  <div class="btn-row"><a class="btn" href="/contact/?topic=${n.key}">${site.cta}</a><a class="link-arrow" href="${n.href}">לפרטים על ${n.label} ${icon("arrow-left")}</a></div>
+  <div class="btn-row"><a class="btn" href="/contact/?topic=${n.key}">${site.cta}</a></div>
 </div>`).join("\n"),
   "values": () => services.values.map((v, i) => `<div class="value-item"><div class="n num">0${i + 1}</div><div><h3>${v.title}</h3><p>${v.text}</p></div></div>`).join("\n"),
   "process-steps": () => services.process.map((s) => `<div class="step"><div class="n num">${s.n}</div><h3>${s.title}</h3><p>${s.text}</p></div>`).join("\n"),
